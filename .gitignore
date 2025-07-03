@@ -55,3 +55,14 @@ Thumbs.db
 
 # Optional dependency directories
 __pypackages__/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest cache
+.pytest_cache/
+pytest.ini
+
+playground/
