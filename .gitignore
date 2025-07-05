@@ -66,3 +66,7 @@ __pycache__/
 pytest.ini
 
 playground/
+
+*.pyc
+*.egg-info/
+dist/

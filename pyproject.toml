@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graduacion_unal"
+version = "0.1.0"
+description = "Planificador de semestres universitarios basado en prerequisitos"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[project.scripts]
+#graduacion-unal = "graduacion_unal.cli:main" 
+
+[tool.setuptools.packages.find]
+where = ["src"]
