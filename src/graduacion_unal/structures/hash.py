@@ -63,7 +63,8 @@ class HashMap:
                 current = current.next
         assert self.size == oldsize
 
-    def set(self, key: Any, value: Any) -> None:
+
+    def put(self, key: Any, value: Any) -> None:
         """
         Insert or update the given key with its value.
 
@@ -126,3 +127,20 @@ class HashMap:
             prev, current = current, current.next
 
         raise KeyError(f"{key!r} not found")
+
+
+    def contains(self, key: Any) -> bool:
+        try:
+            self.get(key)
+            return True
+        except KeyError:
+            return False
+
+
+    def items(self) -> Iterator[tuple[Any, Any]]:
+        # walk each bucket
+        for head in self.buckets:
+            current = head
+            while current:
+                yield current.key, current.value
+                current = current.next
