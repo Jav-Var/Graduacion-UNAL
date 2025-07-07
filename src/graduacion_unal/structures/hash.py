@@ -144,3 +144,29 @@ class HashMap:
             while current:
                 yield current.key, current.value
                 current = current.next
+    
+    def keys(self) -> Iterator[Any]:
+        """
+        Return an iterator over the keys in the hash map.
+        """
+        for key, _ in self.items():
+            yield key
+    
+    def values(self) -> Iterator[Any]:
+        """
+        Return an iterator over the values in the hash map.
+        """
+        for _, value in self.items():
+            yield value
+    
+    def __len__(self) -> int:
+        """
+        Return the number of key-value pairs in the hash map.
+        """
+        return self.size
+    
+    def __iter__(self) -> Iterator[tuple[Any, Any]]:
+        """
+        Return an iterator over the key-value pairs in the hash map.
+        """
+        return self.items()

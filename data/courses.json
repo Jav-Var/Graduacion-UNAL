@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1001,
+    "name": "Cálculo Diferencial",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 1002,
+    "name": "Cálculo Integral",
+    "credits": 4,
+    "prereqs": [1001]
+  },
+  {
+    "id": 1003,
+    "name": "Cálculo Vectorial",
+    "credits": 4,
+    "prereqs": [1002]
+  },
+  {
+    "id": 1004,
+    "name": "Programación I",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 1005,
+    "name": "Programación II",
+    "credits": 3,
+    "prereqs": [1004]
+  },
+  {
+    "id": 1006,
+    "name": "Estructuras de Datos",
+    "credits": 3,
+    "prereqs": [1005]
+  },
+  {
+    "id": 1007,
+    "name": "Álgebra Lineal",
+    "credits": 3,
+    "prereqs": [1001]
+  },
+  {
+    "id": 1008,
+    "name": "Física I",
+    "credits": 4,
+    "prereqs": [1001]
+  },
+  {
+    "id": 1009,
+    "name": "Física II",
+    "credits": 4,
+    "prereqs": [1002, 1008]
+  },
+  {
+    "id": 1010,
+    "name": "Probabilidad y Estadística",
+    "credits": 3,
+    "prereqs": [1002]
+  },
+  {
+    "id": 1011,
+    "name": "Algoritmos y Programación",
+    "credits": 3,
+    "prereqs": [1006]
+  },
+  {
+    "id": 1012,
+    "name": "Bases de Datos",
+    "credits": 3,
+    "prereqs": [1006]
+  },
+  {
+    "id": 1013,
+    "name": "Redes de Computadores",
+    "credits": 3,
+    "prereqs": [1006]
+  },
+  {
+    "id": 1014,
+    "name": "Sistemas Operativos",
+    "credits": 3,
+    "prereqs": [1006]
+  },
+  {
+    "id": 1015,
+    "name": "Inteligencia Artificial",
+    "credits": 3,
+    "prereqs": [1011, 1010]
+  }
+] 

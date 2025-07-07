@@ -12,11 +12,85 @@ from graduacion_unal.structures.queue_ds import Queue    # <- tu Queue con enque
               # tu implementación renombrada en src/queue_ds.py
 
 class Course:
-    def __init__(self, id: int, prereqs: List[int]) -> None:
+    """
+    Modelo que representa una asignatura/curso en el plan de estudios.
+    
+    Attributes:
+        id: Identificador único del curso
+        name: Nombre del curso (opcional)
+        credits: Número de créditos del curso (opcional)
+        prereqs: Lista de IDs de cursos que son prerrequisitos
+        in_degree: Número de prerrequisitos (calculado automáticamente)
+        adjacent: Lista de IDs de cursos que dependen de este curso
+    """
+    
+    def __init__(self, id: int, prereqs: List[int], name: str = "", credits: int = 0) -> None:
         self.id = id
+        self.name = name
+        self.credits = credits
         self.prereqs = prereqs
         self.in_degree = len(prereqs)
         self.adjacent: List[int] = []  # cursos dependientes
+    
+    def add_dependent_course(self, course_id: int) -> None:
+        """
+        Añade un curso que depende de este curso.
+        
+        Args:
+            course_id: ID del curso dependiente
+        """
+        if course_id not in self.adjacent:
+            self.adjacent.append(course_id)
+    
+    def remove_dependent_course(self, course_id: int) -> bool:
+        """
+        Remueve un curso dependiente.
+        
+        Args:
+            course_id: ID del curso dependiente a remover
+            
+        Returns:
+            True si se removió, False si no existía
+        """
+        if course_id in self.adjacent:
+            self.adjacent.remove(course_id)
+            return True
+        return False
+    
+    def has_prerequisites(self) -> bool:
+        """
+        Verifica si el curso tiene prerrequisitos.
+        
+        Returns:
+            True si tiene prerrequisitos, False en caso contrario
+        """
+        return len(self.prereqs) > 0
+    
+    def is_ready_to_take(self, completed_courses: List[int]) -> bool:
+        """
+        Verifica si el curso puede ser tomado dado los cursos completados.
+        
+        Args:
+            completed_courses: Lista de IDs de cursos completados
+            
+        Returns:
+            True si se pueden tomar todos los prerrequisitos, False en caso contrario
+        """
+        return all(prereq in completed_courses for prereq in self.prereqs)
+    
+    def __str__(self) -> str:
+        return f"Course(id={self.id}, name='{self.name}', credits={self.credits}, prereqs={self.prereqs})"
+    
+    def __repr__(self) -> str:
+        return self.__str__()
+    
+    def __eq__(self, other) -> bool:
+        if not isinstance(other, Course):
+            return False
+        return self.id == other.id
+    
+    def __hash__(self) -> int:
+        return hash(self.id)
 
 def load_courses(path: str) -> List[Course]:
     """

@@ -1,0 +1,58 @@
+{
+    {
+        "id": 1,
+        "name": "Matemáticas Discretas",
+        "credits": 3,
+        "prerequisites": [2, 3]
+    },
+    {
+        "id": 2,
+        "name": "Calculo I",
+        "credits": 3,
+        "prerequisites": []
+    },
+    {
+        "id": 3,
+        "name": "Algebra Lineal",
+        "credits": 3,
+        "prerequisites": []
+    },
+    {
+        "id": 4,
+        "name": "Programacion I",
+        "credits": 3,
+        "prerequisites": []
+    },
+    {
+        "id": 5,
+        "name": "Programacion II",
+        "credits": 3,
+        "prerequisites": [4]
+    },
+    {
+        "id": 6,
+        "name": "Base de datos",
+        "credits": 3,
+        "prerequisites": [5]
+    },
+    {
+        "id": 7,
+        "name": "Sistemas Operativos",
+        "credits": 3,
+        "prerequisites": []
+    },
+    {
+        "id": 8,
+        "name": "Combinatoria",
+        "credits": 4,
+        "prerequisites": [1]
+    },
+    {
+        "id": 9,
+        "name": "Teoria de la computacion",
+        "credits": 4,
+        "prerequisites": [8]
+    },
+    
+
+}
