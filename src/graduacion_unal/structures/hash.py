@@ -59,7 +59,7 @@ class HashMap:
         for head in old_buckets:
             current = head
             while current:
-                self.set(current.key, current.value)
+                self.put(current.key, current.value)
                 current = current.next
         assert self.size == oldsize
 
