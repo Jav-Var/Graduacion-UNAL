@@ -1,3 +1,6 @@
+
+## PARA LA SIGUIENTE VERSION DE LA ENTREGA, ACTUALMENTE NO SE ESTA USANDO ESTE MODELO
+
 from typing import List, Optional
 
 class User:
