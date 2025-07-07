@@ -2,6 +2,9 @@ from typing import List, Dict, Any, Optional
 from graduacion_unal.models.courses_schedule import Schedule
 from graduacion_unal.models.courses_graph import CoursesGraph
 from graduacion_unal.models.User import User
+import os
+import uic
+from PyQt5.QtWidgets import QMainWindow
 
 class ScheduleService:
     """
@@ -350,4 +353,23 @@ class ScheduleService:
                 "error": "PERSONALIZED_SCHEDULE_ERROR",
                 "message": f"Error al generar planificación personalizada: {str(e)}",
                 "details": str(e)
-            } 
+            }
+
+    def cargar_ver_arbol(self, ui_dir):
+        self.limpiar_panel()
+        ui_file = os.path.join(ui_dir, 'VerArbolMaterias.ui')
+        widget = uic.loadUi(ui_file)
+        self.panel_layout.addWidget(widget, alignment=Qt.AlignCenter)
+        widget.ButtonVerArbol.clicked.connect(lambda: self.mostrar_arbol(widget))
+
+    def mostrar_arbol(self, widget):
+        resultado = self.get_course_tree()
+        if resultado["success"]:
+            texto = ""
+            for nivel, info in resultado["course_tree"].items():
+                texto += f"Nivel {nivel}:\n"
+                for curso in info["courses"]:
+                    texto += f"  {curso['id']} - {curso['name']} ({curso['credits']} créditos)\n"
+            widget.TextArbol.setPlainText(texto)
+        else:
+            widget.TextArbol.setPlainText("Error: " + resultado["message"]) 
