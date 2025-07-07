@@ -1,4 +1,5 @@
 from graduacion_unal.structures.hash import HashMap
+from graduacion_unal.structures.disjoint_sets import DisjointSets
 from graduacion_unal.adapters.courses_adapter import CoursesAdapter
 from graduacion_unal.models.Courses import Course
 from typing import List, Optional
@@ -271,31 +272,51 @@ class CoursesGraph:
 
     def _has_cycle(self) -> bool:
         """
-        Detecta si el grafo tiene ciclos usando DFS.
+        Detecta si el grafo tiene ciclos usando DisjointSets optimizado para grafos dirigidos.
+        
+        Esta implementación combina DFS con DisjointSets para optimizar las consultas
+        de conectividad y detectar ciclos eficientemente.
         
         Returns:
             True si hay un ciclo, False en caso contrario
         """
+        if self.number_nodes == 0:
+            return False
+        
+        # Obtener el rango de IDs de cursos
+        course_ids = list(self.courses_map.keys())
+        if not course_ids:
+            return False
+        
+        max_course_id = max(course_ids)
+        
+        # Para grafos dirigidos, usamos DFS con DisjointSets para optimización
         visited = set()
         rec_stack = set()
         
-        def dfs(course_id: int) -> bool:
+        def dfs_with_ds(course_id: int, ds: DisjointSets) -> bool:
             visited.add(course_id)
             rec_stack.add(course_id)
             
             for neighbor_id in self.get_neighbors(course_id):
                 if neighbor_id not in visited:
-                    if dfs(neighbor_id):
+                    # Unir los conjuntos para optimizar futuras consultas
+                    ds.union(course_id, neighbor_id)
+                    if dfs_with_ds(neighbor_id, ds):
                         return True
                 elif neighbor_id in rec_stack:
+                    # Ciclo detectado: encontramos un back edge
                     return True
             
             rec_stack.remove(course_id)
             return False
         
-        for course_id in self.courses_map.keys():
+        # Crear DisjointSets para optimizar las consultas de conectividad
+        ds = DisjointSets(max_course_id + 1)
+        
+        for course_id in course_ids:
             if course_id not in visited:
-                if dfs(course_id):
+                if dfs_with_ds(course_id, ds):
                     return True
         
         return False
