@@ -104,30 +104,19 @@ class CoursesAdapter:
             return True
         except (KeyError, ValueError):
             return False
-
-"""{
-    {
-        "id": 1,
-        "name": "Matemáticas Discretas",
-        "credits": 3,
-        "prerequisites": [2, 3]
-    },
-    {
-        "id": 2,
-        "name": "Calculo I",
-        "credits": 3,
-        "prerequisites": []
-    },
-    {
-        "id": 3,
-        "name": "Algebra Lineal",
-        "credits": 3,
-        "prerequisites": []
-    }
-}"""
-
-
-
-
-
+        
+    def get_course_by_id(self, course_id: int) -> Course:
+        """
+        Obtiene un curso por su ID.
+        
+        Args:
+            course_id: ID del curso a buscar
+            
+        Returns:
+            Objeto Course encontrado o None si no existe
+        """
+        for course in self.courses_data:
+            if course['id'] == course_id:
+                return self._create_course_from_data(course)
+        return None
 
