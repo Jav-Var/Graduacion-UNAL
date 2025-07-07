@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Juan Pablo Ladino Rivera",
+    "student_id": "20231012345",
+    "program": "Ingeniería de Sistemas",
+    "semester": 3,
+    "completed_courses": [1001, 1004, 1007],
+    "current_courses": [1002, 1005, 1008],
+    "total_credits": 11,
+    "max_credits_per_semester": 18
+  },
+  {
+    "id": 2,
+    "name": "Samuel José Moreno Peñaranda",
+    "student_id": "20231023456",
+    "program": "Ingeniería de Sistemas",
+    "semester": 2,
+    "completed_courses": [1001, 1004],
+    "current_courses": [1002, 1005, 1007],
+    "total_credits": 7,
+    "max_credits_per_semester": 18
+  },
+  {
+    "id": 3,
+    "name": "Samuel Felipe Palacios Olaya",
+    "student_id": "20231034567",
+    "program": "Ingeniería de Sistemas",
+    "semester": 4,
+    "completed_courses": [1001, 1002, 1004, 1005, 1007, 1008],
+    "current_courses": [1003, 1006, 1009],
+    "total_credits": 22,
+    "max_credits_per_semester": 18
+  },
+  {
+    "id": 4,
+    "name": "Javier Miguel Vargas Méndez",
+    "student_id": "20231045678",
+    "program": "Ingeniería de Sistemas",
+    "semester": 1,
+    "completed_courses": [],
+    "current_courses": [1001, 1004],
+    "total_credits": 0,
+    "max_credits_per_semester": 18
+  },
+  {
+    "id": 5,
+    "name": "María González López",
+    "student_id": "20231056789",
+    "program": "Ingeniería de Sistemas",
+    "semester": 5,
+    "completed_courses": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
+    "current_courses": [1011, 1012, 1013],
+    "total_credits": 37,
+    "max_credits_per_semester": 18
+  }
+] 
