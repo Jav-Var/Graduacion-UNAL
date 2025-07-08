@@ -3,6 +3,9 @@ from graduacion_unal.structures.disjoint_sets import DisjointSets
 from graduacion_unal.adapters.courses_adapter import CoursesAdapter
 from graduacion_unal.models.Courses import Course
 from typing import List, Optional
+from graduacion_unal.models.courses_schedule import Schedule
+from graduacion_unal.models.courses_graph import CoursesGraph
+from graduacion_unal.models.User import User
 
 
 
