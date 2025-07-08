@@ -1,5 +1,129 @@
 [
   {
+    "id": 2015168,
+    "name": "Fundamentos de matemáticas",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 2016377,
+    "name": "Cálculo diferencial en una variable",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 2015181,
+    "name": "Sistemas numéricos",
+    "credits": 4,
+    "prereqs": [2015168]
+  },
+  {
+    "id": 2015556,
+    "name": "Cálculo integral en una variable",
+    "credits": 4,
+    "prereqs": [2016377]
+  },
+  {
+    "id": 2015555,
+    "name": "Álgebra lineal básica",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 2025819,
+    "name": "Introducción a la teoría de conjuntos",
+    "credits": 4,
+    "prereqs": [2015181]
+  },
+  {
+    "id": 2015162,
+    "name": "Cálculo vectorial",
+    "credits": 4,
+    "prereqs": [2015555, 2015556]
+  },
+  {
+    "id": 2015178,
+    "name": "Probabilidad",
+    "credits": 4,
+    "prereqs": [2015556]
+  },
+  {
+    "id": 2015155,
+    "name": "Introducción al análisis real",
+    "credits": 4,
+    "prereqs": [2015181, 2015162]
+  },
+  {
+    "id": 2016342,
+    "name": "Cálculo de ecuaciones diferenciales ordinarias",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa naturales y estadística",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 2026573,
+    "name": "Introducción a las ciencias de la computación y la programación",
+    "credits": 3,
+    "prereqs": []
+  },
+
+  {
+    "id": 2016375,
+    "name": "Programación orientada a objetos",
+    "credits": 3,
+    "prereqs": [2026573]
+  },
+  {
+    "id": 2016699,
+    "name": "Estructura de datos",
+    "credits": 4,
+    "prereqs": [2016375]
+  },
+  {
+    "id": 2016696,
+    "name": "Algoritmos",
+    "credits": 3,
+    "prereqs": [2016699]
+  },
+  {
+    "id": 2016698,
+    "name": "Elementos de computador",
+    "credits": 3,
+    "prereqs": [2026573]
+  },
+  {
+    "id": 2016707,
+    "name": "Sistemas operativos",
+    "credits": 3,
+    "prereqs": [2016698]
+  },
+  {
+    "id": 2015174,
+    "name": "Introducción a la teoría de la computación",
+    "credits": 4,
+    "prereqs": [2025819]
+  },
+  {
+    "id": 2026555,
+    "name": "Algebra abstracta y computacional",
+    "credits": 4,
+    "prereqs": [2025819]
+  },
+  {
+    "id": 2019072,
+    "name": "Análisis numérico 1",
+    "credits": 4,
+    "prereqs": [2016698, 2025819]
+  },
+
+
+
+  {
     "id": 1001,
     "name": "Cálculo Diferencial",
     "credits": 4,
