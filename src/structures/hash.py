@@ -2,7 +2,9 @@ from typing import Any, Optional, Iterator
 
 class Entry:
     """
-    Helper class representing a key-value pair node for a singly linked list in each bucket.
+    
+    Clase auxiliar que representa un nodo de par clave-valor en una lista simplemente enlazada
+    dentro de cada cubeta (bucket) del hash map.
     """
 
     __slots__ = ('key', 'value', 'next')
@@ -15,12 +17,12 @@ class Entry:
 
 class HashMap:
     """
-    A hash map  implementation using separate chaining.
+    Una implementacion de hash map utilizando encadenamiento separado.
 
     Attributes:
-        capacity: Number of buckets.
-        size: Total number of key-value pairs.
-        buckets: Array of bucket heads (each a linked list of Entry nodes).
+        capacity: Numero de buckets.
+        size: Numero total de parejas key-value.
+        buckets: Array de las head de los buckets (cada lista enlazada de nodos de entrada).
     """
 
     __slots__ = ('buckets', 'size', 'capacity', 'load_factor')
@@ -30,11 +32,11 @@ class HashMap:
 
     def __init__(self) -> None:
         """
-        Initialize the hash map.
+        Inicializar el hash map.
 
         Args:
-            initialcapacity: Number of buckets to start with (must be > 0).
-            load_factor: Threshold ratio of size/capacity to trigger resizing.
+            initialcapacity: Numero de buckets con los que empezar (debe ser > 0).
+            load_factor: Relacion de umbral de tamaño/capacidad para activar el cambio de tamaño.
         """
         self.capacity: int = self.INITIAL_CAPACITY
         self.load_factor: float = self.LOAD_FACTOR
@@ -48,7 +50,7 @@ class HashMap:
 
     def resize(self) -> None:
         """
-        Double the capacity and rehash all existing entries.
+        Duplica la capacidad y rehashea todas las entradas existentes.
         """
         old_buckets = self.buckets
         self.capacity *= 2
@@ -66,9 +68,8 @@ class HashMap:
 
     def put(self, key: Any, value: Any) -> None:
         """
-        Insert or update the given key with its value.
-
-        Time complexity: O(1) on average, amortized.
+        Inserta o actualiza la clave con su valor.
+        Time complexity: O(1) en promedio, amortized.
         """
         if (self.size + 1) / self.capacity > self.load_factor:
             self.resize()
@@ -91,10 +92,11 @@ class HashMap:
 
     def get(self, key: Any) -> Any:
         """
-        Return the value associated with key.
+        Return:
+            El valor asociado a la key.
 
         Raises:
-            KeyError: If key is not present.
+            KeyError: Si la key no se encuentra.
         """
         idx = self.bucket_index(key)
         current = self.buckets[idx]
@@ -107,10 +109,9 @@ class HashMap:
 
     def remove(self, key: Any) -> Any:
         """
-        Remove the entry for key and return its value.
-
+        Elimina el elemento asociado a la key y retorna su valor.
         Raises:
-            KeyError: If key is not present.
+            KeyError: Si la key no se encuentra.
         """
         idx = self.bucket_index(key)
         current = self.buckets[idx]
@@ -130,6 +131,13 @@ class HashMap:
 
 
     def contains(self, key: Any) -> bool:
+        """        
+        Verifica si la key existe en el hash map.
+        Args:
+            key: La clave a verificar.
+        Returns:
+            True si la clave existe, False en caso contrario.
+        """
         try:
             self.get(key)
             return True
@@ -147,26 +155,30 @@ class HashMap:
     
     def keys(self) -> Iterator[Any]:
         """
-        Return an iterator over the keys in the hash map.
+        Returns:
+        Un iterador sobre las claves en el hash map.
         """
         for key, _ in self.items():
             yield key
     
     def values(self) -> Iterator[Any]:
         """
-        Return an iterator over the values in the hash map.
+        Returns:
+        Un iterador sobre los valores en el hash map.
         """
         for _, value in self.items():
             yield value
     
     def __len__(self) -> int:
         """
-        Return the number of key-value pairs in the hash map.
+        Returns:
+        El número de parejas key-value que hay en el hash map.
         """
         return self.size
     
     def __iter__(self) -> Iterator[tuple[Any, Any]]:
         """
-        Return an iterator over the key-value pairs in the hash map.
+        Returns:
+        Un iterador sobre las parejas key-value en el hash map.
         """
         return self.items()

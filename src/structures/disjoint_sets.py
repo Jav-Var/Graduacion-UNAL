@@ -16,7 +16,7 @@ class DisjointSets:
         Inicializa los conjuntos disjuntos.
         
         Args:
-            size: Número total de elementos (0 a size-1)
+            size: Numero total de elementos (0 a size-1)
         """
         self.parent = list(range(size))  # Cada elemento es su propio padre inicialmente
         self.rank = [0] * size          # Altura del árbol para optimización
