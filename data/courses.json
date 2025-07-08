@@ -120,8 +120,90 @@
     "credits": 4,
     "prereqs": [2016698, 2025819]
   },
-
-
+  {
+    "id": null,
+    "name": "Optativa matemática y estructuras discretas",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa de computación aplicada",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa algoritmos y teoría de la computación",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa seguridad de información y codificación",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 6",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 4",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 7",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa de computación aplicada",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 3",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa computación científica",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Trabajo de grado",
+    "credits": 8,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 5",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 2",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa sistemas operativos de cómputo y compiladores",
+    "credits": 3,
+    "prereqs": []
+  },
 
   {
     "id": 1001,
