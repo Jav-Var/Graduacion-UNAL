@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AnadirMateria</class>
- <widget class="QWidget" name="AnadirMateria">
+ <class>EliminarPrerrequisito</class>
+ <widget class="QWidget" name="EliminarPrerrequisito">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -108,7 +108,7 @@
 </string>
            </property>
            <property name="text">
-            <string>Añadir Materia</string>
+            <string>Eliminar Prerrequisito</string>
            </property>
           </widget>
          </item>
@@ -140,25 +140,6 @@ QLineEdit {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QWidget" name="FilaNombre" native="true">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QLabel" name="LabelNombre">
-              <property name="text">
-               <string>Nombre de la materia: </string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="InputNombre"/>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
           <widget class="QWidget" name="FilaID" native="true">
            <property name="styleSheet">
             <string notr="true"/>
@@ -167,7 +148,7 @@ QLineEdit {
             <item>
              <widget class="QLabel" name="LabelID">
               <property name="text">
-               <string>ID de la materia: </string>
+               <string>ID de la materia</string>
               </property>
              </widget>
             </item>
@@ -178,26 +159,26 @@ QLineEdit {
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="FilaCreditos" native="true">
+          <widget class="QWidget" name="FilaIDPrerreq" native="true">
            <property name="styleSheet">
             <string notr="true"/>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QLabel" name="LabelCreditos">
+             <widget class="QLabel" name="LabelIDPrerreq">
               <property name="text">
-               <string>Numero de creditos de la materia:</string>
+               <string>ID de la materia prerrequisito</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="InputCreditos"/>
+             <widget class="QLineEdit" name="InputIDPrerreq"/>
             </item>
            </layout>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QPushButton" name="buttonAgregar">
+          <widget class="QPushButton" name="pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -228,7 +209,7 @@ QPushButton:pressed {
 </string>
            </property>
            <property name="text">
-            <string>Añadir</string>
+            <string>Eliminar prerrequisito</string>
            </property>
           </widget>
          </item>

@@ -1,7 +1,7 @@
-from graduacion_unal.structures.hash import HashMap
-from graduacion_unal.structures.disjoint_sets import DisjointSets
-from graduacion_unal.adapters.courses_adapter import CoursesAdapter
-from graduacion_unal.models.Courses import Course
+from structures.hash import HashMap
+from structures.disjoint_sets import DisjointSets
+from adapters.courses_adapter import CoursesAdapter
+from models.Courses import Course
 from typing import List, Optional
 
 

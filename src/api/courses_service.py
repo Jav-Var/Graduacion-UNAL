@@ -1,7 +1,6 @@
 from typing import List, Dict, Any, Optional
-from graduacion_unal.models.courses_graph import CoursesGraph
-from graduacion_unal.models.Courses import Course
-from graduacion_unal.adapters.courses_adapter import CoursesAdapter
+from models.Courses import Course
+from adapters.courses_adapter import CoursesAdapter
 
 class CoursesService:
     """

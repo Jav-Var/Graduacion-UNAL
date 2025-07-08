@@ -1,10 +1,8 @@
 from typing import List, Dict, Any, Optional
-from graduacion_unal.models.courses_schedule import Schedule
-from graduacion_unal.models.courses_graph import CoursesGraph
-from graduacion_unal.models.User import User
+from models.courses_schedule import Schedule
+from models.courses_graph import CoursesGraph
+from models.User import User
 import os
-import uic
-from PyQt5.QtWidgets import QMainWindow
 
 class ScheduleService:
     """

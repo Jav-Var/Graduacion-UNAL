@@ -95,19 +95,30 @@ QPushButton:pressed {
              <string>Ver Materias</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset resource="../resources.qrc">
               <normaloff>:/icons/icons/arrow-right-circle.svg</normaloff>:/icons/icons/arrow-right-circle.svg</iconset>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="ButtonCalcularSemestres">
+           <widget class="QPushButton" name="ButtonSugerenciaAleatoria">
             <property name="text">
-             <string>Calcular Semestres</string>
+             <string>Sugerencia de Materias</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/icons/icons/grid.svg</normaloff>:/icons/icons/grid.svg</iconset>
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ButtonVerCaminosMaterias">
+            <property name="text">
+             <string>Ver Caminos de Materias</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/save.svg</normaloff>:/icons/icons/save.svg</iconset>
             </property>
            </widget>
           </item>
@@ -117,7 +128,7 @@ QPushButton:pressed {
              <string>Añadir Prerrequisitos</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset resource="../resources.qrc">
               <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
             </property>
            </widget>
@@ -128,7 +139,7 @@ QPushButton:pressed {
              <string>Añadir Materias</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset resource="../resources.qrc">
               <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
             </property>
            </widget>
@@ -139,7 +150,7 @@ QPushButton:pressed {
              <string>Eliminar Materias</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset resource="../resources.qrc">
               <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
             </property>
            </widget>
@@ -150,41 +161,8 @@ QPushButton:pressed {
              <string>Eliminar Prerequisito</string>
             </property>
             <property name="icon">
-             <iconset resource="resources.qrc">
+             <iconset resource="../resources.qrc">
               <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="ButtonCargar">
-            <property name="text">
-             <string>Cargar</string>
-            </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/icons/icons/upload.svg</normaloff>:/icons/icons/upload.svg</iconset>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="ButtonGuardar">
-            <property name="text">
-             <string>Guardar</string>
-            </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/icons/icons/save.svg</normaloff>:/icons/icons/save.svg</iconset>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="ButtonNuevo">
-            <property name="text">
-             <string>Nuevo</string>
-            </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/icons/icons/file-plus.svg</normaloff>:/icons/icons/file-plus.svg</iconset>
             </property>
            </widget>
           </item>
@@ -219,7 +197,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>
