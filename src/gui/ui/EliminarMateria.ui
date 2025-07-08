@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>467</width>
+    <width>468</width>
     <height>424</height>
    </rect>
   </property>
@@ -108,7 +108,7 @@
 </string>
            </property>
            <property name="text">
-            <string>Añadir Materia</string>
+            <string>Eliminar Materia</string>
            </property>
           </widget>
          </item>
@@ -140,25 +140,6 @@ QLineEdit {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QWidget" name="FilaNombre" native="true">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QLabel" name="LabelNombre">
-              <property name="text">
-               <string>Nombre de la materia: </string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="InputNombre"/>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
           <widget class="QWidget" name="FilaID" native="true">
            <property name="styleSheet">
             <string notr="true"/>
@@ -177,27 +158,8 @@ QLineEdit {
            </layout>
           </widget>
          </item>
-         <item>
-          <widget class="QWidget" name="FilaCreditos" native="true">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <widget class="QLabel" name="LabelCreditos">
-              <property name="text">
-               <string>Numero de creditos de la materia:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="InputCreditos"/>
-            </item>
-           </layout>
-          </widget>
-         </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QPushButton" name="buttonAgregar">
+          <widget class="QPushButton" name="pushButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -228,7 +190,7 @@ QPushButton:pressed {
 </string>
            </property>
            <property name="text">
-            <string>Añadir</string>
+            <string>Eliminar</string>
            </property>
           </widget>
          </item>

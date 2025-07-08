@@ -5,8 +5,8 @@
 import json
 from typing import List
 import argparse
-from graduacion_unal.structures.hash import HashMap    # <- tu HashMap
-from graduacion_unal.structures.queue_ds import Queue    # <- tu Queue con enqueue/is_empty
+from structures.hash import HashMap    # <- tu HashMap
+from structures.queue_ds import Queue    # <- tu Queue con enqueue/is_empty
 
 # ... resto de tu código ...
               # tu implementación renombrada en src/queue_ds.py

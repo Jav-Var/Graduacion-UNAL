@@ -1,6 +1,6 @@
 import json
 from typing import List, Dict, Any
-from graduacion_unal.models.User import User
+from models.User import User
 
 class UserAdapter:
     """

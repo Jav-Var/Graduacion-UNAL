@@ -1,6 +1,6 @@
 import json
 from typing import List, Dict, Any
-from graduacion_unal.models.Courses import Course
+from models.Courses import Course
 
 class CoursesAdapter:
     """

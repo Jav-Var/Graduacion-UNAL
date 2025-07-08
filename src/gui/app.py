@@ -1,8 +1,16 @@
 import sys
 import os
+
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QMessageBox
+
 import resources_rc
+
+from api.courses_service import CoursesService
+from api.schedule_service import ScheduleService
+
+from pathlib import Path
 
 """
     Este es un archivo para probar la interfaz, no es la aplicacion final.
@@ -33,6 +41,20 @@ class MainWindow(QtWidgets.QMainWindow):
         self.panel = self.findChild(QtWidgets.QWidget, 'panel')
         self.sidebar = self.findChild(QtWidgets.QWidget, 'sidebar')
 
+
+        # === Configuracion de la API === #
+
+        #Crea los paths por defecto de el json de materias
+        #BASE_DIR = Path(__file__).resolve().parents[1]
+        #JSON_PATH = BASE_DIR / 'data' / 'materias.json' 
+
+
+        # Instancia el servicio de cursos
+        self.courses_service = CoursesService()
+
+
+        # === Configuracion de layout y botones === #
+
         # obtener el layout existente en lugar de crear uno nuevo
         self.panel_layout = self.panel.layout()
 
@@ -43,6 +65,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Conectar botones
         self.asignar_botones(ui_dir)
+        
 
     def limpiar_panel(self):
         # Eliminar todos los widgets del panel
@@ -63,17 +86,10 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             materia_widget = uic.loadUi(ui_file)
             self.panel_layout.addWidget(materia_widget, alignment=Qt.AlignCenter)
+            if menu == 'AñadirMateria':
+                self.setup_add_materia(materia_widget)
         except Exception as e:
             print(f"[ERROR] Error cargando {menu}: {e}")
-
-    def cargar(self):
-        print("[DEBUG] Cargar")
-
-    def guardar(self):
-        print("[DEBUG] Guardar")
-
-    def nuevo(self):
-        print("[DEBUG] Nuevo")
 
     def asignar_botones(self, ui_dir: str):
         mappings = {
@@ -82,7 +98,8 @@ class MainWindow(QtWidgets.QMainWindow):
             'ButtonEliminarMateria':       'EliminarMateria',
             'ButtonEliminarPrerrequisito': 'EliminarPrerrequisito',
             'ButtonVerMaterias':           'VerMaterias',
-            'ButtonCalcularSemestres':     'CalcularSemestres',
+            'ButtonSugerenciaAleatoria':   'SugerenciaAleatoria',
+            'ButtonVerCaminosMaterias':    'VerCaminosMaterias'
         }
         # Botones de cambio de menú
         for obj_name, menu_name in mappings.items():
@@ -93,13 +110,46 @@ class MainWindow(QtWidgets.QMainWindow):
             print(f"[OK] Conectando {obj_name} → cambiar_menu('{menu_name}')")
             btn.clicked.connect(lambda _, m=menu_name: self.cambiar_menu(m, ui_dir))
 
-        # Botones de archivo
-        for name, handler in [('ButtonGuardar', self.guardar), ('ButtonCargar', self.cargar), ('ButtonNuevo', self.nuevo)]:
-            btn = self.findChild(QtWidgets.QPushButton, name)
-            if btn:
-                btn.clicked.connect(handler)
+    def setup_add_materia(self, widget):
+        """
+        Conecta los campos y el botón de AñadirMateria.ui con la API.
+        """
+        # Referencias a los campos
+        input_name    = widget.findChild(QtWidgets.QLineEdit, 'InputNombre')
+        input_id      = widget.findChild(QtWidgets.QLineEdit, 'InputID')
+        input_credits = widget.findChild(QtWidgets.QLineEdit, 'InputCreditos')
+        btn_add       = widget.findChild(QtWidgets.QPushButton, 'buttonAgregar')
+
+        def on_add_clicked():
+            # Leer y validar datos
+            print("[DEBUG] Boton presionado: Añadir Materia")
+            try:
+                course_data = {
+                    'id':      int(input_id.text()),
+                    'name':    input_name.text().strip(),
+                    'credits': int(input_credits.text())
+                }
+            except ValueError:
+                QMessageBox.warning(widget, "Datos inválidos",
+                                    "ID y créditos deben ser números enteros.")
+                return
+
+            # Llamar al servicio
+            resultado = self.courses_service.add_course(course_data)
+
+            # Mostrar resultado
+            if resultado.get('success'):
+                QMessageBox.information(widget, "Curso añadido",
+                                        resultado['message'])
+                # Limpiar campos
+                input_name.clear()
+                input_id.clear()
+                input_credits.clear()
             else:
-                print(f"[ERROR] no encontré botón con objectName='{name}'")
+                QMessageBox.critical(widget, "Error al añadir curso",
+                                     resultado.get('message', 'Error desconocido'))
+
+        btn_add.clicked.connect(on_add_clicked)
 
 
 if __name__ == '__main__':

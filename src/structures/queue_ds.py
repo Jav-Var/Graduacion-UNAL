@@ -1,10 +1,10 @@
 from typing import Any, Optional, Iterator
 
 class Node:
-    """
-    Helper class representing a node for a singly linked list.
-    """
     
+    """Clase que representa un nodo en una singly linked list.
+    Cada nodo contiene un valor y una referencia al siguiente nodo."""
+
     __slots__ = ('value', 'next')
 
     def __init__(self, value: Any) -> None:
@@ -13,7 +13,8 @@ class Node:
 
 class Queue:
     """
-    Queue implementation using a singly linked list for O(1) enqueue and dequeue operations.
+    Queue implementada utilizando una singly linked list para complejidad O(1)
+    en las operaciones enqueue and dequeue.
     """
     def __init__(self) -> None:
         self.head: Optional[Node] = None
@@ -22,7 +23,7 @@ class Queue:
 
     def enqueue(self, item: Any) -> None:
         """
-        Add an item to the end of the queue.
+        Agrega un elemento al final de la queue.
 
         Time complexity: O(1)
         """
@@ -38,15 +39,14 @@ class Queue:
 
     def dequeue(self) -> Any:
         """
-        Remove and return the item from the front of the queue.
-
+        Elimina y retorna el elemento del frente de la queue.
         Time complexity: O(1)
 
         Raises:
-            IndexError: If the queue is empty.
+            IndexError: si la queue esta vacia.
         """
         if self.is_empty():
-            raise IndexError("dequeue from empty queue")
+            raise IndexError("dequeue de queue vacia")
 
         assert self.head is not None  # for type checking
         value = self.head.value
@@ -59,10 +59,10 @@ class Queue:
 
     def peek(self) -> Any:
         """
-        Return the front item without removing it.
+        Retorna el elemento de enfrente sin eliminarlo.
 
         Raises:
-            IndexError: If the queue is empty.
+            IndexError: Si la queue esta vacia.
         """
         if self.is_empty():
             raise IndexError("peek from empty queue")
@@ -71,22 +71,24 @@ class Queue:
 
     def is_empty(self) -> bool:
         """
-        Check whether the queue is empty.
+        Metodo que retorna True si la queue no tiene elementos, de lo contrario False.
 
         Returns:
-            True if the queue has no items, False otherwise.
+            bool: True si la queue esta vacia, False en caso contrario.
+
         """
         return self.size == 0
 
     def __len__(self) -> int:
         """
-        Return the number of items in the queue.
+        Returns:
+            el numero de elementos de la queue.
         """
         return self.size
 
     def __iter__(self) -> Iterator[Any]:
         """
-        Iterate over the queue's items from front to back.
+        Itera sobre los elementos de la queue desde el frente hasta la parte trasera.
         """
         current = self.head
         while current:
@@ -95,7 +97,7 @@ class Queue:
 
     def __repr__(self) -> str:
         """
-        String representation of the queue for debugging.
+        Representacion de tipo String de la queue para debugging.
         """
         items = ", ".join(repr(item) for item in self)
         return f"Queue([{items}])"
