@@ -2,6 +2,13 @@ import json
 from typing import List, Dict, Any
 from models.Courses import Course
 
+
+### TODAVIA LA MEMORIA NO ES PERSISTENTE
+## HACER CASO OMISO A ESTE PROGRAMA
+## PARA LA PROXIMA ENTREGA
+
+
+
 class CoursesAdapter:
     """
     Adaptador para cargar y traducir datos de cursos desde JSON a objetos Course.

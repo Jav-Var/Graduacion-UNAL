@@ -4,6 +4,10 @@ from models.courses_graph import CoursesGraph
 from models.User import User
 import os
 
+
+### PARA LA PROXIMA ENTREGA
+## API PARA CONECTAR A LA GUI
+
 class ScheduleService:
     """
     Servicio de API para manejar la lógica de planificación semestral.
@@ -11,7 +15,7 @@ class ScheduleService:
     
     def __init__(self):
         self.schedule = Schedule()
-        self.graph: Optional[CoursesGraph] = None
+        self.graph= None
     
     def set_graph(self, graph: CoursesGraph) -> None:
         """

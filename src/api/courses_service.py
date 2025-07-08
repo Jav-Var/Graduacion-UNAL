@@ -2,6 +2,10 @@ from typing import List, Dict, Any, Optional
 from models.Courses import Course
 from adapters.courses_adapter import CoursesAdapter
 
+
+### PARA LA PROXIMA ENTREGA
+## API 
+
 class CoursesService:
     """
     Servicio de API para manejar la lógica de negocio de cursos.
@@ -9,7 +13,7 @@ class CoursesService:
     """
     
     def __init__(self):
-        self.graph: Optional[CoursesGraph] = None
+        self.graph = None
         self.adapter = CoursesAdapter()
     
     def load_graph_from_json(self, json_path: str) -> Dict[str, Any]:

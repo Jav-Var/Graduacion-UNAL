@@ -1,7 +1,3 @@
-from src.graduacion_unal.models.Courses import Course
-from src.graduacion_unal.models.Graph import Graph
-
-
 #### PARA LA SIGUIENTE VERSION DE LA ENTREGA
 ## PARA MANEJAR TIPOS DE MATERIAS Y VARIOS USUARIOS
 

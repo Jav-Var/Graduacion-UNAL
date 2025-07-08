@@ -3,6 +3,11 @@ from typing import List, Dict, Any, Set
 from models.courses_graph import CoursesGraph
 from models.Courses import Course
 
+
+### PARA LA PROXIMA ENTREGA
+## PARA MANEJAR PLANIFICACIONES DE SEMESTRES
+## API SIN TESTEAR, ALGORITMOS INCOMPLETOS Y NO OPTIMIZADOS
+
 class Schedule:
     """
     Metodo para una planificacion de semestres valida.
@@ -45,7 +50,12 @@ class Schedule:
         visited = set()
         
         def calculate_level(course_id: int) -> int:
-            """Calcula el nivel de un curso basado en sus prerrequisitos."""
+            """Calcula el nivel de un curso basado en sus prerrequisitos.
+            
+            Definicion recursiva de "profundidad" de un curso.
+
+            Numero minimo de semestres necesarios para poder ver el curso.
+            """
             if course_id in course_levels:
                 return course_levels[course_id]
             
@@ -203,6 +213,15 @@ class Schedule:
             
         Returns:
             Diccionario con la planificación de semestres
+        
+        Similar a un level order traversal de un "arbol" basado en la profunidad de los prerequisitos   . 
+
+        Empezar por los cursos de nivel 1, seleccionar los que desbloqueen mas creditos y que no excedan el maximo de creditos por semestre.
+
+        Repetir el proceso para los cursos de nivel 2, 3, etc.
+
+        Y finalmente retornar la planificacion de semestres.
+
         """
         if not courses_graph:
             return {}

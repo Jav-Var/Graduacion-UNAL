@@ -21,4 +21,10 @@ Los estudiantes necesitan planificar su carrera considerando complejas relacione
 
 📥 Importación/exportación de datos en JSON
 
-🧮 Respeto del límite de 6 materias por semestre
+🧮 Organización y entorno de pruebas 
+
+## Punto de entrada (PyQt)
+
+Ejecutar src/gui/app.py 
+
+# En la primera version no estan implementadas las funcionalidades, solo bocetos y primeras versiones de los modelos, los adaptdores y de la base de datos

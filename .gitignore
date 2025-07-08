@@ -13,6 +13,7 @@ dist/
 *.egg-info/
 *.egg
 wheels/
+test/
 
 # Virtual environments
 venv/

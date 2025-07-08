@@ -1,21 +1,20 @@
-# planner.py
-
-# Courses.py
-
 import json
 from typing import List
 import argparse
-from structures.hash import HashMap    # <- tu HashMap
-from structures.queue_ds import Queue    # <- tu Queue con enqueue/is_empty
+from structures.hash import HashMap  
+from structures.queue_ds import Queue   
 
-# ... resto de tu código ...
-              # tu implementación renombrada en src/queue_ds.py
+
+### PARA LA PROXIMA ENTREGA
+## PARA MANEJAR CURSOS Y GRAFOS DE CURSOS
+## NO SE UTILIZA EN LA ACTUAL VERSION
+
 
 class Course:
     """
     Modelo que representa una asignatura/curso en el plan de estudios.
     
-    Attributes:
+    Atributos:
         id: Identificador único del curso
         name: Nombre del curso (opcional)
         credits: Número de créditos del curso (opcional)
