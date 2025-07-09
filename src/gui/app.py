@@ -3,7 +3,7 @@ import os
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction
 
 import resources_rc
 
@@ -41,17 +41,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.panel = self.findChild(QtWidgets.QWidget, 'panel')
         self.sidebar = self.findChild(QtWidgets.QWidget, 'sidebar')
 
-
         # === Configuracion de la API === #
-
-        #Crea los paths por defecto de el json de materias
-        #BASE_DIR = Path(__file__).resolve().parents[1]
-        #JSON_PATH = BASE_DIR / 'data' / 'materias.json' 
-
 
         # Instancia el servicio de cursos
         self.courses_service = CoursesService()
-
 
         # === Configuracion de layout y botones === #
 
@@ -63,9 +56,118 @@ class MainWindow(QtWidgets.QMainWindow):
             self.panel_layout = QtWidgets.QVBoxLayout(self.panel)
             self.panel_layout.setContentsMargins(0, 0, 0, 0)
 
+        # Configurar menú
+        self.setup_menu()
+        
         # Conectar botones
         self.asignar_botones(ui_dir)
         
+        # Cargar archivo de ejemplo por defecto
+        self.cargar_archivo_ejemplo()
+
+    def setup_menu(self):
+        """Configura el menú de la aplicación."""
+        menubar = self.menuBar()
+        
+        # Menú Archivo
+        file_menu = menubar.addMenu('Archivo')
+        
+        # Acción Abrir
+        open_action = QAction('Abrir archivo JSON', self)
+        open_action.setShortcut('Ctrl+O')
+        open_action.triggered.connect(self.abrir_archivo)
+        file_menu.addAction(open_action)
+        
+        # Acción Guardar
+        save_action = QAction('Guardar como...', self)
+        save_action.setShortcut('Ctrl+S')
+        save_action.triggered.connect(self.guardar_archivo)
+        file_menu.addAction(save_action)
+        
+        file_menu.addSeparator()
+        
+        # Acción Cargar ejemplo
+        example_action = QAction('Cargar archivo de ejemplo', self)
+        example_action.triggered.connect(self.cargar_archivo)
+        file_menu.addAction(example_action)
+        
+        # Menú Ver
+        view_menu = menubar.addMenu('Ver')
+        
+        # Acción Información del grafo
+        info_action = QAction('Información del grafo', self)
+        info_action.triggered.connect(self.mostrar_info_grafo)
+        view_menu.addAction(info_action)
+
+    def abrir_archivo(self):
+        """Abre un archivo JSON de materias."""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "Abrir archivo de materias",
+            "",
+            "Archivos JSON (*.json);;Todos los archivos (*)"
+        )
+        
+        if file_path:
+            self.cargar_archivo(file_path)
+
+    def guardar_archivo(self):
+        """Guarda el grafo actual en un archivo JSON."""
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Guardar archivo de materias",
+            "",
+            "Archivos JSON (*.json);;Todos los archivos (*)"
+        )
+        
+        if file_path:
+            resultado = self.courses_service.save_graph_to_json(file_path)
+            if resultado.get('success'):
+                QMessageBox.information(self, "Archivo guardado", resultado['message'])
+            else:
+                QMessageBox.critical(self, "Error al guardar", resultado.get('message', 'Error desconocido'))
+
+    def cargar_archivo_ejemplo(self):
+        """Carga el archivo de ejemplo por defecto."""
+        # Buscar el archivo de ejemplo
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        example_file = os.path.join(script_dir, "..", "..", "data", "courses.json")
+        
+        if os.path.exists(example_file):
+            self.cargar_archivo(example_file)
+        else:
+            QMessageBox.warning(self, "Archivo no encontrado", 
+                               f"No se encontró el archivo de ejemplo: {example_file}")
+
+    def cargar_archivo(self, file_path):
+        """Carga un archivo JSON de materias."""
+        resultado = self.courses_service.load_graph_from_json(file_path)
+        
+        if resultado.get('success'):
+            QMessageBox.information(self, "Archivo cargado", resultado['message'])
+            # Actualizar título de la ventana
+            self.setWindowTitle(f"Graduacion UNAL - {os.path.basename(file_path)}")
+        else:
+            QMessageBox.critical(self, "Error al cargar archivo", resultado.get('message', 'Error desconocido'))
+
+    def mostrar_info_grafo(self):
+        """Muestra información del grafo actual."""
+        info = self.courses_service.get_graph_info()
+        
+        if info.get('success'):
+            mensaje = f"""
+Información del Grafo:
+• Total de materias: {info['total_courses']}
+• Sin prerrequisitos: {info['courses_without_prereqs']}
+• Con prerrequisitos: {info['courses_with_prereqs']}
+• Total créditos: {info['total_credits']}
+• Tiene ciclos: {'Sí' if info['has_cycle'] else 'No'}
+• Archivo actual: {info['current_file'] or 'Ninguno'}
+• Modificado: {'Sí' if info['is_modified'] else 'No'}
+            """
+            QMessageBox.information(self, "Información del Grafo", mensaje.strip())
+        else:
+            QMessageBox.critical(self, "Error", info.get('message', 'Error desconocido'))
 
     def limpiar_panel(self):
         # Eliminar todos los widgets del panel
@@ -86,8 +188,19 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             materia_widget = uic.loadUi(ui_file)
             self.panel_layout.addWidget(materia_widget, alignment=Qt.AlignCenter)
+            
+            # Configurar cada menú específico
             if menu == 'AñadirMateria':
                 self.setup_add_materia(materia_widget)
+            elif menu == 'AñadirPrerrequisito':
+                self.setup_add_prerrequisito(materia_widget)
+            elif menu == 'EliminarMateria':
+                self.setup_eliminar_materia(materia_widget)
+            elif menu == 'EliminarPrerrequisito':
+                self.setup_eliminar_prerrequisito(materia_widget)
+            elif menu == 'VerMaterias':
+                self.setup_ver_materias(materia_widget)
+                
         except Exception as e:
             print(f"[ERROR] Error cargando {menu}: {e}")
 
@@ -99,16 +212,72 @@ class MainWindow(QtWidgets.QMainWindow):
             'ButtonEliminarPrerrequisito': 'EliminarPrerrequisito',
             'ButtonVerMaterias':           'VerMaterias',
             'ButtonSugerenciaAleatoria':   'SugerenciaAleatoria',
-            'ButtonVerCaminosMaterias':    'VerCaminosMaterias'
+            'ButtonVerCaminosMaterias':    'VerCaminosMaterias',
+            'ButtonGuardar':               'Guardar',
+            'ButtonCargarArchivo':         'CargarArchivo'
         }
-        # Botones de cambio de menú
+        # Botones de cambio de menú o acción
         for obj_name, menu_name in mappings.items():
             btn = self.findChild(QtWidgets.QPushButton, obj_name)
             if not btn:
                 print(f"[ERROR] no encontré botón con objectName='{obj_name}'")
                 continue
             print(f"[OK] Conectando {obj_name} → cambiar_menu('{menu_name}')")
-            btn.clicked.connect(lambda _, m=menu_name: self.cambiar_menu(m, ui_dir))
+            if menu_name == 'VerCaminosMaterias':
+                btn.clicked.connect(self.setup_ver_caminos_materias)
+            elif menu_name == 'SugerenciaAleatoria':
+                btn.clicked.connect(self.setup_sugerencia_aleatoria)
+            elif menu_name == 'Guardar':
+                btn.clicked.connect(self.guardar_archivo_panel)
+            elif menu_name == 'CargarArchivo':
+                btn.clicked.connect(self.cargar_archivo_panel)
+            else:
+                btn.clicked.connect(lambda _, m=menu_name: self.cambiar_menu(m, ui_dir))
+
+    def guardar_archivo_panel(self):
+        """Guarda el grafo actual en el archivo actual o pide ruta si no hay."""
+        file_path = self.courses_service.get_current_file_path()
+        if not file_path:
+            file_path, _ = QtWidgets.QFileDialog.getSaveFileName(
+                self,
+                "Guardar archivo de materias",
+                "",
+                "Archivos JSON (*.json);;Todos los archivos (*)"
+            )
+            if not file_path:
+                return
+        resultado = self.courses_service.save_graph_to_json(file_path)
+        if resultado.get('success'):
+            QMessageBox.information(self, "Archivo guardado", resultado['message'])
+        else:
+            QMessageBox.critical(self, "Error al guardar", resultado.get('message', 'Error desconocido'))
+        # Sincronizar ScheduleService
+        self.sincronizar_schedule_service()
+
+    def cargar_archivo_panel(self):
+        """Carga un archivo JSON de materias desde cualquier ubicación."""
+        file_path, _ = QtWidgets.QFileDialog.getOpenFileName(
+            self,
+            "Abrir archivo de materias",
+            "",
+            "Archivos JSON (*.json);;Todos los archivos (*)"
+        )
+        if file_path:
+            resultado = self.courses_service.load_graph_from_json(file_path)
+            if resultado.get('success'):
+                QMessageBox.information(self, "Archivo cargado", resultado['message'])
+                self.setWindowTitle(f"Graduacion UNAL - {os.path.basename(file_path)}")
+            else:
+                QMessageBox.critical(self, "Error al cargar archivo", resultado.get('message', 'Error desconocido'))
+            # Sincronizar ScheduleService
+            self.sincronizar_schedule_service()
+
+    def sincronizar_schedule_service(self):
+        """Actualiza el grafo de ScheduleService para mantenerlo sincronizado."""
+        if not hasattr(self, 'schedule_service'):
+            from api.schedule_service import ScheduleService
+            self.schedule_service = ScheduleService()
+        self.schedule_service.set_graph(self.courses_service.graph)
 
     def setup_add_materia(self, widget):
         """
@@ -127,11 +296,18 @@ class MainWindow(QtWidgets.QMainWindow):
                 course_data = {
                     'id':      int(input_id.text()),
                     'name':    input_name.text().strip(),
-                    'credits': int(input_credits.text())
+                    'credits': int(input_credits.text()),
+                    'prereqs': []  # Por defecto sin prerrequisitos
                 }
             except ValueError:
                 QMessageBox.warning(widget, "Datos inválidos",
                                     "ID y créditos deben ser números enteros.")
+                return
+
+            # Validar que los campos no estén vacíos
+            if not course_data['name']:
+                QMessageBox.warning(widget, "Datos inválidos",
+                                    "El nombre de la materia no puede estar vacío.")
                 return
 
             # Llamar al servicio
@@ -150,6 +326,391 @@ class MainWindow(QtWidgets.QMainWindow):
                                      resultado.get('message', 'Error desconocido'))
 
         btn_add.clicked.connect(on_add_clicked)
+
+    def setup_add_prerrequisito(self, widget):
+        """
+        Conecta los campos y el botón de AñadirPrerrequisito.ui con la API.
+        """
+        # Referencias a los campos
+        input_id_materia = widget.findChild(QtWidgets.QLineEdit, 'InputID')
+        input_id_prereq  = widget.findChild(QtWidgets.QLineEdit, 'InputIDPrerreq')
+        btn_add          = widget.findChild(QtWidgets.QPushButton, 'pushButton')
+
+        def on_add_clicked():
+            print("[DEBUG] Boton presionado: Añadir Prerrequisito")
+            try:
+                course_id = int(input_id_materia.text())
+                prereq_id = int(input_id_prereq.text())
+            except ValueError:
+                QMessageBox.warning(widget, "Datos inválidos",
+                                    "Los IDs deben ser números enteros.")
+                return
+
+            # Llamar al servicio
+            resultado = self.courses_service.add_prerequisite(prereq_id, course_id)
+
+            # Mostrar resultado
+            if resultado.get('success'):
+                QMessageBox.information(widget, "Prerrequisito añadido",
+                                        resultado['message'])
+                # Limpiar campos
+                input_id_materia.clear()
+                input_id_prereq.clear()
+            else:
+                QMessageBox.critical(widget, "Error al añadir prerrequisito",
+                                     resultado.get('message', 'Error desconocido'))
+
+        btn_add.clicked.connect(on_add_clicked)
+
+    def setup_eliminar_materia(self, widget):
+        """
+        Conecta los campos y el botón de EliminarMateria.ui con la API.
+        """
+        # Referencias a los campos
+        input_id = widget.findChild(QtWidgets.QLineEdit, 'InputID')
+        btn_eliminar = widget.findChild(QtWidgets.QPushButton, 'pushButton')
+
+        def on_eliminar_clicked():
+            print("[DEBUG] Boton presionado: Eliminar Materia")
+            try:
+                course_id = int(input_id.text())
+            except ValueError:
+                QMessageBox.warning(widget, "Datos inválidos",
+                                    "El ID debe ser un número entero.")
+                return
+
+            # Confirmar eliminación
+            reply = QMessageBox.question(widget, "Confirmar eliminación",
+                                        "¿Estás seguro de que quieres eliminar esta materia?",
+                                        QMessageBox.Yes | QMessageBox.No,
+                                        QMessageBox.No)
+            
+            if reply == QMessageBox.Yes:
+                # Llamar al servicio
+                resultado = self.courses_service.remove_course(course_id)
+
+                # Mostrar resultado
+                if resultado.get('success'):
+                    QMessageBox.information(widget, "Materia eliminada",
+                                            resultado['message'])
+                    # Limpiar campo
+                    input_id.clear()
+                else:
+                    QMessageBox.critical(widget, "Error al eliminar materia",
+                                         resultado.get('message', 'Error desconocido'))
+
+        btn_eliminar.clicked.connect(on_eliminar_clicked)
+
+    def setup_eliminar_prerrequisito(self, widget):
+        """
+        Conecta los campos y el botón de EliminarPrerrequisito.ui con la API.
+        """
+        # Referencias a los campos
+        input_id_materia = widget.findChild(QtWidgets.QLineEdit, 'InputID')
+        input_id_prereq  = widget.findChild(QtWidgets.QLineEdit, 'InputIDPrerreq')
+        btn_eliminar     = widget.findChild(QtWidgets.QPushButton, 'pushButton')
+
+        def on_eliminar_clicked():
+            print("[DEBUG] Boton presionado: Eliminar Prerrequisito")
+            try:
+                course_id = int(input_id_materia.text())
+                prereq_id = int(input_id_prereq.text())
+            except ValueError:
+                QMessageBox.warning(widget, "Datos inválidos",
+                                    "Los IDs deben ser números enteros.")
+                return
+
+            # Llamar al servicio
+            resultado = self.courses_service.remove_prerequisite(prereq_id, course_id)
+
+            # Mostrar resultado
+            if resultado.get('success'):
+                QMessageBox.information(widget, "Prerrequisito eliminado",
+                                        resultado['message'])
+                # Limpiar campos
+                input_id_materia.clear()
+                input_id_prereq.clear()
+            else:
+                QMessageBox.critical(widget, "Error al eliminar prerrequisito",
+                                     resultado.get('message', 'Error desconocido'))
+
+        btn_eliminar.clicked.connect(on_eliminar_clicked)
+
+    def setup_ver_materias(self, widget):
+        """
+        Conecta la vista de VerMaterias.ui con la API para mostrar todas las materias.
+        """
+        # Referencias a los widgets
+        scroll_area = widget.findChild(QtWidgets.QScrollArea, 'ScrollMaterias')
+        contenido = scroll_area.findChild(QtWidgets.QWidget, 'Contenido')
+        
+        # Crear layout para el contenido
+        layout = QVBoxLayout(contenido)
+        layout.setSpacing(10)
+        layout.setContentsMargins(10, 10, 10, 10)
+
+        def actualizar_lista_materias():
+            # Limpiar contenido anterior
+            while layout.count():
+                child = layout.takeAt(0)
+                if child.widget():
+                    child.widget().deleteLater()
+
+            # Obtener todas las materias
+            resultado = self.courses_service.get_all_courses()
+            
+            if not resultado.get('success'):
+                # Mostrar error
+                error_label = QLabel(f"Error al cargar materias: {resultado.get('message', 'Error desconocido')}")
+                error_label.setStyleSheet("color: red; font-weight: bold;")
+                layout.addWidget(error_label)
+                return
+
+            cursos = resultado.get('courses', [])
+            
+            if not cursos:
+                # Mostrar mensaje de no hay materias
+                no_materias_label = QLabel("No hay materias registradas.")
+                no_materias_label.setStyleSheet("color: gray; font-style: italic;")
+                layout.addWidget(no_materias_label)
+                return
+
+            # Crear tarjetas para cada materia
+            for curso in cursos:
+                card = self.crear_tarjeta_materia(curso)
+                layout.addWidget(card)
+
+            # Añadir spacer al final
+            layout.addStretch()
+
+        # Crear función para crear tarjetas de materias
+        def crear_tarjeta_materia(self, curso):
+            """Crea una tarjeta visual para mostrar una materia."""
+            # Crear frame principal
+            card = QFrame()
+            card.setFrameStyle(QFrame.Box)
+            card.setStyleSheet("""
+                QFrame {
+                    background-color: white;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 10px;
+                    margin: 5px;
+                }
+                QFrame:hover {
+                    border: 2px solid #007bff;
+                }
+            """)
+
+            # Layout para la tarjeta
+            card_layout = QVBoxLayout(card)
+            
+            # Título con ID y nombre
+            titulo = QLabel(f"ID: {curso['id']} - {curso['name']}")
+            titulo.setStyleSheet("font-weight: bold; font-size: 14px; color: #333;")
+            card_layout.addWidget(titulo)
+            
+            # Información adicional
+            info_text = f"Créditos: {curso['credits']}"
+            if curso.get('prereqs'):
+                info_text += f" | Prerrequisitos: {', '.join(map(str, curso['prereqs']))}"
+            else:
+                info_text += " | Sin prerrequisitos"
+            
+            info_label = QLabel(info_text)
+            info_label.setStyleSheet("color: #666; font-size: 12px;")
+            card_layout.addWidget(info_label)
+            
+            return card
+
+        # Asignar el método a la instancia
+        self.crear_tarjeta_materia = crear_tarjeta_materia.__get__(self, MainWindow)
+        
+        # Cargar materias inicialmente
+        actualizar_lista_materias()
+
+    def setup_ver_caminos_materias(self):
+        """
+        Muestra la malla curricular en un QTableWidget, con los semestres como columnas y las materias como filas.
+        """
+        self.limpiar_panel()
+
+        # Obtener datos del API
+        resultado = self.courses_service.get_graph_info()
+        if not resultado.get('success') or resultado.get('total_courses', 0) == 0:
+            label = QLabel("No hay materias cargadas o error al obtener la información.")
+            label.setStyleSheet("color: red; font-weight: bold;")
+            self.panel_layout.addWidget(label)
+            return
+
+        tree_result = self.courses_service.get_course_tree()
+        if not tree_result.get('success'):
+            label = QLabel(f"Error: {tree_result.get('message', 'Error desconocido')}")
+            label.setStyleSheet("color: red; font-weight: bold;")
+            self.panel_layout.addWidget(label)
+            return
+
+        course_tree = tree_result['course_tree']  # dict: nivel -> {courses: [...], ...}
+        niveles = sorted(course_tree.keys(), key=lambda x: int(x))
+        max_materias = max(len(course_tree[n]['courses']) for n in niveles)
+        num_semestres = len(niveles)
+
+        # Crear tabla
+        table = QtWidgets.QTableWidget()
+        table.setColumnCount(num_semestres)
+        table.setRowCount(max_materias)
+        table.setHorizontalHeaderLabels([f"Semestre {int(n)+1}" for n in niveles])
+        table.verticalHeader().setVisible(False)
+        table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        table.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
+        table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        table.setStyleSheet("font-size: 12px;")
+
+        # Llenar la tabla
+        for col, nivel in enumerate(niveles):
+            cursos = course_tree[nivel]['courses']
+            for row, curso in enumerate(cursos):
+                texto = f"ID: {curso['id']}\n{curso['name']}\nCréditos: {curso['credits']}\nPrerreq: "
+                if curso['prereqs']:
+                    texto += ', '.join(str(pid) for pid in curso['prereqs'])
+                else:
+                    texto += 'Ninguno'
+                item = QtWidgets.QTableWidgetItem(texto)
+                item.setTextAlignment(Qt.AlignCenter)
+                table.setItem(row, col, item)
+
+        table.resizeColumnsToContents()
+        table.resizeRowsToContents()
+        table.setMinimumHeight(400)
+        table.setMinimumWidth(900)
+        table.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        table.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+        # Scroll en caso de muchas filas
+        scroll = QtWidgets.QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setWidget(table)
+        self.panel_layout.addWidget(scroll)
+
+        # Título
+        titulo = QLabel("Malla Curricular por Semestre (Nivel)")
+        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
+        self.panel_layout.insertWidget(0, titulo)
+
+    def setup_sugerencia_aleatoria(self):
+        """
+        Muestra la malla generada aleatoriamente por semestres usando generate_random_schedule.
+        Permite al usuario elegir el tope de créditos por semestre.
+        """
+        self.limpiar_panel()
+
+        # Layout vertical para el panel
+        layout = QtWidgets.QVBoxLayout()
+
+        # Campo para ingresar el tope de créditos
+        creditos_layout = QtWidgets.QHBoxLayout()
+        label_creditos = QLabel("Créditos máximos por semestre:")
+        spin_creditos = QtWidgets.QSpinBox()
+        spin_creditos.setMinimum(1)
+        spin_creditos.setMaximum(40)
+        spin_creditos.setValue(18)
+        spin_creditos.setSingleStep(1)
+        creditos_layout.addWidget(label_creditos)
+        creditos_layout.addWidget(spin_creditos)
+        creditos_layout.addStretch()
+
+        # Botón para recalcular
+        btn_generar = QtWidgets.QPushButton("Generar horario")
+        btn_generar.setStyleSheet("font-weight: bold; padding: 6px 12px;")
+        creditos_layout.addWidget(btn_generar)
+
+        layout.addLayout(creditos_layout)
+
+        # Widget para la tabla (se actualizará)
+        tabla_scroll = QtWidgets.QScrollArea()
+        tabla_scroll.setWidgetResizable(True)
+        layout.addWidget(tabla_scroll)
+
+        # Título
+        titulo = QLabel("Sugerencia Aleatoria de Horario por Semestre")
+        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
+        layout.insertWidget(0, titulo)
+
+        # Contenedor para la tabla
+        tabla_container = QtWidgets.QWidget()
+        tabla_layout = QtWidgets.QVBoxLayout(tabla_container)
+        tabla_layout.setContentsMargins(0, 0, 0, 0)
+        tabla_scroll.setWidget(tabla_container)
+
+        def actualizar_tabla():
+            # Limpiar tabla previa
+            for i in reversed(range(tabla_layout.count())):
+                widget = tabla_layout.itemAt(i).widget()
+                if widget:
+                    widget.setParent(None)
+
+            # Obtener datos del API
+            resultado = self.courses_service.get_graph_info()
+            if not resultado.get('success') or resultado.get('total_courses', 0) == 0:
+                label = QLabel("No hay materias cargadas o error al obtener la información.")
+                label.setStyleSheet("color: red; font-weight: bold;")
+                tabla_layout.addWidget(label)
+                return
+
+            max_cred = spin_creditos.value()
+            schedule_result = self.courses_service.generate_random_schedule(max_cred)
+            if not schedule_result.get('success'):
+                label = QLabel(f"Error: {schedule_result.get('message', 'Error desconocido')}")
+                label.setStyleSheet("color: red; font-weight: bold;")
+                tabla_layout.addWidget(label)
+                return
+
+            schedule = schedule_result['schedule']  # dict: semestre -> {courses: [...], ...}
+            semestres = sorted(schedule.keys(), key=lambda x: int(x))
+            max_materias = max(len(schedule[s]['courses']) for s in semestres)
+            num_semestres = len(semestres)
+
+            # Crear tabla
+            table = QtWidgets.QTableWidget()
+            table.setColumnCount(num_semestres)
+            table.setRowCount(max_materias)
+            table.setHorizontalHeaderLabels([f"Semestre {int(s)}" for s in semestres])
+            table.verticalHeader().setVisible(False)
+            table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+            table.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
+            table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+            table.setStyleSheet("font-size: 12px;")
+
+            # Llenar la tabla
+            for col, semestre in enumerate(semestres):
+                cursos = schedule[semestre]['courses']
+                for row, curso in enumerate(cursos):
+                    texto = f"ID: {curso['id']}\n{curso['name']}\nCréditos: {curso['credits']}\nPrerreq: "
+                    if curso['prereqs']:
+                        texto += ', '.join(str(pid) for pid in curso['prereqs'])
+                    else:
+                        texto += 'Ninguno'
+                    item = QtWidgets.QTableWidgetItem(texto)
+                    item.setTextAlignment(Qt.AlignCenter)
+                    table.setItem(row, col, item)
+
+            table.resizeColumnsToContents()
+            table.resizeRowsToContents()
+            table.setMinimumHeight(400)
+            table.setMinimumWidth(900)
+            table.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+            table.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+            tabla_layout.addWidget(table)
+
+        # Conectar botón
+        btn_generar.clicked.connect(actualizar_tabla)
+        # Generar tabla inicial
+        actualizar_tabla()
+
+        # Limpiar y agregar el layout al panel principal
+        self.limpiar_panel()
+        self.panel_layout.addLayout(layout)
 
 
 if __name__ == '__main__':

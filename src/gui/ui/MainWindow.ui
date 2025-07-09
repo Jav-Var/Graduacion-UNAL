@@ -166,6 +166,30 @@ QPushButton:pressed {
             </property>
            </widget>
           </item>
+          <!-- Botón Guardar -->
+          <item>
+           <widget class="QPushButton" name="ButtonGuardar">
+            <property name="text">
+             <string>Guardar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/save.svg</normaloff>:/icons/icons/save.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <!-- Botón Cargar Archivo -->
+          <item>
+           <widget class="QPushButton" name="ButtonCargarArchivo">
+            <property name="text">
+             <string>Cargar desde archivo...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/folder.svg</normaloff>:/icons/icons/folder.svg</iconset>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
