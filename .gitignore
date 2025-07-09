@@ -71,3 +71,4 @@ playground/
 *.pyc
 *.egg-info/
 dist/
+src/docs/
