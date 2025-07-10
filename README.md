@@ -1,6 +1,6 @@
 ## Graduación-UNAL:
 ### Descripción del Proyecto
-Graduación-UNAL es una herramienta para estudiantes de la Universidad Nacional de Colombia que calcula el número mínimo de semestres necesarios para completar un programa académico, respetando relaciones de prerrequisito y el límite de 6 materias por semestre.
+Graduación-UNAL es una herramienta para estudiantes de la Universidad Nacional de Colombia que calcula el número mínimo de semestres necesarios para completar un programa académico, respetando relaciones de prerrequisito y el límite de creditos por semestre.
 
 **Problema que resuelve:**  
 Los estudiantes necesitan planificar su carrera considerando complejas relaciones de prerrequisitos y límites de carga académica, lo que requiere cálculos manuales propensos a errores.
