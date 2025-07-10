@@ -51,7 +51,7 @@
     "id": 2015155,
     "name": "Introducción al análisis real",
     "credits": 4,
-    "prereqs": [2015181, 2015162]
+    "prereqs": [2025819, 2015162]
   },
   {
     "id": 2016342,
@@ -118,7 +118,7 @@
     "id": 2019072,
     "name": "Análisis numérico 1",
     "credits": 4,
-    "prereqs": [2016698, 2025819]
+    "prereqs": [2015155, 2016698]
   },
   {
     "id": null,
@@ -130,6 +130,12 @@
     "id": null,
     "name": "Optativa de computación aplicada",
     "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Optativa mat. y estructuras discretas 2",
+    "credits": 4,
     "prereqs": []
   },
   {
@@ -146,13 +152,43 @@
   },
   {
     "id": null,
-    "name": "Libre elección 6",
+    "name": "Optativa seguridad de información y codificación 2",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 1",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 2",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 3",
     "credits": 4,
     "prereqs": []
   },
   {
     "id": null,
     "name": "Libre elección 4",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 5",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": null,
+    "name": "Libre elección 6",
     "credits": 4,
     "prereqs": []
   },
@@ -170,12 +206,6 @@
   },
   {
     "id": null,
-    "name": "Libre elección 3",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
     "name": "Optativa computación científica",
     "credits": 3,
     "prereqs": []
@@ -184,18 +214,6 @@
     "id": null,
     "name": "Trabajo de grado",
     "credits": 8,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 5",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 2",
-    "credits": 4,
     "prereqs": []
   },
   {
