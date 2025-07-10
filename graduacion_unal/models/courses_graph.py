@@ -1,6 +1,6 @@
-from structures.hash import HashMap
-from structures.disjoint_sets import DisjointSets
-from models.Courses import Course
+from graduacion_unal.structures.hash import HashMap
+from graduacion_unal.structures.disjoint_sets import DisjointSets
+from graduacion_unal.models.Courses import Course
 from typing import List, Optional
 
 

@@ -1,8 +1,8 @@
 from typing import List, Dict, Any, Optional
-from models.Courses import Course
-from models.courses_graph import CoursesGraph
-from adapters.courses_adapter import CoursesAdapter
-from api.schedule_service import ScheduleService
+from graduacion_unal.models.Courses import Course
+from graduacion_unal.models.courses_graph import CoursesGraph
+from graduacion_unal.adapters.courses_adapter import CoursesAdapter
+from graduacion_unal.api.schedule_service import ScheduleService
 
 
 class CoursesService:

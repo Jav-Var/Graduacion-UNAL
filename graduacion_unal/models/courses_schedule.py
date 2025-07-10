@@ -1,7 +1,7 @@
 import random
 from typing import List, Dict, Any, Set
-from models.courses_graph import CoursesGraph
-from models.Courses import Course
+from graduacion_unal.models.courses_graph import CoursesGraph
+from graduacion_unal.models.Courses import Course
 
 
 ### PARA LA PROXIMA ENTREGA

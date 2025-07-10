@@ -5,10 +5,10 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction
 
-import resources_rc
+from graduacion_unal.gui import resources_rc
 
-from api.courses_service import CoursesService
-from api.schedule_service import ScheduleService
+from graduacion_unal.api.courses_service import CoursesService
+from graduacion_unal.api.schedule_service import ScheduleService
 
 from pathlib import Path
 
@@ -275,7 +275,7 @@ Información del Grafo:
     def sincronizar_schedule_service(self):
         """Actualiza el grafo de ScheduleService para mantenerlo sincronizado."""
         if not hasattr(self, 'schedule_service'):
-            from api.schedule_service import ScheduleService
+            from graduacion_unal.api.schedule_service import ScheduleService
             self.schedule_service = ScheduleService()
         self.schedule_service.set_graph(self.courses_service.graph)
 
@@ -713,8 +713,12 @@ Información del Grafo:
         self.panel_layout.addLayout(layout)
 
 
-if __name__ == '__main__':
+def main():
     app = QtWidgets.QApplication(sys.argv)
     main_window = MainWindow()
     main_window.show()
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    main()
+

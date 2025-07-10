@@ -1,17 +1,34 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "graduacion_unal"
+name = "graduacion-unal"
 version = "0.1.0"
-description = "Planificador de semestres universitarios basado en prerequisitos"
+description = "Planificación de programas académicos y materias para la graduación de la UNAL"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
+
+dependencies = [
+  "pyqt5",
+  "iniconfig>=2.1.0",
+  "packaging>=25.0",
+]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage   = "https://github.com/Jav-Var/Graduacion-UNAL"
+Repository = "https://github.com/Jav-Var/Graduacion-UNAL.git"
 
 [project.scripts]
-#graduacion-unal = "graduacion_unal.cli:main" 
+graduacion-unal = "graduacion_unal.gui.app:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+# Solo incluye el paquete graduacion_unal y subpaquetes
+include = ["graduacion_unal*", "graduacion_unal.*"]
+exclude = ["data"]

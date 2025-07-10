@@ -1,8 +1,8 @@
 import json
 from typing import List
 import argparse
-from structures.hash import HashMap  
-from structures.queue_ds import Queue   
+from graduacion_unal.structures.hash import HashMap  
+from graduacion_unal.structures.queue_ds import Queue   
 
 
 ### PARA LA PROXIMA ENTREGA
