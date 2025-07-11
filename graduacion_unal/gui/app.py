@@ -567,20 +567,31 @@ Información del Grafo:
         if not resultado.get('success') or resultado.get('total_courses', 0) == 0:
             label = QLabel("No hay materias cargadas o error al obtener la información.")
             label.setStyleSheet("color: red; font-weight: bold;")
-            self.panel_layout.addWidget(label)
+            self.panel_layout.addWidget(label, alignment=Qt.AlignHCenter)
             return
 
         tree_result = self.courses_service.get_course_tree()
         if not tree_result.get('success'):
             label = QLabel(f"Error: {tree_result.get('message', 'Error desconocido')}")
             label.setStyleSheet("color: red; font-weight: bold;")
-            self.panel_layout.addWidget(label)
+            self.panel_layout.addWidget(label, alignment=Qt.AlignHCenter)
             return
 
-        course_tree = tree_result['course_tree']  # dict: nivel -> {courses: [...], ...}
+        course_tree = tree_result['course_tree']
         niveles = sorted(course_tree.keys(), key=lambda x: int(x))
         max_materias = max(len(course_tree[n]['courses']) for n in niveles)
         num_semestres = len(niveles)
+
+        # Contenedor principal con márgenes
+        contenedor = QtWidgets.QWidget()
+        main_layout = QtWidgets.QVBoxLayout(contenedor)
+        main_layout.setContentsMargins(20, 20, 20, 20)
+        main_layout.setSpacing(15)
+
+        # Título
+        titulo = QLabel("Malla Curricular por Semestre (Nivel)")
+        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
+        main_layout.addWidget(titulo, alignment=Qt.AlignHCenter)
 
         # Crear tabla
         table = QtWidgets.QTableWidget()
@@ -597,11 +608,10 @@ Información del Grafo:
         for col, nivel in enumerate(niveles):
             cursos = course_tree[nivel]['courses']
             for row, curso in enumerate(cursos):
-                texto = f"ID: {curso['id']}\n{curso['name']}\nCréditos: {curso['credits']}\nPrerreq: "
-                if curso['prereqs']:
-                    texto += ', '.join(str(pid) for pid in curso['prereqs'])
-                else:
-                    texto += 'Ninguno'
+                texto = (f"ID: {curso['id']}\n{curso['name']}\n"
+                        f"Créditos: {curso['credits']}\nPrerreq: ")
+                texto += (', '.join(str(pid) for pid in curso['prereqs'])
+                        if curso['prereqs'] else 'Ninguno')
                 item = QtWidgets.QTableWidgetItem(texto)
                 item.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row, col, item)
@@ -613,16 +623,20 @@ Información del Grafo:
         table.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         table.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-        # Scroll en caso de muchas filas
+        # Scroll y contenedor intermedio para centrar
         scroll = QtWidgets.QScrollArea()
         scroll.setWidgetResizable(True)
-        scroll.setWidget(table)
-        self.panel_layout.addWidget(scroll)
 
-        # Título
-        titulo = QLabel("Malla Curricular por Semestre (Nivel)")
-        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
-        self.panel_layout.insertWidget(0, titulo)
+        tabla_wrapper = QtWidgets.QWidget()
+        wrapper_layout = QtWidgets.QVBoxLayout(tabla_wrapper)
+        wrapper_layout.setContentsMargins(10, 10, 10, 10)
+        wrapper_layout.addWidget(table, alignment=Qt.AlignHCenter)
+
+        scroll.setWidget(tabla_wrapper)
+        main_layout.addWidget(scroll)
+
+        # Añadir todo al panel principal
+        self.panel_layout.addWidget(contenedor)
 
     def setup_sugerencia_aleatoria(self):
         """
