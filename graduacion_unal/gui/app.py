@@ -1,33 +1,35 @@
 import sys
 import os
-
 from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction, QApplication 
-
 from graduacion_unal.gui import resources_rc
-
 from graduacion_unal.api.courses_service import CoursesService
 from graduacion_unal.api.schedule_service import ScheduleService
-
 from pathlib import Path
+from pprint import pprint
 
-"""
-    Este es un archivo para probar la interfaz, no es la aplicacion final.
-"""
 
-def load_stylesheet(path):
+def load_stylesheet(path: str) -> str:
+    """
+    Lee un stylesheet de un path y retorna su contenido como string
+    """
     with open(path, 'r', encoding='utf-8') as f:
         return f.read()
 
         
 class MainWindow(QtWidgets.QMainWindow):
-
+    """
+    Ventana principal de la aplicacion.
+    
+    """
+    
     def __init__(self):
         super().__init__()
-        # Determinar la ruta al directorio 'gui', donde están los .ui
+
+        # Determina la ruta al directorio donde están los archivos de interfaz .ui
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        ui_dir = script_dir + "/ui"
+        ui_dir = script_dir + "/ui" 
 
         # Verificar existencia del directorio ui_dir
         if not os.path.isdir(ui_dir):
@@ -39,8 +41,8 @@ class MainWindow(QtWidgets.QMainWindow):
             raise FileNotFoundError(f"No se encontró {main_ui}")
         uic.loadUi(main_ui, self)
 
-        # Configurar ventana
-        self.setWindowTitle("Graduacion UNAL")
+        # Configurar titulo
+        self.setWindowTitle("Planificador de Ruta Académica UNAL")
 
         # Referenciar widgets importantes
         self.panel = self.findChild(QtWidgets.QWidget, 'panel')
@@ -53,10 +55,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # === Configuracion de layout y botones === #
 
-        # obtener el layout existente en lugar de crear uno nuevo
+        # Obtener el layout existente (En el .ui) en lugar de crear uno nuevo
         self.panel_layout = self.panel.layout()
 
-        # Si no tenía layout, crear uno (esto es por seguridad)
+        # Si no tenía layout, crear uno (Por seguridad)
         if self.panel_layout is None:
             self.panel_layout = QtWidgets.QVBoxLayout(self.panel)
             self.panel_layout.setContentsMargins(0, 0, 0, 0)
@@ -64,11 +66,9 @@ class MainWindow(QtWidgets.QMainWindow):
         # Configurar menú
         self.setup_menu()
         
-        # Conectar botones
+        # Conectar botones de la sidebar
         self.asignar_botones(ui_dir)
         
-        # Cargar archivo de ejemplo por defecto
-        # self.cargar_archivo_ejemplo() El archivo se esta cargando en el main para que primero se muestre la ventana
 
     def setup_menu(self):
         """Configura el menú de la aplicación."""
@@ -698,6 +698,8 @@ Información del Grafo:
 
             # Obtener datos del API
             resultado = self.courses_service.get_graph_info()
+            pprint(f"[DEBUG] (sugerencia) get_graph_info → {resultado}")
+
             if not resultado.get('success') or resultado.get('total_courses', 0) == 0:
                 label = QLabel("No hay materias cargadas o error al obtener la información.")
                 label.setStyleSheet("color: red; font-weight: bold;")
@@ -706,6 +708,7 @@ Información del Grafo:
 
             max_cred = spin_creditos.value()
             schedule_result = self.courses_service.generate_random_schedule(max_cred)
+            pprint(f"[DEBUG] generate_random_schedule →{schedule_result}")
             if not schedule_result.get('success'):
                 label = QLabel(f"Error: {schedule_result.get('message', 'Error desconocido')}")
                 label.setStyleSheet("color: red; font-weight: bold;")
@@ -713,6 +716,7 @@ Información del Grafo:
                 return
 
             schedule = schedule_result['schedule']
+            pprint(f"[DEBUG] schedule dict → {schedule}")
             semestres = sorted(schedule.keys(), key=lambda x: int(x))
             max_materias = max(len(schedule[s]['courses']) for s in semestres)
             num_semestres = len(semestres)

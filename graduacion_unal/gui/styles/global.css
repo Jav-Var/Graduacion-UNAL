@@ -44,31 +44,68 @@ QWidget#sidebar QPushButton::menu-indicator {
     subcontrol-position: left center;
 }
 
-/* =============== ScrollAreas (por si las usas) =============== */
-QScrollArea, QScrollBar {
+/* =============== ScrollAreas =============== */
+QScrollArea {
     background: transparent;
     border: none;
 }
 
-QScrollBar:vertical {
-    width: 8px;
-    margin: 16px 0 16px 0;
+/* ===========================
+   Scrollbar (ejes vertical y horizontal)
+   =========================== */
+QScrollBar:vertical,
+QScrollBar:horizontal {
+    width: 12px;   /* grosor total del widget vertical */
+    height: 12px;  /* grosor total del widget horizontal */
+    background: transparent;
 }
 
-QScrollBar::handle:vertical {
-    background: rgba(255,255,255,0.2);
-    border-radius: 4px;
-    min-height: 20px;
+/* ===========================
+   Track (fondo)
+   =========================== */
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:horizontal,
+QScrollBar::add-page:horizontal {
+    background-color: #e3e3e3;
+    border-radius: 6px;
 }
 
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-    height: 0;
+/* ===========================
+   Handle (barra deslizante)
+   =========================== */
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal {
+    background-color: #30343d;
+    /* grosor efectivo = 12px total − 2×1px de margen = 10px */
+    margin: 1px;
+    /* radio igual a la mitad del grosor (10px/2) */
+    border-radius: 5px;
+    /* evita que desaparezca si el contenido es muy corto */
+    min-height: 20px;  /* vertical */
+    min-width:  20px;  /* horizontal */
 }
+
+/* ===========================
+   Quitar flechas (opcional)
+   =========================== */
+QScrollBar::sub-line,
+QScrollBar::add-line {
+    background: none;
+    width: 0; height: 0;
+}
+
+/* ===========================
+   Dejar el groove transparente
+   =========================== */
+QScrollBar::groove {
+    background: transparent;
+}
+
 
 /* =============== Menú superior =============== */
 QMenuBar {
-    background-color: #2f323a;
+    background-color: #16171b;
     color: #ffffff;
     spacing: 4px;
 }
