@@ -1,9 +1,9 @@
 import sys
 import os
 
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction
+from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction, QApplication 
 
 from graduacion_unal.gui import resources_rc
 
@@ -16,6 +16,11 @@ from pathlib import Path
     Este es un archivo para probar la interfaz, no es la aplicacion final.
 """
 
+def load_stylesheet(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+        
 class MainWindow(QtWidgets.QMainWindow):
 
     def __init__(self):
@@ -63,7 +68,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.asignar_botones(ui_dir)
         
         # Cargar archivo de ejemplo por defecto
-        self.cargar_archivo_ejemplo()
+        # self.cargar_archivo_ejemplo() El archivo se esta cargando en el main para que primero se muestre la ventana
 
     def setup_menu(self):
         """Configura el menú de la aplicación."""
@@ -178,7 +183,9 @@ Información del Grafo:
 
     def cambiar_menu(self, menu: str, ui_dir: str):
         """
-            Cambia al menú pasado como argumento.
+            Carga el archivo .ui pasado como argumento y actualiza el panel con la nueva interfaz
+            Argumentos:
+                Nombre del archivo .ui (Sin la extension)
         """
         self.limpiar_panel()
         ui_file = os.path.join(ui_dir, f"{menu}.ui")
@@ -440,6 +447,9 @@ Información del Grafo:
         """
         Conecta la vista de VerMaterias.ui con la API para mostrar todas las materias.
         """
+
+        #self.limpiar_panel()
+
         # Referencias a los widgets
         scroll_area = widget.findChild(QtWidgets.QScrollArea, 'ScrollMaterias')
         contenido = scroll_area.findChild(QtWidgets.QWidget, 'Contenido')
@@ -713,10 +723,28 @@ Información del Grafo:
         self.panel_layout.addLayout(layout)
 
 
+
 def main():
-    app = QtWidgets.QApplication(sys.argv)
+    # 1) Antes de instanciar QApplication, indicamos que NO use
+    #    los diálogos nativos del SO para que respete nuestro QSS:
+    QApplication.setAttribute(Qt.AA_DontUseNativeDialogs, True)
+
+    # 2) Creamos la aplicación
+    app = QApplication(sys.argv)
+
+    # 3) Cargamos el QSS desde un archivo externo
+    qss_path = os.path.join(os.path.dirname(__file__), 'styles/global.css')
+    if os.path.exists(qss_path):
+        app.setStyleSheet(load_stylesheet(qss_path))
+    else:
+        print(f"[WARNING] No se encontró el QSS en: {qss_path}")
+
+    # 4) Instanciamos y mostramos la ventana principal
     main_window = MainWindow()
     main_window.show()
+    main_window.cargar_archivo_ejemplo()
+
+    # 5) Ejecutamos el bucle de eventos
     sys.exit(app.exec_())
 
 if __name__ == '__main__':

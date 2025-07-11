@@ -1,0 +1,249 @@
+/* =============== Fuentes y tamaño global =============== */
+* {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 10pt;
+    color: #000000;  /* color negro por defecto */
+}
+
+/* =============== Ventana principal y panel =============== */
+QMainWindow {
+    background-color: #2f323a;  /* fondo oscuro para el panel principal */
+}
+QWidget#panel {
+    background-color: #2f323a;
+    color: #000000;
+}
+
+/* =============== Sidebar =============== */
+QWidget#sidebar {
+    background-color: #d3d7dc;  /* sidebar clara */
+}
+
+/* =============== Botones de la sidebar =============== */
+QWidget#sidebar QPushButton {
+    color: #000000;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 8px 16px;
+    icon-size: 16px;
+}
+
+QWidget#sidebar QPushButton:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+QWidget#sidebar QPushButton:pressed,
+QWidget#sidebar QPushButton:checked {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Iconos precediendo el texto */
+QWidget#sidebar QPushButton::menu-indicator {
+    subcontrol-origin: padding;
+    subcontrol-position: left center;
+}
+
+/* =============== ScrollAreas (por si las usas) =============== */
+QScrollArea, QScrollBar {
+    background: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    width: 8px;
+    margin: 16px 0 16px 0;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* =============== Menú superior =============== */
+QMenuBar {
+    background-color: #2f323a;
+    color: #ffffff;
+    spacing: 4px;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 4px 12px;
+}
+
+QMenuBar::item:selected {
+    background-color: rgba(255,255,255,0.1);
+}
+
+QMenu {
+    background-color: #2f323a;
+    color: #ffffff;
+    border: 1px solid #3c4048;
+}
+
+QMenu::item:selected {
+    background-color: #3c4048;
+}
+
+/* =============== Mensajes y diálogos =============== */
+QMessageBox {
+    background-color: #2f323a;
+    color: #ffffff;  /* texto blanco solo en QMessageBox */
+    border-radius: 8px;
+}
+
+QMessageBox QLabel {
+    color: #ffffff;  /* asegura que el QLabel interno tenga texto blanco */
+}
+
+/* Botones en MessageBox */
+QMessageBox QPushButton {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+QMessageBox QPushButton:pressed {
+    background-color: rgba(255,255,255,0.2);
+}
+
+QMessageBox QFrame {
+    background-color: #3c4048;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    color: #ffffff;
+}
+
+QMessageBox QFrame:hover {
+    border: 2px solid #007bff;
+}
+
+/* =============== Tablas (QTableWidget) =============== */
+QTableWidget {
+    background-color: #f8f8f8;
+    gridline-color: #cccccc;
+    border: none;
+    alternate-background-color: #f0f0f0;
+}
+
+/* Cada celda alineada al centro */
+QTableWidget::item {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 4px;
+    text-align: center;                /* <— centrado horizontal */
+}
+
+/* Encabezado horizontal centrado */
+QHeaderView::section {
+    background-color: #e3e3e3;
+    padding: 6px 4px;
+    border: none;
+    text-align: center;                /* <— centrado horizontal */
+}
+
+/* Esquinas redondeadas en encabezado */
+QHeaderView::section:first {
+    border-top-left-radius: 12px;
+}
+QHeaderView::section:last {
+    border-top-right-radius: 12px;
+}
+
+/* Botón de esquina */
+QTableCornerButton::section {
+    background-color: #e3e3e3;
+    border: none;
+    border-top-left-radius: 12px;
+    text-align: center;                /* <— centrado */
+}
+
+/* Selección */
+QTableWidget::item:selected {
+    background-color: rgba(0, 123, 255, 0.25);
+    color: #000;
+}
+
+/* Scrollbars */
+QTableWidget QScrollBar:vertical {
+    width: 8px;
+    background: transparent;
+    margin: 16px 0;
+}
+QTableWidget QScrollBar::handle:vertical {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    min-height: 20px;
+}
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* =============== SpinBox (entero y decimal) =============== */
+QSpinBox, QDoubleSpinBox {
+    background-color: white;            /* fondo blanco como los QLineEdit */
+    border: 1px solid #cccccc;          /* mismo borde gris claro */
+    border-radius: 4px;                 /* esquinas redondeadas */
+    padding: 2px 4px;                   /* espacio interior */
+    min-height: 24px;                   /* altura mínima */
+    selection-background-color: #007bff;/* color de selección de texto */
+    selection-color: #ffffff;           /* texto seleccionado en blanco */
+    text-align: center;                 /* valor centrado */
+}
+
+/* Posicionamiento de los botones internos de flecha */
+QSpinBox::up-button, QDoubleSpinBox::up-button,
+QSpinBox::down-button, QDoubleSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: right;         /* todos a la derecha */
+    width: 16px;                        /* zona de clic */
+    background: transparent;
+    border: none;
+}
+
+/* Efecto hover sobre las flechas */
+QSpinBox::up-button:hover, QDoubleSpinBox::up-button:hover,
+QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
+    background-color: rgba(0,123,255,0.1);
+}
+
+/* Deshabilitado */
+QSpinBox:disabled, QDoubleSpinBox:disabled {
+    background-color: #f0f0f0;
+    color: #888888;
+    border-color: #dddddd;
+}
+
+/* =============== PushButton ================= */
+
+QPushButton {
+    background-color: #e3e3e3;   /* color de fondo plano */
+    color: #000000;              /* texto blanco */
+    border: none;                /* sin borde */
+    padding: 8px 12px;           /* espaciado interno */
+    border-radius: 4px;          /* esquinas redondeadas */
+    text-align: center;            /* icono + texto alineados a la izquierda */
+  }
+  QPushButton:hover {
+    background-color: #3a3a3a;   /* ligero cambio al pasar el ratón */
+  }
+  QPushButton:pressed {
+    background-color: #1f1f1f;   /* tono más oscuro al pulsar */
+  }
+  

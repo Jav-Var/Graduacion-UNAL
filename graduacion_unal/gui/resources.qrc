@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/icons">
+    <file>icons/alert-circle-black.png</file>
     <file>icons/zoom-out.svg</file>
     <file>icons/zoom-in.svg</file>
     <file>icons/zap.svg</file>
