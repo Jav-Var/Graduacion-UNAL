@@ -175,11 +175,28 @@ Información del Grafo:
             QMessageBox.critical(self, "Error", info.get('message', 'Error desconocido'))
 
     def limpiar_panel(self):
-        # Eliminar todos los widgets del panel
+        """
+        Elimina **todo** del panel: widgets y layouts anidados.
+        """
         while self.panel_layout.count():
-            child = self.panel_layout.takeAt(0)
+            item = self.panel_layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+            elif item.layout():
+                self._clear_layout(item.layout())
+
+    def _clear_layout(self, layout):
+        """
+        Limpia recursivamente un QLayout (widgets y sub-layouts), y luego lo marca para eliminación.
+        """
+        while layout.count():
+            child = layout.takeAt(0)
             if child.widget():
                 child.widget().deleteLater()
+            elif child.layout():
+                self._clear_layout(child.layout())
+        # Marcar el layout para eliminación segura por Qt
+        layout.deleteLater()
 
     def cambiar_menu(self, menu: str, ui_dir: str):
         """
@@ -614,11 +631,15 @@ Información del Grafo:
         """
         self.limpiar_panel()
 
-        # Layout vertical para el panel
+        # Layout vertical para el panel (con márgenes y spacing)
         layout = QtWidgets.QVBoxLayout()
+        layout.setContentsMargins(20, 20, 20, 20)   # márgenes: izquierda, arriba, derecha, abajo
+        layout.setSpacing(15)
 
         # Campo para ingresar el tope de créditos
         creditos_layout = QtWidgets.QHBoxLayout()
+        creditos_layout.setContentsMargins(0, 0, 0, 0)
+        creditos_layout.setSpacing(10)
         label_creditos = QLabel("Créditos máximos por semestre:")
         spin_creditos = QtWidgets.QSpinBox()
         spin_creditos.setMinimum(1)
@@ -636,26 +657,28 @@ Información del Grafo:
 
         layout.addLayout(creditos_layout)
 
+        # Título
+        titulo = QLabel("Sugerencia Aleatoria de Horario por Semestre")
+        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
+        layout.insertWidget(0, titulo, alignment=Qt.AlignHCenter)
+
         # Widget para la tabla (se actualizará)
         tabla_scroll = QtWidgets.QScrollArea()
         tabla_scroll.setWidgetResizable(True)
         layout.addWidget(tabla_scroll)
 
-        # Título
-        titulo = QLabel("Sugerencia Aleatoria de Horario por Semestre")
-        titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
-        layout.insertWidget(0, titulo)
-
-        # Contenedor para la tabla
+        # Contenedor para la tabla con márgenes internos
         tabla_container = QtWidgets.QWidget()
         tabla_layout = QtWidgets.QVBoxLayout(tabla_container)
-        tabla_layout.setContentsMargins(0, 0, 0, 0)
+        tabla_layout.setContentsMargins(10, 10, 10, 10)
+        tabla_layout.setSpacing(10)
         tabla_scroll.setWidget(tabla_container)
 
         def actualizar_tabla():
             # Limpiar tabla previa
             for i in reversed(range(tabla_layout.count())):
-                widget = tabla_layout.itemAt(i).widget()
+                item = tabla_layout.itemAt(i)
+                widget = item.widget() if item else None
                 if widget:
                     widget.setParent(None)
 
@@ -664,7 +687,7 @@ Información del Grafo:
             if not resultado.get('success') or resultado.get('total_courses', 0) == 0:
                 label = QLabel("No hay materias cargadas o error al obtener la información.")
                 label.setStyleSheet("color: red; font-weight: bold;")
-                tabla_layout.addWidget(label)
+                tabla_layout.addWidget(label, alignment=Qt.AlignHCenter)
                 return
 
             max_cred = spin_creditos.value()
@@ -672,10 +695,10 @@ Información del Grafo:
             if not schedule_result.get('success'):
                 label = QLabel(f"Error: {schedule_result.get('message', 'Error desconocido')}")
                 label.setStyleSheet("color: red; font-weight: bold;")
-                tabla_layout.addWidget(label)
+                tabla_layout.addWidget(label, alignment=Qt.AlignHCenter)
                 return
 
-            schedule = schedule_result['schedule']  # dict: semestre -> {courses: [...], ...}
+            schedule = schedule_result['schedule']
             semestres = sorted(schedule.keys(), key=lambda x: int(x))
             max_materias = max(len(schedule[s]['courses']) for s in semestres)
             num_semestres = len(semestres)
@@ -695,11 +718,10 @@ Información del Grafo:
             for col, semestre in enumerate(semestres):
                 cursos = schedule[semestre]['courses']
                 for row, curso in enumerate(cursos):
-                    texto = f"ID: {curso['id']}\n{curso['name']}\nCréditos: {curso['credits']}\nPrerreq: "
-                    if curso['prereqs']:
-                        texto += ', '.join(str(pid) for pid in curso['prereqs'])
-                    else:
-                        texto += 'Ninguno'
+                    texto = (f"ID: {curso['id']}\n{curso['name']}\n"
+                            f"Créditos: {curso['credits']}\nPrerreq: ")
+                    texto += (', '.join(str(pid) for pid in curso['prereqs'])
+                            if curso['prereqs'] else 'Ninguno')
                     item = QtWidgets.QTableWidgetItem(texto)
                     item.setTextAlignment(Qt.AlignCenter)
                     table.setItem(row, col, item)
@@ -711,7 +733,8 @@ Información del Grafo:
             table.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
             table.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-            tabla_layout.addWidget(table)
+            # Añadir y centrar tabla
+            tabla_layout.addWidget(table, alignment=Qt.AlignHCenter)
 
         # Conectar botón
         btn_generar.clicked.connect(actualizar_tabla)
@@ -721,7 +744,6 @@ Información del Grafo:
         # Limpiar y agregar el layout al panel principal
         self.limpiar_panel()
         self.panel_layout.addLayout(layout)
-
 
 
 def main():
