@@ -2,7 +2,7 @@ import json
 from typing import List
 import argparse
 from graduacion_unal.structures.hash import HashMap  
-from graduacion_unal.structures.queue_ds import Queue   
+from graduacion_unal.structures.queue import Queue   
 
 
 ### PARA LA PROXIMA ENTREGA

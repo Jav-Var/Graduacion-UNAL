@@ -597,7 +597,7 @@ Información del Grafo:
         table = QtWidgets.QTableWidget()
         table.setColumnCount(num_semestres)
         table.setRowCount(max_materias)
-        table.setHorizontalHeaderLabels([f"Semestre {int(n)+1}" for n in niveles])
+        table.setHorizontalHeaderLabels([f"Semestre {int(n)}" for n in niveles])
         table.verticalHeader().setVisible(False)
         table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         table.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
@@ -672,7 +672,7 @@ Información del Grafo:
         layout.addLayout(creditos_layout)
 
         # Título
-        titulo = QLabel("Sugerencia Aleatoria de Horario por Semestre")
+        titulo = QLabel("Sugerencia de planificacion de horario por semestre")
         titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
         layout.insertWidget(0, titulo, alignment=Qt.AlignHCenter)
 

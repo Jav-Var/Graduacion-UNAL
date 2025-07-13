@@ -25,6 +25,6 @@ Los estudiantes necesitan planificar su carrera considerando complejas relacione
 
 ## Punto de entrada (PyQt)
 
-Ejecutar src/gui/app.py 
+Ejecutar graduacion_unal/gui/app.py 
 
 # En la primera version no estan implementadas las funcionalidades, solo bocetos y primeras versiones de los modelos, los adaptdores y de la base de datos
