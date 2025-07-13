@@ -1,8 +1,9 @@
 import random
 from typing import List, Dict, Any, Set
-from models.courses_graph import CoursesGraph
-from models.Courses import Course
-
+from graduacion_unal.models.courses_graph import CoursesGraph
+from graduacion_unal.models.Courses import Course
+from graduacion_unal.structures.queue import Queue
+from graduacion_unal.structures.heap import MaxHeap
 
 ### PARA LA PROXIMA ENTREGA
 ## PARA MANEJAR PLANIFICACIONES DE SEMESTRES
@@ -149,8 +150,117 @@ class Schedule:
             "total_courses": sum(len(courses) for courses in schedule.values())
         }
 
-    def random_schedule(self, max_credits_per_semester: int, courses_graph: CoursesGraph) -> Dict[int, List[int]]:
+
+    def random_schedule(self, max_creditos_semestre: int, courses_graph: CoursesGraph) -> Dict[int, List[int]]:
         """
+        Planifica los cursos semestre a semestre maximizando los créditos críticos.
+
+        Args:
+            max_creditos_semestre: Límite de créditos por semestre.
+            courses_graph: Instancia de CoursesGraph con los cursos y prerrequisitos.
+
+        Returns:
+            Dict donde la clave es el número de semestre (1-based) y el valor es la lista de IDs de cursos.
+        """
+        # Paso 1: Preprocesamiento
+        # Inicializar grado de entrada y estructuras
+        grado_entrada: Dict[int, int] = {}
+        max_credits: Dict[int, int] = {}
+        creditos: Dict[int, int] = {}
+
+        # Obtener todos los cursos y sus créditos
+        for course in courses_graph.get_all_courses():
+            cid = course.id
+            grado_entrada[cid] = 0
+            max_credits[cid] = 0
+            creditos[cid] = course.credits
+
+        # Calcular grado de entrada y grafo inverso
+        grafo_inverso: Dict[int, List[int]] = {cid: [] for cid in grado_entrada}
+        for cid in grado_entrada:
+            for succ in courses_graph.get_neighbors(cid):
+                grado_entrada[succ] += 1
+                grafo_inverso[succ].append(cid)
+
+        # Paso 2: Orden topológico inverso para camino crítico
+        cola = Queue()
+        orden_inverso: List[int] = []
+        for cid, deg in grado_entrada.items():
+            if deg == 0:
+                cola.enqueue(cid)
+
+        # Extraer en topológico y construir orden inverso
+        temp_entrada = grado_entrada.copy()
+        while not cola.is_empty():
+            u = cola.dequeue()
+            orden_inverso.insert(0, u)
+            for v in courses_graph.get_neighbors(u):
+                temp_entrada[v] -= 1
+                if temp_entrada[v] == 0:
+                    cola.enqueue(v)
+
+        # Calcular max_credits desde hojas hacia raíces
+        for u in orden_inverso:
+            max_credits[u] = creditos[u]
+            mayor = 0
+            for v in courses_graph.get_neighbors(u):
+                if max_credits[v] > mayor:
+                    mayor = max_credits[v]
+            max_credits[u] += mayor
+
+        # Paso 3: Reiniciar grado de entrada
+        grado_entrada = {cid: 0 for cid in grado_entrada}
+        for cid in grado_entrada:
+            for succ in courses_graph.get_neighbors(cid):
+                grado_entrada[succ] += 1
+
+        # Inicializar heap de disponibles
+        disponibles = MaxHeap()
+        for cid, deg in grado_entrada.items():
+            if deg == 0:
+                # Usamos tupla (prioridad, créditos, id)
+                disponibles.push((max_credits[cid], creditos[cid], cid))
+
+        semestres: Dict[int, List[int]] = {}
+        completados: Dict[int, bool] = {cid: False for cid in grado_entrada}
+        pendientes = len(grado_entrada)
+        semestre_idx = 1
+
+        # Paso 4: Asignación semestral
+        while pendientes > 0:
+            sem_actual: List[int] = []
+            suma_cred = 0
+            no_caben: List[Tuple[int,int,int]] = []
+
+            while not disponibles.is_empty():
+                pri, cred, u = disponibles.pop()
+                if suma_cred + cred <= max_creditos_semestre:
+                    sem_actual.append(u)
+                    suma_cred += cred
+                    completados[u] = True
+                    pendientes -= 1
+                else:
+                    no_caben.append((pri, cred, u))
+
+            # Reinsertar los que no cupieron
+            for item in no_caben:
+                disponibles.push(item)
+
+            semestres[semestre_idx] = sem_actual
+            semestre_idx += 1
+
+            # Actualizar sucesores
+            for u in sem_actual:
+                for v in courses_graph.get_neighbors(u):
+                    grado_entrada[v] -= 1
+                    if grado_entrada[v] == 0 and not completados[v]:
+                        disponibles.push((max_credits[v], creditos[v], v))
+
+        return semestres
+
+    """
+
+    def random_schedule(self, max_credits_per_semester: int, courses_graph: CoursesGraph) -> Dict[int, List[int]]:
         Metodo para generar una planificacion de semestres aleatoria con un maximo de creditos por semestre.
         
         Generar el grafo de cursos y seleccionar aleatoriamente entre las asignaturas que se pueden tomar en un semestre, que a lo mas sumen el maximo de creditos por semestre.
@@ -162,7 +272,6 @@ class Schedule:
             ...
             n: [i, j, k] ## materias seleccionadas para tomar en el semestre n
         }
-        """
         if not courses_graph:
             return {}
         
@@ -203,68 +312,4 @@ class Schedule:
         
         return schedule
 
-    def max_greedy_schedule(self, max_credits_per_semester: int, courses_graph: CoursesGraph) -> Dict[int, List[int]]:
-        """
-        Genera una planificación de semestres usando un algoritmo greedy que maximiza los créditos por semestre.
-        
-        Args:
-            max_credits_per_semester: Límite de créditos por semestre
-            courses_graph: Grafo de cursos
-            
-        Returns:
-            Diccionario con la planificación de semestres
-        
-        Similar a un level order traversal de un "arbol" basado en la profunidad de los prerequisitos   . 
-
-        Empezar por los cursos de nivel 1, seleccionar los que desbloqueen mas creditos y que no excedan el maximo de creditos por semestre.
-
-        Repetir el proceso para los cursos de nivel 2, 3, etc.
-
-        Y finalmente retornar la planificacion de semestres.
-
-        """
-        if not courses_graph:
-            return {}
-        
-        # Obtener el árbol de cursos disponibles
-        course_tree = self.tree_of_availible_courses(max_credits_per_semester, courses_graph)
-        
-        schedule = {}
-        completed_courses = set()
-        current_semester = 1
-        
-        # Procesar cada nivel del árbol
-        for level in sorted(course_tree.keys()):
-            available_courses = course_tree[level]
-            
-            # Filtrar cursos que ya están completados
-            available_courses = [course_id for course_id in available_courses if course_id not in completed_courses]
-            
-            if not available_courses:
-                continue
-            
-            # Ordenar cursos por créditos (mayor a menor) para maximizar créditos por semestre
-            course_credits = []
-            for course_id in available_courses:
-                course = courses_graph.get_course(course_id)
-                if course:
-                    course_credits.append((course_id, course.credits))
-            
-            # Ordenar por créditos descendente
-            course_credits.sort(key=lambda x: x[1], reverse=True)
-            
-            # Seleccionar cursos greedy
-            selected_courses = []
-            current_credits = 0
-            
-            for course_id, credits in course_credits:
-                if (current_credits + credits) <= max_credits_per_semester:
-                    selected_courses.append(course_id)
-                    current_credits += credits
-            
-            if selected_courses:
-                schedule[current_semester] = selected_courses
-                completed_courses.update(selected_courses)
-                current_semester += 1
-        
-        return schedule
+    """

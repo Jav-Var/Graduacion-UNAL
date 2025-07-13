@@ -1,20 +1,22 @@
 from typing import List, Dict, Any, Optional
-from models.Courses import Course
-from adapters.courses_adapter import CoursesAdapter
+from graduacion_unal.models.Courses import Course
+from graduacion_unal.models.courses_graph import CoursesGraph
+from graduacion_unal.adapters.courses_adapter import CoursesAdapter
+from graduacion_unal.api.schedule_service import ScheduleService
 
-
-### PARA LA PROXIMA ENTREGA
-## API 
 
 class CoursesService:
     """
     Servicio de API para manejar la lógica de negocio de cursos.
-    Implementa la separación entre el modelo y la interfaz.
+    Mantiene una única instancia del grafo y maneja la persistencia.
+    Es la única interfaz que debe usar la GUI.
     """
     
     def __init__(self):
-        self.graph = None
+        self.graph = CoursesGraph()
         self.adapter = CoursesAdapter()
+        self.current_file_path: Optional[str] = None
+        self._is_modified = False
     
     def load_graph_from_json(self, json_path: str) -> Dict[str, Any]:
         """
@@ -32,8 +34,15 @@ class CoursesService:
             ValueError: Si hay errores en los datos
         """
         try:
-            self.graph = CoursesGraph()
-            self.graph.initialize_graph(json_path)
+            # Cargar cursos usando el adaptador
+            courses = self.adapter.load_from_json(json_path)
+            
+            # Construir el grafo
+            self.graph.build_from_courses(courses)
+            
+            # Actualizar estado
+            self.current_file_path = json_path
+            self._is_modified = False
             
             return {
                 "success": True,
@@ -49,11 +58,70 @@ class CoursesService:
                 "message": f"No se encontró el archivo: {json_path}",
                 "details": str(e)
             }
+        except ValueError as e:
+            return {
+                "success": False,
+                "error": "VALIDATION_ERROR",
+                "message": f"Error de validación en los datos: {str(e)}",
+                "details": str(e)
+            }
         except Exception as e:
             return {
                 "success": False,
                 "error": "LOAD_ERROR",
                 "message": f"Error al cargar el grafo: {str(e)}",
+                "details": str(e)
+            }
+    
+    def save_graph_to_json(self, json_path: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Guarda el grafo actual en un archivo JSON.
+        
+        Args:
+            json_path: Ruta del archivo JSON (opcional, usa el actual si no se especifica)
+            
+        Returns:
+            Diccionario con el resultado de la operación
+        """
+        if not self.graph or self.graph.number_nodes == 0:
+            return {
+                "success": False,
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado para guardar"
+            }
+        
+        try:
+            # Usar la ruta actual si no se especifica una nueva
+            save_path = json_path or self.current_file_path
+            if not save_path:
+                return {
+                    "success": False,
+                    "error": "NO_FILE_PATH",
+                    "message": "No se especificó una ruta de archivo"
+                }
+            
+            # Obtener todos los cursos del grafo
+            courses = self.graph.get_all_courses()
+            
+            # Guardar usando el adaptador
+            self.adapter.save_to_json(courses, save_path)
+            
+            # Actualizar estado
+            self.current_file_path = save_path
+            self._is_modified = False
+            
+            return {
+                "success": True,
+                "message": f"Grafo guardado exitosamente en: {save_path}",
+                "file_path": save_path,
+                "courses_count": len(courses)
+            }
+            
+        except Exception as e:
+            return {
+                "success": False,
+                "error": "SAVE_ERROR",
+                "message": f"Error al guardar el grafo: {str(e)}",
                 "details": str(e)
             }
     
@@ -64,11 +132,11 @@ class CoursesService:
         Returns:
             Diccionario con la lista de cursos
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -109,11 +177,11 @@ class CoursesService:
         Returns:
             Diccionario con la información del curso
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -153,11 +221,11 @@ class CoursesService:
         Returns:
             Diccionario con la lista de cursos sin prerrequisitos
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -195,11 +263,11 @@ class CoursesService:
         Returns:
             Diccionario con la lista de cursos listos para tomar
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -242,17 +310,17 @@ class CoursesService:
         if not self.graph:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo inicializado"
             }
         
         try:
-            # Validar datos del curso
+            # Validar datos del curso usando el adaptador
             if not self.adapter.validate_course_data(course_data):
                 return {
                     "success": False,
                     "error": "INVALID_DATA",
-                    "message": "Los datos del curso no son válidos"
+                    "message": "Los datos del curso no son válidos. Verifique que el ID sea único y todos los campos sean del tipo correcto."
                 }
             
             # Crear el curso
@@ -260,6 +328,11 @@ class CoursesService:
             
             # Añadir al grafo
             self.graph.add_node(course)
+            
+            # Añadir ID al adaptador para mantener coherencia
+            self.adapter.add_course_id(course.id)
+            
+            self._is_modified = True
             
             return {
                 "success": True,
@@ -285,11 +358,11 @@ class CoursesService:
         Returns:
             Diccionario con el resultado de la operación
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -308,6 +381,9 @@ class CoursesService:
             success = self.graph.remove_node(course_id)
             
             if success:
+                # Remover ID del adaptador para mantener coherencia
+                self.adapter.remove_course_id(course_id)
+                self._is_modified = True
                 return {
                     "success": True,
                     "message": f"Curso '{course_name}' eliminado exitosamente",
@@ -339,17 +415,26 @@ class CoursesService:
         Returns:
             Diccionario con el resultado de la operación
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
+            # Validar datos del prerrequisito usando el adaptador
+            if not self.adapter.validate_prerequisite_data(course_id, prereq_id):
+                return {
+                    "success": False,
+                    "error": "INVALID_PREREQ_DATA",
+                    "message": "Los datos del prerrequisito no son válidos. Verifique que ambos IDs existan y sean diferentes."
+                }
+            
             success = self.graph.add_vertex(prereq_id, course_id)
             
             if success:
+                self._is_modified = True
                 return {
                     "success": True,
                     "message": f"Prerrequisito {prereq_id} añadido al curso {course_id}",
@@ -389,17 +474,18 @@ class CoursesService:
         Returns:
             Diccionario con el resultado de la operación
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
             success = self.graph.remove_edge(prereq_id, course_id)
             
             if success:
+                self._is_modified = True
                 return {
                     "success": True,
                     "message": f"Prerrequisito {prereq_id} eliminado del curso {course_id}",
@@ -428,11 +514,11 @@ class CoursesService:
         Returns:
             Diccionario con el resultado de la verificación
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -459,11 +545,11 @@ class CoursesService:
         Returns:
             Diccionario con información del grafo
         """
-        if not self.graph:
+        if not self.graph or self.graph.number_nodes == 0:
             return {
                 "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
+                "error": "NO_GRAPH",
+                "message": "No hay grafo cargado"
             }
         
         try:
@@ -479,7 +565,9 @@ class CoursesService:
                 "courses_without_prereqs": len(courses_without_prereqs),
                 "courses_with_prereqs": courses_with_prereqs,
                 "total_credits": total_credits,
-                "has_cycle": self.graph._has_cycle()
+                "has_cycle": self.graph._has_cycle(),
+                "current_file": self.current_file_path,
+                "is_modified": self._is_modified
             }
             
         except Exception as e:
@@ -488,4 +576,38 @@ class CoursesService:
                 "error": "INFO_ERROR",
                 "message": f"Error al obtener información del grafo: {str(e)}",
                 "details": str(e)
-            } 
+            }
+    
+    def is_modified(self) -> bool:
+        """
+        Verifica si el grafo ha sido modificado desde la última carga/guardado.
+        
+        Returns:
+            True si ha sido modificado, False en caso contrario
+        """
+        return self._is_modified
+    
+    def get_current_file_path(self) -> Optional[str]:
+        """
+        Obtiene la ruta del archivo actual.
+        
+        Returns:
+            Ruta del archivo actual o None si no hay archivo cargado
+        """
+        return self.current_file_path 
+
+    def get_course_tree(self, max_credits_per_semester: int = 18) -> dict:
+        """
+        Devuelve la malla curricular organizada por niveles usando ScheduleService.
+        """
+        schedule_service = ScheduleService()
+        schedule_service.set_graph(self.graph)
+        return schedule_service.get_course_tree(max_credits_per_semester) 
+
+    def generate_random_schedule(self, max_credits_per_semester: int = 18) -> dict:
+        """
+        Devuelve una malla generada aleatoriamente por semestres usando ScheduleService.
+        """
+        schedule_service = ScheduleService()
+        schedule_service.set_graph(self.graph)
+        return schedule_service.generate_random_schedule(max_credits_per_semester) 

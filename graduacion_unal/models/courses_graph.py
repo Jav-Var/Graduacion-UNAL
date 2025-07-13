@@ -1,12 +1,7 @@
-from structures.hash import HashMap
-from structures.disjoint_sets import DisjointSets
-from adapters.courses_adapter import CoursesAdapter
-from models.Courses import Course
+from graduacion_unal.structures.hash import HashMap
+from graduacion_unal.structures.disjoint_sets import DisjointSets
+from graduacion_unal.models.Courses import Course
 from typing import List, Optional
-from graduacion_unal.models.courses_schedule import Schedule
-from graduacion_unal.models.courses_graph import CoursesGraph
-from graduacion_unal.models.User import User
-
 
 
 class CoursesGraph:
@@ -23,27 +18,8 @@ class CoursesGraph:
         self.adjacency_list = HashMap()
         self.courses_map = HashMap()
         self.number_nodes: int = 0
-        self.adapter = CoursesAdapter()
 
-    def initialize_graph(self, json_path: str) -> None:
-        """
-        Inicializa el grafo cargando los datos desde un archivo JSON.
-        
-        Args:
-            json_path: Ruta al archivo JSON con los datos de cursos
-            
-        Raises:
-            FileNotFoundError: Si el archivo no existe
-            json.JSONDecodeError: Si el JSON está mal formateado
-            KeyError: Si falta algún campo requerido
-        """
-        # Cargar cursos usando el adaptador
-        courses = self.adapter.load_from_json(json_path)
-        
-        # Construir el grafo
-        self._build_graph_from_courses(courses)
-    
-    def _build_graph_from_courses(self, courses: List[Course]) -> None:
+    def build_from_courses(self, courses: List[Course]) -> None:
         """
         Construye el grafo a partir de una lista de cursos.
         
@@ -275,10 +251,7 @@ class CoursesGraph:
 
     def _has_cycle(self) -> bool:
         """
-        Detecta si el grafo tiene ciclos usando DisjointSets optimizado para grafos dirigidos.
-        
-        Esta implementación combina DFS con DisjointSets para optimizar las consultas
-        de conectividad y detectar ciclos eficientemente.
+        Detecta si el grafo tiene ciclos usando DFS.
         
         Returns:
             True si hay un ciclo, False en caso contrario
@@ -286,26 +259,22 @@ class CoursesGraph:
         if self.number_nodes == 0:
             return False
         
-        # Obtener el rango de IDs de cursos
+        # Obtener todos los IDs de cursos
         course_ids = list(self.courses_map.keys())
         if not course_ids:
             return False
         
-        max_course_id = max(course_ids)
-        
-        # Para grafos dirigidos, usamos DFS con DisjointSets para optimización
+        # Para grafos dirigidos, usamos DFS simple
         visited = set()
         rec_stack = set()
         
-        def dfs_with_ds(course_id: int, ds: DisjointSets) -> bool:
+        def dfs(course_id: int) -> bool:
             visited.add(course_id)
             rec_stack.add(course_id)
             
             for neighbor_id in self.get_neighbors(course_id):
                 if neighbor_id not in visited:
-                    # Unir los conjuntos para optimizar futuras consultas
-                    ds.union(course_id, neighbor_id)
-                    if dfs_with_ds(neighbor_id, ds):
+                    if dfs(neighbor_id):
                         return True
                 elif neighbor_id in rec_stack:
                     # Ciclo detectado: encontramos un back edge
@@ -314,12 +283,9 @@ class CoursesGraph:
             rec_stack.remove(course_id)
             return False
         
-        # Crear DisjointSets para optimizar las consultas de conectividad
-        ds = DisjointSets(max_course_id + 1)
-        
         for course_id in course_ids:
             if course_id not in visited:
-                if dfs_with_ds(course_id, ds):
+                if dfs(course_id):
                     return True
         
         return False

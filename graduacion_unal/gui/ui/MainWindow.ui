@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>864</width>
-    <height>600</height>
+    <width>1112</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -166,6 +166,28 @@ QPushButton:pressed {
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QPushButton" name="ButtonGuardar">
+            <property name="text">
+             <string>Guardar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/save.svg</normaloff>:/icons/icons/save.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ButtonCargarArchivo">
+            <property name="text">
+             <string>Cargar desde archivo...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/icons/icons/folder.svg</normaloff>:/icons/icons/folder.svg</iconset>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -188,6 +210,21 @@ QPushButton:pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: #d5d8df;
+
+QPushButton {
+  background-color: #e3e3e3;   /* color de fondo plano */
+  color: #000000;              /* texto blanco */
+  border: none;                /* sin borde */
+  padding: 8px 12px;           /* espaciado interno */
+  border-radius: 4px;          /* esquinas redondeadas */
+  text-align: center;            /* icono + texto alineados a la izquierda */
+}
+QPushButton:hover {
+  background-color: #3a3a3a;   /* ligero cambio al pasar el ratón */
+}
+QPushButton:pressed {
+  background-color: #1f1f1f;   /* tono más oscuro al pulsar */
+}
 </string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout"/>

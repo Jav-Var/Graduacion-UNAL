@@ -1,6 +1,6 @@
 import json
 from typing import List, Dict, Any
-from models.User import User
+from graduacion_unal.models.User import User
 
 ### TODAVIA LA MEMORIA NO ES PERSISTENTE
 ## NO SE HA IMPLEMENTADO EL HISTORIAL DEL USUARIO
