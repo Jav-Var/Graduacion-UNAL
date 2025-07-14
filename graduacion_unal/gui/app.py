@@ -167,14 +167,14 @@ class MainWindow(QtWidgets.QMainWindow):
         
         if info.get('success'):
             mensaje = f"""
-Información del Grafo:
-• Total de materias: {info['total_courses']}
-• Sin prerrequisitos: {info['courses_without_prereqs']}
-• Con prerrequisitos: {info['courses_with_prereqs']}
-• Total créditos: {info['total_credits']}
-• Tiene ciclos: {'Sí' if info['has_cycle'] else 'No'}
-• Archivo actual: {info['current_file'] or 'Ninguno'}
-• Modificado: {'Sí' if info['is_modified'] else 'No'}
+            Información del Grafo:
+            • Total de materias: {info['total_courses']}
+            • Sin prerrequisitos: {info['courses_without_prereqs']}
+            • Con prerrequisitos: {info['courses_with_prereqs']}
+            • Total créditos: {info['total_credits']}
+            • Tiene ciclos: {'Sí' if info['has_cycle'] else 'No'}
+            • Archivo actual: {info['current_file'] or 'Ninguno'}
+            • Modificado: {'Sí' if info['is_modified'] else 'No'}
             """
             QMessageBox.information(self, "Información del Grafo", mensaje.strip())
         else:
@@ -595,7 +595,7 @@ Información del Grafo:
         main_layout.setSpacing(15)
 
         # Título
-        titulo = QLabel("Malla Curricular por Semestre (Nivel)")
+        titulo = QLabel("Malla Curricular por Niveles")
         titulo.setStyleSheet("font-weight: bold; font-size: 16px; margin-bottom: 10px;")
         main_layout.addWidget(titulo, alignment=Qt.AlignHCenter)
 
@@ -603,7 +603,7 @@ Información del Grafo:
         table = QtWidgets.QTableWidget()
         table.setColumnCount(num_semestres)
         table.setRowCount(max_materias)
-        table.setHorizontalHeaderLabels([f"Semestre {int(n)}" for n in niveles])
+        table.setHorizontalHeaderLabels([f"Nivel {int(n)}" for n in niveles])
         table.verticalHeader().setVisible(False)
         table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         table.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
@@ -662,7 +662,7 @@ Información del Grafo:
         creditos_layout.setSpacing(10)
         label_creditos = QLabel("Créditos máximos por semestre:")
         spin_creditos = QtWidgets.QSpinBox()
-        spin_creditos.setMinimum(1)
+        spin_creditos.setMinimum(6)
         spin_creditos.setMaximum(40)
         spin_creditos.setValue(18)
         spin_creditos.setSingleStep(1)
