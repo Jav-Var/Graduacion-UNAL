@@ -1,27 +1,184 @@
 [
   {
+    "id": 2019072,
+    "name": "Análisis numérico 1",
+    "credits": 4,
+    "prereqs": [
+      2015155,
+      2016698
+    ]
+  },
+  {
+    "id": 9001,
+    "name": "Optativa naturales y estadística",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 9002,
+    "name": "Optativa matemática y estructuras discretas",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9003,
+    "name": "Optativa de computación aplicada",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 9004,
+    "name": "Optativa mat. y estructuras discretas 2",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9005,
+    "name": "Optativa algoritmos y teoría de la computación",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 9006,
+    "name": "Optativa seguridad de información y codificación",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9007,
+    "name": "Optativa seguridad de información y codificación 2",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 9008,
+    "name": "Libre elección 1",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9009,
+    "name": "Libre elección 2",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9010,
+    "name": "Libre elección 3",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 2015155,
+    "name": "Introducción al análisis real",
+    "credits": 4,
+    "prereqs": [
+      2025819,
+      2015162
+    ]
+  },
+  {
+    "id": 9011,
+    "name": "Libre elección 4",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9012,
+    "name": "Libre elección 5",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9013,
+    "name": "Libre elección 6",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9014,
+    "name": "Libre elección 7",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 9015,
+    "name": "Optativa de computación aplicada",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 2016696,
+    "name": "Algoritmos",
+    "credits": 3,
+    "prereqs": [
+      2016699
+    ]
+  },
+  {
+    "id": 9016,
+    "name": "Optativa computación científica",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 9017,
+    "name": "Trabajo de grado",
+    "credits": 8,
+    "prereqs": []
+  },
+  {
+    "id": 2016698,
+    "name": "Elementos de computador",
+    "credits": 3,
+    "prereqs": [
+      2026573
+    ]
+  },
+  {
+    "id": 2015162,
+    "name": "Cálculo vectorial",
+    "credits": 4,
+    "prereqs": [
+      2015555,
+      2015556
+    ]
+  },
+  {
+    "id": 9018,
+    "name": "Optativa sistemas operativos de cómputo y compiladores",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 2026555,
+    "name": "Algebra abstracta y computacional",
+    "credits": 4,
+    "prereqs": [
+      2025819
+    ]
+  },
+  {
+    "id": 2016699,
+    "name": "Estructura de datos",
+    "credits": 4,
+    "prereqs": [
+      2016375
+    ]
+  },
+  {
     "id": 2015168,
     "name": "Fundamentos de matemáticas",
     "credits": 4,
     "prereqs": []
   },
   {
-    "id": 2016377,
-    "name": "Cálculo diferencial en una variable",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": 2015181,
-    "name": "Sistemas numéricos",
-    "credits": 4,
-    "prereqs": [2015168]
-  },
-  {
-    "id": 2015556,
-    "name": "Cálculo integral en una variable",
-    "credits": 4,
-    "prereqs": [2016377]
+    "id": 2016707,
+    "name": "Sistemas operativos",
+    "credits": 3,
+    "prereqs": [
+      2016698
+    ]
   },
   {
     "id": 2015555,
@@ -30,28 +187,42 @@
     "prereqs": []
   },
   {
-    "id": 2025819,
-    "name": "Introducción a la teoría de conjuntos",
+    "id": 2015556,
+    "name": "Cálculo integral en una variable",
     "credits": 4,
-    "prereqs": [2015181]
+    "prereqs": [
+      2016377
+    ]
   },
   {
-    "id": 2015162,
-    "name": "Cálculo vectorial",
+    "id": 2015174,
+    "name": "Introducción a la teoría de la computación",
     "credits": 4,
-    "prereqs": [2015555, 2015556]
+    "prereqs": [
+      2025819
+    ]
   },
   {
     "id": 2015178,
     "name": "Probabilidad",
     "credits": 4,
-    "prereqs": [2015556]
+    "prereqs": [
+      2015556
+    ]
   },
   {
-    "id": 2015155,
-    "name": "Introducción al análisis real",
+    "id": 2015181,
+    "name": "Sistemas numéricos",
     "credits": 4,
-    "prereqs": [2025819, 2015162]
+    "prereqs": [
+      2015168
+    ]
+  },
+  {
+    "id": 2026573,
+    "name": "Introducción a las ciencias de la computación y la programación",
+    "credits": 3,
+    "prereqs": []
   },
   {
     "id": 2016342,
@@ -60,285 +231,25 @@
     "prereqs": []
   },
   {
-    "id": null,
-    "name": "Optativa naturales y estadística",
-    "credits": 3,
-    "prereqs": []
+    "id": 2025819,
+    "name": "Introducción a la teoría de conjuntos",
+    "credits": 4,
+    "prereqs": [
+      2015181
+    ]
   },
-  {
-    "id": 2026573,
-    "name": "Introducción a las ciencias de la computación y la programación",
-    "credits": 3,
-    "prereqs": []
-  },
-
   {
     "id": 2016375,
     "name": "Programación orientada a objetos",
     "credits": 3,
-    "prereqs": [2026573]
-  },
-  {
-    "id": 2016699,
-    "name": "Estructura de datos",
-    "credits": 4,
-    "prereqs": [2016375]
-  },
-  {
-    "id": 2016696,
-    "name": "Algoritmos",
-    "credits": 3,
-    "prereqs": [2016699]
-  },
-  {
-    "id": 2016698,
-    "name": "Elementos de computador",
-    "credits": 3,
-    "prereqs": [2026573]
-  },
-  {
-    "id": 2016707,
-    "name": "Sistemas operativos",
-    "credits": 3,
-    "prereqs": [2016698]
-  },
-  {
-    "id": 2015174,
-    "name": "Introducción a la teoría de la computación",
-    "credits": 4,
-    "prereqs": [2025819]
-  },
-  {
-    "id": 2026555,
-    "name": "Algebra abstracta y computacional",
-    "credits": 4,
-    "prereqs": [2025819]
-  },
-  {
-    "id": 2019072,
-    "name": "Análisis numérico 1",
-    "credits": 4,
-    "prereqs": [2015155, 2016698]
-  },
-  {
-    "id": null,
-    "name": "Optativa matemática y estructuras discretas",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa de computación aplicada",
-    "credits": 3,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa mat. y estructuras discretas 2",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa algoritmos y teoría de la computación",
-    "credits": 3,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa seguridad de información y codificación",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa seguridad de información y codificación 2",
-    "credits": 3,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 1",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 2",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 3",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 4",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 5",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 6",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Libre elección 7",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa de computación aplicada",
-    "credits": 3,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa computación científica",
-    "credits": 3,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Trabajo de grado",
-    "credits": 8,
-    "prereqs": []
-  },
-  {
-    "id": null,
-    "name": "Optativa sistemas operativos de cómputo y compiladores",
-    "credits": 3,
-    "prereqs": []
-  },
-
-  {
-    "id": 1001,
-    "name": "Cálculo Diferencial",
-    "credits": 4,
-    "prereqs": []
-  },
-  {
-    "id": 1002,
-    "name": "Cálculo Integral",
-    "credits": 4,
     "prereqs": [
-      1001
+      2026573
     ]
   },
   {
-    "id": 1003,
-    "name": "Cálculo Vectorial",
+    "id": 2016377,
+    "name": "Cálculo diferencial en una variable",
     "credits": 4,
-    "prereqs": [
-      1002
-    ]
-  },
-  {
-    "id": 1004,
-    "name": "Programación I",
-    "credits": 3,
     "prereqs": []
-  },
-  {
-    "id": 1005,
-    "name": "Programación II",
-    "credits": 3,
-    "prereqs": [
-      1004
-    ]
-  },
-  {
-    "id": 1006,
-    "name": "Estructuras de Datos",
-    "credits": 3,
-    "prereqs": [
-      1005
-    ]
-  },
-  {
-    "id": 1007,
-    "name": "Álgebra Lineal",
-    "credits": 3,
-    "prereqs": [
-      1001
-    ]
-  },
-  {
-    "id": 1008,
-    "name": "Física I",
-    "credits": 4,
-    "prereqs": [
-      1001
-    ]
-  },
-  {
-    "id": 1009,
-    "name": "Física II",
-    "credits": 4,
-    "prereqs": [
-      1002,
-      1008
-    ]
-  },
-  {
-    "id": 1010,
-    "name": "Probabilidad y Estadística",
-    "credits": 3,
-    "prereqs": [
-      1002
-    ]
-  },
-  {
-    "id": 1011,
-    "name": "Algoritmos y Programación",
-    "credits": 3,
-    "prereqs": [
-      1006
-    ]
-  },
-  {
-    "id": 1012,
-    "name": "Bases de Datos",
-    "credits": 3,
-    "prereqs": [
-      1006
-    ]
-  },
-  {
-    "id": 1013,
-    "name": "Redes de Computadores",
-    "credits": 3,
-    "prereqs": [
-      1006
-    ]
-  },
-  {
-    "id": 1014,
-    "name": "Sistemas Operativos",
-    "credits": 3,
-    "prereqs": [
-      1006
-    ]
-  },
-  {
-    "id": 1015,
-    "name": "Inteligencia Artificial",
-    "credits": 3,
-    "prereqs": [
-      1011,
-      1010
-    ]
   }
 ]

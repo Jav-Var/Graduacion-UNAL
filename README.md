@@ -23,8 +23,21 @@ Los estudiantes necesitan planificar su carrera considerando complejas relacione
 
 🧮 Organización y entorno de pruebas 
 
-## Punto de entrada (PyQt)
+### 📦 Requisitos
 
-Ejecutar graduacion_unal/gui/app.py 
+- Python 3.11
+- Instala PyQt5 con el siguiente comando:
 
-# En la primera version no estan implementadas las funcionalidades, solo bocetos y primeras versiones de los modelos, los adaptdores y de la base de datos
+```bash
+pip install PyQt5
+```
+
+### Punto de entrada (PyQt)
+
+Ejecutar: 
+- Opcion 1:  
+python graduacion_unal/gui/app.py
+- Opcion 2(windows):  
+python -m graduacion_unal.gui.app
+
+### En la primera version no estan implementadas las funcionalidades, solo bocetos y primeras versiones de los modelos, los adaptdores y de la base de datos

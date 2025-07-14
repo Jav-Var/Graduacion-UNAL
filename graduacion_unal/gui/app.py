@@ -1,19 +1,20 @@
 import sys
 import os
+from pathlib import Path
 from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QMenuBar, QMenu, QAction, QApplication 
+from PyQt5.QtWidgets import (
+    QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QAction, QApplication
+)
+
 from graduacion_unal.gui import resources_rc
 from graduacion_unal.api.courses_service import CoursesService
-from graduacion_unal.api.schedule_service import ScheduleService
-from pathlib import Path
 from pprint import pprint
+"""
+    Este es un archivo para probar la interfaz, no es la aplicacion final.
+"""
 
-
-def load_stylesheet(path: str) -> str:
-    """
-    Lee un stylesheet de un path y retorna su contenido como string
-    """
+def load_stylesheet(path):
     with open(path, 'r', encoding='utf-8') as f:
         return f.read()
 
@@ -29,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Determina la ruta al directorio donde están los archivos de interfaz .ui
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        ui_dir = script_dir + "/ui" 
+        ui_dir = script_dir + "/ui"
 
         # Verificar existencia del directorio ui_dir
         if not os.path.isdir(ui_dir):
@@ -43,6 +44,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Configurar titulo
         self.setWindowTitle("Planificador de Ruta Académica UNAL")
+
+        self.resize(1500, 800)         # Tamaño inicial (ancho x alto)
+        self.setMinimumSize(900, 600)
 
         # Referenciar widgets importantes
         self.panel = self.findChild(QtWidgets.QWidget, 'panel')
@@ -69,6 +73,8 @@ class MainWindow(QtWidgets.QMainWindow):
         # Conectar botones de la sidebar
         self.asignar_botones(ui_dir)
         
+        # Cargar archivo de ejemplo por defecto
+        # self.cargar_archivo_ejemplo() El archivo se esta cargando en el main para que primero se muestre la ventana
 
     def setup_menu(self):
         """Configura el menú de la aplicación."""
