@@ -2,10 +2,11 @@ import sys
 import os
 from pathlib import Path
 from PyQt5 import QtCore, QtWidgets, uic
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtWidgets import (
     QMessageBox, QVBoxLayout, QLabel, QFrame, QFileDialog, QAction, QApplication
 )
+from PyQt5.QtGui import QIcon
 
 from graduacion_unal.gui import resources_rc
 from graduacion_unal.api.courses_service import CoursesService
@@ -252,6 +253,15 @@ class MainWindow(QtWidgets.QMainWindow):
             if not btn:
                 print(f"[ERROR] no encontré botón con objectName='{obj_name}'")
                 continue
+
+            # Si es el botón "Ver sugerencia de materias", le ponemos icono
+            if obj_name == 'ButtonSugerenciaAleatoria':
+                # Usa aquí la ruta interna que definiste en tu .qrc, por ejemplo ":/icons/lightbulb.svg"
+                btn.setIcon(QIcon(":/icons/icons/edit.svg"))
+            if obj_name == 'ButtonVerCaminosMaterias':
+                # Usa aquí la ruta interna que definiste en tu .qrc, por ejemplo ":/icons/lightbulb.svg"
+                btn.setIcon(QIcon(":/icons/icons/list.svg"))    
+
             print(f"[OK] Conectando {obj_name} → cambiar_menu('{menu_name}')")
             if menu_name == 'VerCaminosMaterias':
                 btn.clicked.connect(self.setup_ver_caminos_materias)
