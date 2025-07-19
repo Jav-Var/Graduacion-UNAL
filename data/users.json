@@ -49,8 +49,8 @@
     "student_id": "20231056789",
     "program": "Ingeniería de Sistemas",
     "semester": 5,
-    "completed_courses": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
-    "current_courses": [1011, 1012, 1013],
+    "completed_courses": [9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010],
+    "current_courses": [9011, 9012, 9013],
     "total_credits": 37,
     "max_credits_per_semester": 18
   }
