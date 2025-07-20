@@ -3,7 +3,7 @@ from graduacion_unal.models.courses_schedule import Schedule
 from graduacion_unal.models.courses_graph import CoursesGraph
 from graduacion_unal.models.User import User
 import os
-
+import time
 
 ### PARA LA PROXIMA ENTREGA
 ## API PARA CONECTAR A LA GUI
@@ -136,7 +136,11 @@ class ScheduleService:
         Returns:
             Diccionario con la planificación generada
         """
+        #start = time.time()
         if not self.graph:
+            # end = time.time()
+            # elapsed = end - start
+            # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return {
                 "success": False,
                 "error": "GRAPH_NOT_LOADED",
@@ -174,7 +178,9 @@ class ScheduleService:
                     "total_credits": semester_credits
                 }
                 total_credits += semester_credits
-            
+            # end = time.time()
+            # elapsed = end - start
+            # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return {
                 "success": True,
                 "schedule": schedule_details,
@@ -186,6 +192,9 @@ class ScheduleService:
             }
             
         except Exception as e:
+            # end = time.time()
+            # elapsed = end - start
+            # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return {
                 "success": False,
                 "error": "RANDOM_SCHEDULE_ERROR",

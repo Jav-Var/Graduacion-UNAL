@@ -1,7 +1,7 @@
 import json
 import random
 # Genera un conjunto de cursos ficticios con ID, nombre, créditos y prerrequisitos.
-def generar_cursos(n=10000, max_prereqs=3, max_credits=4):
+def generar_cursos(n=1000, max_prereqs=3, max_credits=4):
     cursos = []
     for i in range(1, n+1):
         # Un curso puede tener prerrequisitos solo de cursos con ID menor (para evitar ciclos)
@@ -19,7 +19,7 @@ def generar_cursos(n=10000, max_prereqs=3, max_credits=4):
     return cursos
 
 if __name__ == "__main__":
-    N = 10000 # cantidad de cursos a generar  
+    N = 1000 # cantidad de cursos a generar  
     cursos = generar_cursos(N)
     with open(f"courses_{N}.json", "w", encoding="utf-8") as f:
         json.dump(cursos, f, ensure_ascii=False, indent=2)

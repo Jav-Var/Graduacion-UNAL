@@ -724,7 +724,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             max_cred = spin_creditos.value()
             schedule_result = self.courses_service.generate_random_schedule(max_cred)
-            pprint(f"[DEBUG] generate_random_schedule →{schedule_result}")
+            #pprint(f"[DEBUG] generate_random_schedule →{schedule_result}")
             if not schedule_result.get('success'):
                 label = QLabel(f"Error: {schedule_result.get('message', 'Error desconocido')}")
                 label.setStyleSheet("color: red; font-weight: bold;")
@@ -732,7 +732,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 return
 
             schedule = schedule_result['schedule']
-            pprint(f"[DEBUG] schedule dict → {schedule}")
+            #pprint(f"[DEBUG] schedule dict → {schedule}")
             semestres = sorted(schedule.keys(), key=lambda x: int(x))
             max_materias = max(len(schedule[s]['courses']) for s in semestres)
             num_semestres = len(semestres)

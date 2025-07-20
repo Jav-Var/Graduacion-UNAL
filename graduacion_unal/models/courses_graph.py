@@ -2,7 +2,7 @@ from graduacion_unal.structures.hash import HashMap
 from graduacion_unal.structures.disjoint_sets import DisjointSets
 from graduacion_unal.models.Courses import Course
 from typing import List, Optional
-
+import time
 
 class CoursesGraph:
     """
@@ -250,18 +250,26 @@ class CoursesGraph:
         return True
 
     def _has_cycle(self) -> bool:
+        
         """
         Detecta si el grafo tiene ciclos usando DFS.
         
         Returns:
             True si hay un ciclo, False en caso contrario
         """
+        #start = time.time()
         if self.number_nodes == 0:
+            # end = time.time()
+            # elapsed = end - start
+            # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return False
         
         # Obtener todos los IDs de cursos
         course_ids = list(self.courses_map.keys())
         if not course_ids:
+            # end = time.time()
+            # elapsed = end - start
+            # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return False
         
         # Para grafos dirigidos, usamos DFS simple
@@ -286,8 +294,13 @@ class CoursesGraph:
         for course_id in course_ids:
             if course_id not in visited:
                 if dfs(course_id):
+                    # end = time.time()
+                    # elapsed = end - start
+                    # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
                     return True
-        
+        # end = time.time()
+        # elapsed = end - start
+        # print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
         return False
 
     def get_neighbors(self, course_id: int) -> List[int]:

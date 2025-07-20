@@ -3,7 +3,7 @@ from graduacion_unal.models.Courses import Course
 from graduacion_unal.models.courses_graph import CoursesGraph
 from graduacion_unal.adapters.courses_adapter import CoursesAdapter
 from graduacion_unal.api.schedule_service import ScheduleService
-
+import time
 
 class CoursesService:
     """
@@ -33,6 +33,7 @@ class CoursesService:
             json.JSONDecodeError: Si el JSON está mal formateado
             ValueError: Si hay errores en los datos
         """
+        start = time.time()
         try:
             # Cargar cursos usando el adaptador
             courses = self.adapter.load_from_json(json_path)
@@ -44,6 +45,9 @@ class CoursesService:
             self.current_file_path = json_path
             self._is_modified = False
             
+            end = time.time()
+            elapsed = end - start
+            print(f"Tiempo de ejecución: {elapsed:.6f} segundos")
             return {
                 "success": True,
                 "message": "Grafo cargado exitosamente",

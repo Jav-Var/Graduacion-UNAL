@@ -1,0 +1,8241 @@
+[
+  {
+    "id": 1,
+    "name": "Materia 1",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 2,
+    "name": "Materia 2",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 3,
+    "name": "Materia 3",
+    "credits": 2,
+    "prereqs": [
+      1
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Materia 4",
+    "credits": 3,
+    "prereqs": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Materia 5",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 6,
+    "name": "Materia 6",
+    "credits": 1,
+    "prereqs": [
+      2,
+      4,
+      5
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Materia 7",
+    "credits": 4,
+    "prereqs": [
+      4,
+      5,
+      3
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Materia 8",
+    "credits": 3,
+    "prereqs": [
+      6,
+      7,
+      1
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Materia 9",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 10,
+    "name": "Materia 10",
+    "credits": 3,
+    "prereqs": [
+      6
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Materia 11",
+    "credits": 2,
+    "prereqs": [
+      10
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Materia 12",
+    "credits": 1,
+    "prereqs": [
+      5,
+      8,
+      7
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Materia 13",
+    "credits": 2,
+    "prereqs": [
+      10,
+      2,
+      5
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Materia 14",
+    "credits": 4,
+    "prereqs": [
+      11,
+      4
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Materia 15",
+    "credits": 1,
+    "prereqs": [
+      12
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Materia 16",
+    "credits": 3,
+    "prereqs": [
+      3
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Materia 17",
+    "credits": 3,
+    "prereqs": [
+      15,
+      11
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Materia 18",
+    "credits": 1,
+    "prereqs": [
+      14
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Materia 19",
+    "credits": 3,
+    "prereqs": [
+      14
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Materia 20",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 21,
+    "name": "Materia 21",
+    "credits": 1,
+    "prereqs": [
+      7
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Materia 22",
+    "credits": 2,
+    "prereqs": [
+      5
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Materia 23",
+    "credits": 4,
+    "prereqs": [
+      14,
+      16
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Materia 24",
+    "credits": 1,
+    "prereqs": [
+      3
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Materia 25",
+    "credits": 4,
+    "prereqs": [
+      20
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Materia 26",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 27,
+    "name": "Materia 27",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 28,
+    "name": "Materia 28",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 29,
+    "name": "Materia 29",
+    "credits": 4,
+    "prereqs": [
+      13,
+      6
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Materia 30",
+    "credits": 1,
+    "prereqs": [
+      9,
+      12,
+      5
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Materia 31",
+    "credits": 3,
+    "prereqs": [
+      17,
+      24
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Materia 32",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 33,
+    "name": "Materia 33",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 34,
+    "name": "Materia 34",
+    "credits": 1,
+    "prereqs": [
+      14,
+      26
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Materia 35",
+    "credits": 2,
+    "prereqs": [
+      10
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Materia 36",
+    "credits": 4,
+    "prereqs": [
+      10,
+      4
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Materia 37",
+    "credits": 1,
+    "prereqs": [
+      21,
+      9
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Materia 38",
+    "credits": 1,
+    "prereqs": [
+      20,
+      8
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Materia 39",
+    "credits": 2,
+    "prereqs": [
+      27,
+      22
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Materia 40",
+    "credits": 2,
+    "prereqs": [
+      7,
+      22
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Materia 41",
+    "credits": 1,
+    "prereqs": [
+      3,
+      5,
+      16
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Materia 42",
+    "credits": 2,
+    "prereqs": [
+      30
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Materia 43",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 44,
+    "name": "Materia 44",
+    "credits": 1,
+    "prereqs": [
+      21,
+      14,
+      5
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Materia 45",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 46,
+    "name": "Materia 46",
+    "credits": 2,
+    "prereqs": [
+      22
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Materia 47",
+    "credits": 1,
+    "prereqs": [
+      35
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Materia 48",
+    "credits": 2,
+    "prereqs": [
+      2
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Materia 49",
+    "credits": 4,
+    "prereqs": [
+      1
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Materia 50",
+    "credits": 2,
+    "prereqs": [
+      8,
+      1
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Materia 51",
+    "credits": 1,
+    "prereqs": [
+      46
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Materia 52",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 53,
+    "name": "Materia 53",
+    "credits": 1,
+    "prereqs": [
+      22,
+      19,
+      26
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Materia 54",
+    "credits": 1,
+    "prereqs": [
+      36
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Materia 55",
+    "credits": 4,
+    "prereqs": [
+      46,
+      9,
+      1
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Materia 56",
+    "credits": 1,
+    "prereqs": [
+      17,
+      16,
+      37
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Materia 57",
+    "credits": 3,
+    "prereqs": [
+      20
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Materia 58",
+    "credits": 1,
+    "prereqs": [
+      9
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Materia 59",
+    "credits": 4,
+    "prereqs": [
+      22,
+      53,
+      32
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Materia 60",
+    "credits": 4,
+    "prereqs": [
+      10,
+      39,
+      29
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Materia 61",
+    "credits": 3,
+    "prereqs": [
+      40
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Materia 62",
+    "credits": 4,
+    "prereqs": [
+      8
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Materia 63",
+    "credits": 2,
+    "prereqs": [
+      11,
+      16
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Materia 64",
+    "credits": 3,
+    "prereqs": [
+      50,
+      24,
+      52
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Materia 65",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 66,
+    "name": "Materia 66",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 67,
+    "name": "Materia 67",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 68,
+    "name": "Materia 68",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 69,
+    "name": "Materia 69",
+    "credits": 4,
+    "prereqs": [
+      31,
+      29
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Materia 70",
+    "credits": 4,
+    "prereqs": [
+      61,
+      69
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Materia 71",
+    "credits": 2,
+    "prereqs": [
+      23
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Materia 72",
+    "credits": 1,
+    "prereqs": [
+      14,
+      45
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Materia 73",
+    "credits": 4,
+    "prereqs": [
+      30
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Materia 74",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 75,
+    "name": "Materia 75",
+    "credits": 2,
+    "prereqs": [
+      54,
+      35
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Materia 76",
+    "credits": 3,
+    "prereqs": [
+      39
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Materia 77",
+    "credits": 3,
+    "prereqs": [
+      54
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Materia 78",
+    "credits": 4,
+    "prereqs": [
+      32,
+      51
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Materia 79",
+    "credits": 4,
+    "prereqs": [
+      37,
+      13,
+      43
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Materia 80",
+    "credits": 4,
+    "prereqs": [
+      72
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Materia 81",
+    "credits": 4,
+    "prereqs": [
+      66,
+      43,
+      59
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Materia 82",
+    "credits": 3,
+    "prereqs": [
+      68,
+      51,
+      43
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Materia 83",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 84,
+    "name": "Materia 84",
+    "credits": 1,
+    "prereqs": [
+      45,
+      9
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Materia 85",
+    "credits": 4,
+    "prereqs": [
+      1,
+      83,
+      28
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Materia 86",
+    "credits": 3,
+    "prereqs": [
+      16,
+      27,
+      67
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Materia 87",
+    "credits": 3,
+    "prereqs": [
+      75,
+      11
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Materia 88",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 89,
+    "name": "Materia 89",
+    "credits": 4,
+    "prereqs": [
+      1,
+      2,
+      51
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Materia 90",
+    "credits": 1,
+    "prereqs": [
+      64,
+      77,
+      20
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Materia 91",
+    "credits": 2,
+    "prereqs": [
+      57,
+      83,
+      7
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Materia 92",
+    "credits": 3,
+    "prereqs": [
+      25
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Materia 93",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 94,
+    "name": "Materia 94",
+    "credits": 4,
+    "prereqs": [
+      18
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Materia 95",
+    "credits": 3,
+    "prereqs": [
+      41,
+      7
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Materia 96",
+    "credits": 2,
+    "prereqs": [
+      74,
+      23
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Materia 97",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 98,
+    "name": "Materia 98",
+    "credits": 4,
+    "prereqs": [
+      69
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Materia 99",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 100,
+    "name": "Materia 100",
+    "credits": 3,
+    "prereqs": [
+      31,
+      59
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Materia 101",
+    "credits": 3,
+    "prereqs": [
+      65,
+      3
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Materia 102",
+    "credits": 4,
+    "prereqs": [
+      55,
+      93
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Materia 103",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 104,
+    "name": "Materia 104",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 105,
+    "name": "Materia 105",
+    "credits": 4,
+    "prereqs": [
+      44
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Materia 106",
+    "credits": 2,
+    "prereqs": [
+      41,
+      80
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Materia 107",
+    "credits": 2,
+    "prereqs": [
+      86,
+      85
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Materia 108",
+    "credits": 3,
+    "prereqs": [
+      85
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Materia 109",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 110,
+    "name": "Materia 110",
+    "credits": 1,
+    "prereqs": [
+      22,
+      97
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Materia 111",
+    "credits": 1,
+    "prereqs": [
+      69,
+      44
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Materia 112",
+    "credits": 4,
+    "prereqs": [
+      27,
+      30,
+      61
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Materia 113",
+    "credits": 3,
+    "prereqs": [
+      44
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Materia 114",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 115,
+    "name": "Materia 115",
+    "credits": 4,
+    "prereqs": [
+      111,
+      114,
+      55
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Materia 116",
+    "credits": 4,
+    "prereqs": [
+      55
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Materia 117",
+    "credits": 4,
+    "prereqs": [
+      21,
+      89
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Materia 118",
+    "credits": 1,
+    "prereqs": [
+      71,
+      54
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Materia 119",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 120,
+    "name": "Materia 120",
+    "credits": 2,
+    "prereqs": [
+      54,
+      69
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Materia 121",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 122,
+    "name": "Materia 122",
+    "credits": 4,
+    "prereqs": [
+      17,
+      6
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Materia 123",
+    "credits": 1,
+    "prereqs": [
+      60
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Materia 124",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 125,
+    "name": "Materia 125",
+    "credits": 3,
+    "prereqs": [
+      4,
+      69
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Materia 126",
+    "credits": 2,
+    "prereqs": [
+      84,
+      34,
+      101
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Materia 127",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 128,
+    "name": "Materia 128",
+    "credits": 2,
+    "prereqs": [
+      80,
+      65
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Materia 129",
+    "credits": 2,
+    "prereqs": [
+      115,
+      77,
+      21
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Materia 130",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 131,
+    "name": "Materia 131",
+    "credits": 3,
+    "prereqs": [
+      13
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Materia 132",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 133,
+    "name": "Materia 133",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 134,
+    "name": "Materia 134",
+    "credits": 4,
+    "prereqs": [
+      105,
+      79
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Materia 135",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 136,
+    "name": "Materia 136",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 137,
+    "name": "Materia 137",
+    "credits": 1,
+    "prereqs": [
+      113
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Materia 138",
+    "credits": 1,
+    "prereqs": [
+      21
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Materia 139",
+    "credits": 3,
+    "prereqs": [
+      6,
+      72,
+      14
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Materia 140",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 141,
+    "name": "Materia 141",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 142,
+    "name": "Materia 142",
+    "credits": 4,
+    "prereqs": [
+      25
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Materia 143",
+    "credits": 3,
+    "prereqs": [
+      136,
+      126
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Materia 144",
+    "credits": 4,
+    "prereqs": [
+      101,
+      110,
+      77
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Materia 145",
+    "credits": 1,
+    "prereqs": [
+      132,
+      119
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Materia 146",
+    "credits": 1,
+    "prereqs": [
+      81
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Materia 147",
+    "credits": 1,
+    "prereqs": [
+      75
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Materia 148",
+    "credits": 1,
+    "prereqs": [
+      77,
+      39
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Materia 149",
+    "credits": 3,
+    "prereqs": [
+      15
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Materia 150",
+    "credits": 1,
+    "prereqs": [
+      141,
+      103,
+      14
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Materia 151",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 152,
+    "name": "Materia 152",
+    "credits": 4,
+    "prereqs": [
+      129,
+      102,
+      43
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Materia 153",
+    "credits": 1,
+    "prereqs": [
+      39,
+      59
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Materia 154",
+    "credits": 2,
+    "prereqs": [
+      30,
+      116
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Materia 155",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 156,
+    "name": "Materia 156",
+    "credits": 4,
+    "prereqs": [
+      52
+    ]
+  },
+  {
+    "id": 157,
+    "name": "Materia 157",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 158,
+    "name": "Materia 158",
+    "credits": 4,
+    "prereqs": [
+      78,
+      68
+    ]
+  },
+  {
+    "id": 159,
+    "name": "Materia 159",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 160,
+    "name": "Materia 160",
+    "credits": 3,
+    "prereqs": [
+      20
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Materia 161",
+    "credits": 2,
+    "prereqs": [
+      9,
+      135,
+      14
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Materia 162",
+    "credits": 3,
+    "prereqs": [
+      16
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Materia 163",
+    "credits": 4,
+    "prereqs": [
+      148
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Materia 164",
+    "credits": 1,
+    "prereqs": [
+      154,
+      17,
+      50
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Materia 165",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 166,
+    "name": "Materia 166",
+    "credits": 3,
+    "prereqs": [
+      121
+    ]
+  },
+  {
+    "id": 167,
+    "name": "Materia 167",
+    "credits": 1,
+    "prereqs": [
+      66
+    ]
+  },
+  {
+    "id": 168,
+    "name": "Materia 168",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 169,
+    "name": "Materia 169",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 170,
+    "name": "Materia 170",
+    "credits": 3,
+    "prereqs": [
+      77,
+      49
+    ]
+  },
+  {
+    "id": 171,
+    "name": "Materia 171",
+    "credits": 2,
+    "prereqs": [
+      80,
+      13,
+      22
+    ]
+  },
+  {
+    "id": 172,
+    "name": "Materia 172",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 173,
+    "name": "Materia 173",
+    "credits": 2,
+    "prereqs": [
+      137
+    ]
+  },
+  {
+    "id": 174,
+    "name": "Materia 174",
+    "credits": 2,
+    "prereqs": [
+      70,
+      124
+    ]
+  },
+  {
+    "id": 175,
+    "name": "Materia 175",
+    "credits": 4,
+    "prereqs": [
+      144,
+      49
+    ]
+  },
+  {
+    "id": 176,
+    "name": "Materia 176",
+    "credits": 3,
+    "prereqs": [
+      43,
+      139
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Materia 177",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 178,
+    "name": "Materia 178",
+    "credits": 3,
+    "prereqs": [
+      100,
+      12
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Materia 179",
+    "credits": 3,
+    "prereqs": [
+      86,
+      64
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Materia 180",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 181,
+    "name": "Materia 181",
+    "credits": 3,
+    "prereqs": [
+      14
+    ]
+  },
+  {
+    "id": 182,
+    "name": "Materia 182",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 183,
+    "name": "Materia 183",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 184,
+    "name": "Materia 184",
+    "credits": 1,
+    "prereqs": [
+      170,
+      171,
+      169
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Materia 185",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 186,
+    "name": "Materia 186",
+    "credits": 1,
+    "prereqs": [
+      21,
+      62,
+      154
+    ]
+  },
+  {
+    "id": 187,
+    "name": "Materia 187",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 188,
+    "name": "Materia 188",
+    "credits": 4,
+    "prereqs": [
+      7
+    ]
+  },
+  {
+    "id": 189,
+    "name": "Materia 189",
+    "credits": 1,
+    "prereqs": [
+      101,
+      24,
+      90
+    ]
+  },
+  {
+    "id": 190,
+    "name": "Materia 190",
+    "credits": 2,
+    "prereqs": [
+      4,
+      158,
+      74
+    ]
+  },
+  {
+    "id": 191,
+    "name": "Materia 191",
+    "credits": 2,
+    "prereqs": [
+      99
+    ]
+  },
+  {
+    "id": 192,
+    "name": "Materia 192",
+    "credits": 4,
+    "prereqs": [
+      136,
+      168
+    ]
+  },
+  {
+    "id": 193,
+    "name": "Materia 193",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 194,
+    "name": "Materia 194",
+    "credits": 4,
+    "prereqs": [
+      59,
+      162,
+      81
+    ]
+  },
+  {
+    "id": 195,
+    "name": "Materia 195",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 196,
+    "name": "Materia 196",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 197,
+    "name": "Materia 197",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 198,
+    "name": "Materia 198",
+    "credits": 1,
+    "prereqs": [
+      27,
+      197,
+      182
+    ]
+  },
+  {
+    "id": 199,
+    "name": "Materia 199",
+    "credits": 2,
+    "prereqs": [
+      20,
+      189,
+      118
+    ]
+  },
+  {
+    "id": 200,
+    "name": "Materia 200",
+    "credits": 3,
+    "prereqs": [
+      151,
+      42,
+      11
+    ]
+  },
+  {
+    "id": 201,
+    "name": "Materia 201",
+    "credits": 1,
+    "prereqs": [
+      100,
+      143
+    ]
+  },
+  {
+    "id": 202,
+    "name": "Materia 202",
+    "credits": 4,
+    "prereqs": [
+      198,
+      28,
+      191
+    ]
+  },
+  {
+    "id": 203,
+    "name": "Materia 203",
+    "credits": 3,
+    "prereqs": [
+      79,
+      202,
+      9
+    ]
+  },
+  {
+    "id": 204,
+    "name": "Materia 204",
+    "credits": 2,
+    "prereqs": [
+      173,
+      46,
+      10
+    ]
+  },
+  {
+    "id": 205,
+    "name": "Materia 205",
+    "credits": 3,
+    "prereqs": [
+      57,
+      10
+    ]
+  },
+  {
+    "id": 206,
+    "name": "Materia 206",
+    "credits": 4,
+    "prereqs": [
+      186,
+      142
+    ]
+  },
+  {
+    "id": 207,
+    "name": "Materia 207",
+    "credits": 1,
+    "prereqs": [
+      73,
+      201
+    ]
+  },
+  {
+    "id": 208,
+    "name": "Materia 208",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 209,
+    "name": "Materia 209",
+    "credits": 1,
+    "prereqs": [
+      113,
+      102
+    ]
+  },
+  {
+    "id": 210,
+    "name": "Materia 210",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 211,
+    "name": "Materia 211",
+    "credits": 1,
+    "prereqs": [
+      49,
+      197
+    ]
+  },
+  {
+    "id": 212,
+    "name": "Materia 212",
+    "credits": 1,
+    "prereqs": [
+      83,
+      9
+    ]
+  },
+  {
+    "id": 213,
+    "name": "Materia 213",
+    "credits": 1,
+    "prereqs": [
+      151,
+      161
+    ]
+  },
+  {
+    "id": 214,
+    "name": "Materia 214",
+    "credits": 3,
+    "prereqs": [
+      41,
+      3
+    ]
+  },
+  {
+    "id": 215,
+    "name": "Materia 215",
+    "credits": 1,
+    "prereqs": [
+      96,
+      94,
+      51
+    ]
+  },
+  {
+    "id": 216,
+    "name": "Materia 216",
+    "credits": 4,
+    "prereqs": [
+      131,
+      16,
+      132
+    ]
+  },
+  {
+    "id": 217,
+    "name": "Materia 217",
+    "credits": 1,
+    "prereqs": [
+      85
+    ]
+  },
+  {
+    "id": 218,
+    "name": "Materia 218",
+    "credits": 3,
+    "prereqs": [
+      63,
+      147
+    ]
+  },
+  {
+    "id": 219,
+    "name": "Materia 219",
+    "credits": 3,
+    "prereqs": [
+      125,
+      114
+    ]
+  },
+  {
+    "id": 220,
+    "name": "Materia 220",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 221,
+    "name": "Materia 221",
+    "credits": 1,
+    "prereqs": [
+      163,
+      196
+    ]
+  },
+  {
+    "id": 222,
+    "name": "Materia 222",
+    "credits": 3,
+    "prereqs": [
+      190,
+      120
+    ]
+  },
+  {
+    "id": 223,
+    "name": "Materia 223",
+    "credits": 1,
+    "prereqs": [
+      167,
+      26
+    ]
+  },
+  {
+    "id": 224,
+    "name": "Materia 224",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 225,
+    "name": "Materia 225",
+    "credits": 4,
+    "prereqs": [
+      154,
+      177,
+      54
+    ]
+  },
+  {
+    "id": 226,
+    "name": "Materia 226",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 227,
+    "name": "Materia 227",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 228,
+    "name": "Materia 228",
+    "credits": 1,
+    "prereqs": [
+      38,
+      225
+    ]
+  },
+  {
+    "id": 229,
+    "name": "Materia 229",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 230,
+    "name": "Materia 230",
+    "credits": 2,
+    "prereqs": [
+      28,
+      205,
+      43
+    ]
+  },
+  {
+    "id": 231,
+    "name": "Materia 231",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 232,
+    "name": "Materia 232",
+    "credits": 2,
+    "prereqs": [
+      142
+    ]
+  },
+  {
+    "id": 233,
+    "name": "Materia 233",
+    "credits": 2,
+    "prereqs": [
+      156,
+      186,
+      227
+    ]
+  },
+  {
+    "id": 234,
+    "name": "Materia 234",
+    "credits": 1,
+    "prereqs": [
+      168
+    ]
+  },
+  {
+    "id": 235,
+    "name": "Materia 235",
+    "credits": 2,
+    "prereqs": [
+      232,
+      103
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Materia 236",
+    "credits": 4,
+    "prereqs": [
+      73,
+      191
+    ]
+  },
+  {
+    "id": 237,
+    "name": "Materia 237",
+    "credits": 4,
+    "prereqs": [
+      4
+    ]
+  },
+  {
+    "id": 238,
+    "name": "Materia 238",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 239,
+    "name": "Materia 239",
+    "credits": 1,
+    "prereqs": [
+      232,
+      208
+    ]
+  },
+  {
+    "id": 240,
+    "name": "Materia 240",
+    "credits": 3,
+    "prereqs": [
+      162,
+      163,
+      181
+    ]
+  },
+  {
+    "id": 241,
+    "name": "Materia 241",
+    "credits": 2,
+    "prereqs": [
+      181
+    ]
+  },
+  {
+    "id": 242,
+    "name": "Materia 242",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 243,
+    "name": "Materia 243",
+    "credits": 4,
+    "prereqs": [
+      197,
+      10,
+      47
+    ]
+  },
+  {
+    "id": 244,
+    "name": "Materia 244",
+    "credits": 3,
+    "prereqs": [
+      38
+    ]
+  },
+  {
+    "id": 245,
+    "name": "Materia 245",
+    "credits": 2,
+    "prereqs": [
+      176,
+      9,
+      16
+    ]
+  },
+  {
+    "id": 246,
+    "name": "Materia 246",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 247,
+    "name": "Materia 247",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 248,
+    "name": "Materia 248",
+    "credits": 2,
+    "prereqs": [
+      124,
+      151
+    ]
+  },
+  {
+    "id": 249,
+    "name": "Materia 249",
+    "credits": 1,
+    "prereqs": [
+      14
+    ]
+  },
+  {
+    "id": 250,
+    "name": "Materia 250",
+    "credits": 4,
+    "prereqs": [
+      38
+    ]
+  },
+  {
+    "id": 251,
+    "name": "Materia 251",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 252,
+    "name": "Materia 252",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 253,
+    "name": "Materia 253",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 254,
+    "name": "Materia 254",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 255,
+    "name": "Materia 255",
+    "credits": 2,
+    "prereqs": [
+      46,
+      155
+    ]
+  },
+  {
+    "id": 256,
+    "name": "Materia 256",
+    "credits": 2,
+    "prereqs": [
+      51
+    ]
+  },
+  {
+    "id": 257,
+    "name": "Materia 257",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 258,
+    "name": "Materia 258",
+    "credits": 3,
+    "prereqs": [
+      78,
+      131
+    ]
+  },
+  {
+    "id": 259,
+    "name": "Materia 259",
+    "credits": 1,
+    "prereqs": [
+      95
+    ]
+  },
+  {
+    "id": 260,
+    "name": "Materia 260",
+    "credits": 1,
+    "prereqs": [
+      97,
+      88,
+      117
+    ]
+  },
+  {
+    "id": 261,
+    "name": "Materia 261",
+    "credits": 4,
+    "prereqs": [
+      150,
+      260
+    ]
+  },
+  {
+    "id": 262,
+    "name": "Materia 262",
+    "credits": 4,
+    "prereqs": [
+      130,
+      112,
+      250
+    ]
+  },
+  {
+    "id": 263,
+    "name": "Materia 263",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 264,
+    "name": "Materia 264",
+    "credits": 3,
+    "prereqs": [
+      232
+    ]
+  },
+  {
+    "id": 265,
+    "name": "Materia 265",
+    "credits": 1,
+    "prereqs": [
+      115,
+      57,
+      114
+    ]
+  },
+  {
+    "id": 266,
+    "name": "Materia 266",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 267,
+    "name": "Materia 267",
+    "credits": 1,
+    "prereqs": [
+      164
+    ]
+  },
+  {
+    "id": 268,
+    "name": "Materia 268",
+    "credits": 4,
+    "prereqs": [
+      4
+    ]
+  },
+  {
+    "id": 269,
+    "name": "Materia 269",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 270,
+    "name": "Materia 270",
+    "credits": 4,
+    "prereqs": [
+      146,
+      79
+    ]
+  },
+  {
+    "id": 271,
+    "name": "Materia 271",
+    "credits": 1,
+    "prereqs": [
+      230,
+      65,
+      136
+    ]
+  },
+  {
+    "id": 272,
+    "name": "Materia 272",
+    "credits": 1,
+    "prereqs": [
+      258
+    ]
+  },
+  {
+    "id": 273,
+    "name": "Materia 273",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 274,
+    "name": "Materia 274",
+    "credits": 3,
+    "prereqs": [
+      155,
+      249,
+      229
+    ]
+  },
+  {
+    "id": 275,
+    "name": "Materia 275",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 276,
+    "name": "Materia 276",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 277,
+    "name": "Materia 277",
+    "credits": 3,
+    "prereqs": [
+      66,
+      213
+    ]
+  },
+  {
+    "id": 278,
+    "name": "Materia 278",
+    "credits": 2,
+    "prereqs": [
+      263
+    ]
+  },
+  {
+    "id": 279,
+    "name": "Materia 279",
+    "credits": 1,
+    "prereqs": [
+      41,
+      70
+    ]
+  },
+  {
+    "id": 280,
+    "name": "Materia 280",
+    "credits": 4,
+    "prereqs": [
+      73,
+      52
+    ]
+  },
+  {
+    "id": 281,
+    "name": "Materia 281",
+    "credits": 2,
+    "prereqs": [
+      173
+    ]
+  },
+  {
+    "id": 282,
+    "name": "Materia 282",
+    "credits": 3,
+    "prereqs": [
+      85
+    ]
+  },
+  {
+    "id": 283,
+    "name": "Materia 283",
+    "credits": 1,
+    "prereqs": [
+      171,
+      238
+    ]
+  },
+  {
+    "id": 284,
+    "name": "Materia 284",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 285,
+    "name": "Materia 285",
+    "credits": 1,
+    "prereqs": [
+      123,
+      215,
+      206
+    ]
+  },
+  {
+    "id": 286,
+    "name": "Materia 286",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 287,
+    "name": "Materia 287",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 288,
+    "name": "Materia 288",
+    "credits": 3,
+    "prereqs": [
+      238,
+      252
+    ]
+  },
+  {
+    "id": 289,
+    "name": "Materia 289",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 290,
+    "name": "Materia 290",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 291,
+    "name": "Materia 291",
+    "credits": 4,
+    "prereqs": [
+      73,
+      28
+    ]
+  },
+  {
+    "id": 292,
+    "name": "Materia 292",
+    "credits": 3,
+    "prereqs": [
+      101,
+      55
+    ]
+  },
+  {
+    "id": 293,
+    "name": "Materia 293",
+    "credits": 3,
+    "prereqs": [
+      124,
+      95,
+      187
+    ]
+  },
+  {
+    "id": 294,
+    "name": "Materia 294",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 295,
+    "name": "Materia 295",
+    "credits": 1,
+    "prereqs": [
+      54
+    ]
+  },
+  {
+    "id": 296,
+    "name": "Materia 296",
+    "credits": 2,
+    "prereqs": [
+      193,
+      11,
+      257
+    ]
+  },
+  {
+    "id": 297,
+    "name": "Materia 297",
+    "credits": 1,
+    "prereqs": [
+      181,
+      8
+    ]
+  },
+  {
+    "id": 298,
+    "name": "Materia 298",
+    "credits": 4,
+    "prereqs": [
+      29
+    ]
+  },
+  {
+    "id": 299,
+    "name": "Materia 299",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 300,
+    "name": "Materia 300",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 301,
+    "name": "Materia 301",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 302,
+    "name": "Materia 302",
+    "credits": 3,
+    "prereqs": [
+      74,
+      5
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Materia 303",
+    "credits": 3,
+    "prereqs": [
+      265,
+      273
+    ]
+  },
+  {
+    "id": 304,
+    "name": "Materia 304",
+    "credits": 1,
+    "prereqs": [
+      133,
+      294,
+      175
+    ]
+  },
+  {
+    "id": 305,
+    "name": "Materia 305",
+    "credits": 2,
+    "prereqs": [
+      182,
+      3
+    ]
+  },
+  {
+    "id": 306,
+    "name": "Materia 306",
+    "credits": 4,
+    "prereqs": [
+      55,
+      152
+    ]
+  },
+  {
+    "id": 307,
+    "name": "Materia 307",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 308,
+    "name": "Materia 308",
+    "credits": 1,
+    "prereqs": [
+      190
+    ]
+  },
+  {
+    "id": 309,
+    "name": "Materia 309",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 310,
+    "name": "Materia 310",
+    "credits": 4,
+    "prereqs": [
+      207,
+      48,
+      119
+    ]
+  },
+  {
+    "id": 311,
+    "name": "Materia 311",
+    "credits": 4,
+    "prereqs": [
+      85,
+      191,
+      275
+    ]
+  },
+  {
+    "id": 312,
+    "name": "Materia 312",
+    "credits": 2,
+    "prereqs": [
+      91,
+      179,
+      21
+    ]
+  },
+  {
+    "id": 313,
+    "name": "Materia 313",
+    "credits": 3,
+    "prereqs": [
+      169
+    ]
+  },
+  {
+    "id": 314,
+    "name": "Materia 314",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 315,
+    "name": "Materia 315",
+    "credits": 3,
+    "prereqs": [
+      127,
+      16
+    ]
+  },
+  {
+    "id": 316,
+    "name": "Materia 316",
+    "credits": 3,
+    "prereqs": [
+      80
+    ]
+  },
+  {
+    "id": 317,
+    "name": "Materia 317",
+    "credits": 3,
+    "prereqs": [
+      252,
+      266,
+      28
+    ]
+  },
+  {
+    "id": 318,
+    "name": "Materia 318",
+    "credits": 4,
+    "prereqs": [
+      49,
+      212
+    ]
+  },
+  {
+    "id": 319,
+    "name": "Materia 319",
+    "credits": 4,
+    "prereqs": [
+      213
+    ]
+  },
+  {
+    "id": 320,
+    "name": "Materia 320",
+    "credits": 2,
+    "prereqs": [
+      312,
+      96
+    ]
+  },
+  {
+    "id": 321,
+    "name": "Materia 321",
+    "credits": 1,
+    "prereqs": [
+      318,
+      195
+    ]
+  },
+  {
+    "id": 322,
+    "name": "Materia 322",
+    "credits": 3,
+    "prereqs": [
+      116,
+      270,
+      28
+    ]
+  },
+  {
+    "id": 323,
+    "name": "Materia 323",
+    "credits": 4,
+    "prereqs": [
+      145,
+      202,
+      228
+    ]
+  },
+  {
+    "id": 324,
+    "name": "Materia 324",
+    "credits": 3,
+    "prereqs": [
+      111,
+      59
+    ]
+  },
+  {
+    "id": 325,
+    "name": "Materia 325",
+    "credits": 4,
+    "prereqs": [
+      217,
+      212
+    ]
+  },
+  {
+    "id": 326,
+    "name": "Materia 326",
+    "credits": 3,
+    "prereqs": [
+      156,
+      172
+    ]
+  },
+  {
+    "id": 327,
+    "name": "Materia 327",
+    "credits": 3,
+    "prereqs": [
+      113,
+      239
+    ]
+  },
+  {
+    "id": 328,
+    "name": "Materia 328",
+    "credits": 1,
+    "prereqs": [
+      242,
+      33
+    ]
+  },
+  {
+    "id": 329,
+    "name": "Materia 329",
+    "credits": 2,
+    "prereqs": [
+      229,
+      208,
+      261
+    ]
+  },
+  {
+    "id": 330,
+    "name": "Materia 330",
+    "credits": 3,
+    "prereqs": [
+      98,
+      195,
+      154
+    ]
+  },
+  {
+    "id": 331,
+    "name": "Materia 331",
+    "credits": 2,
+    "prereqs": [
+      169,
+      199
+    ]
+  },
+  {
+    "id": 332,
+    "name": "Materia 332",
+    "credits": 3,
+    "prereqs": [
+      14,
+      171,
+      101
+    ]
+  },
+  {
+    "id": 333,
+    "name": "Materia 333",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 334,
+    "name": "Materia 334",
+    "credits": 3,
+    "prereqs": [
+      13
+    ]
+  },
+  {
+    "id": 335,
+    "name": "Materia 335",
+    "credits": 2,
+    "prereqs": [
+      104
+    ]
+  },
+  {
+    "id": 336,
+    "name": "Materia 336",
+    "credits": 4,
+    "prereqs": [
+      162,
+      248,
+      32
+    ]
+  },
+  {
+    "id": 337,
+    "name": "Materia 337",
+    "credits": 3,
+    "prereqs": [
+      239
+    ]
+  },
+  {
+    "id": 338,
+    "name": "Materia 338",
+    "credits": 1,
+    "prereqs": [
+      116,
+      232
+    ]
+  },
+  {
+    "id": 339,
+    "name": "Materia 339",
+    "credits": 1,
+    "prereqs": [
+      97,
+      219
+    ]
+  },
+  {
+    "id": 340,
+    "name": "Materia 340",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 341,
+    "name": "Materia 341",
+    "credits": 1,
+    "prereqs": [
+      2
+    ]
+  },
+  {
+    "id": 342,
+    "name": "Materia 342",
+    "credits": 4,
+    "prereqs": [
+      290
+    ]
+  },
+  {
+    "id": 343,
+    "name": "Materia 343",
+    "credits": 4,
+    "prereqs": [
+      271,
+      250
+    ]
+  },
+  {
+    "id": 344,
+    "name": "Materia 344",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 345,
+    "name": "Materia 345",
+    "credits": 4,
+    "prereqs": [
+      63
+    ]
+  },
+  {
+    "id": 346,
+    "name": "Materia 346",
+    "credits": 3,
+    "prereqs": [
+      327,
+      10,
+      108
+    ]
+  },
+  {
+    "id": 347,
+    "name": "Materia 347",
+    "credits": 1,
+    "prereqs": [
+      273
+    ]
+  },
+  {
+    "id": 348,
+    "name": "Materia 348",
+    "credits": 3,
+    "prereqs": [
+      162
+    ]
+  },
+  {
+    "id": 349,
+    "name": "Materia 349",
+    "credits": 4,
+    "prereqs": [
+      327,
+      155,
+      124
+    ]
+  },
+  {
+    "id": 350,
+    "name": "Materia 350",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 351,
+    "name": "Materia 351",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 352,
+    "name": "Materia 352",
+    "credits": 2,
+    "prereqs": [
+      223,
+      43,
+      138
+    ]
+  },
+  {
+    "id": 353,
+    "name": "Materia 353",
+    "credits": 1,
+    "prereqs": [
+      104,
+      258,
+      16
+    ]
+  },
+  {
+    "id": 354,
+    "name": "Materia 354",
+    "credits": 1,
+    "prereqs": [
+      28
+    ]
+  },
+  {
+    "id": 355,
+    "name": "Materia 355",
+    "credits": 4,
+    "prereqs": [
+      196,
+      18,
+      100
+    ]
+  },
+  {
+    "id": 356,
+    "name": "Materia 356",
+    "credits": 1,
+    "prereqs": [
+      141,
+      198,
+      63
+    ]
+  },
+  {
+    "id": 357,
+    "name": "Materia 357",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 358,
+    "name": "Materia 358",
+    "credits": 1,
+    "prereqs": [
+      201
+    ]
+  },
+  {
+    "id": 359,
+    "name": "Materia 359",
+    "credits": 1,
+    "prereqs": [
+      223,
+      110,
+      301
+    ]
+  },
+  {
+    "id": 360,
+    "name": "Materia 360",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 361,
+    "name": "Materia 361",
+    "credits": 3,
+    "prereqs": [
+      57,
+      31
+    ]
+  },
+  {
+    "id": 362,
+    "name": "Materia 362",
+    "credits": 2,
+    "prereqs": [
+      156
+    ]
+  },
+  {
+    "id": 363,
+    "name": "Materia 363",
+    "credits": 1,
+    "prereqs": [
+      156
+    ]
+  },
+  {
+    "id": 364,
+    "name": "Materia 364",
+    "credits": 3,
+    "prereqs": [
+      87,
+      284,
+      118
+    ]
+  },
+  {
+    "id": 365,
+    "name": "Materia 365",
+    "credits": 2,
+    "prereqs": [
+      137
+    ]
+  },
+  {
+    "id": 366,
+    "name": "Materia 366",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 367,
+    "name": "Materia 367",
+    "credits": 1,
+    "prereqs": [
+      132,
+      41
+    ]
+  },
+  {
+    "id": 368,
+    "name": "Materia 368",
+    "credits": 2,
+    "prereqs": [
+      159
+    ]
+  },
+  {
+    "id": 369,
+    "name": "Materia 369",
+    "credits": 2,
+    "prereqs": [
+      288
+    ]
+  },
+  {
+    "id": 370,
+    "name": "Materia 370",
+    "credits": 3,
+    "prereqs": [
+      329,
+      19,
+      147
+    ]
+  },
+  {
+    "id": 371,
+    "name": "Materia 371",
+    "credits": 3,
+    "prereqs": [
+      279,
+      94
+    ]
+  },
+  {
+    "id": 372,
+    "name": "Materia 372",
+    "credits": 4,
+    "prereqs": [
+      262,
+      282
+    ]
+  },
+  {
+    "id": 373,
+    "name": "Materia 373",
+    "credits": 2,
+    "prereqs": [
+      44,
+      330
+    ]
+  },
+  {
+    "id": 374,
+    "name": "Materia 374",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 375,
+    "name": "Materia 375",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 376,
+    "name": "Materia 376",
+    "credits": 4,
+    "prereqs": [
+      314,
+      345,
+      69
+    ]
+  },
+  {
+    "id": 377,
+    "name": "Materia 377",
+    "credits": 1,
+    "prereqs": [
+      4,
+      30
+    ]
+  },
+  {
+    "id": 378,
+    "name": "Materia 378",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 379,
+    "name": "Materia 379",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 380,
+    "name": "Materia 380",
+    "credits": 4,
+    "prereqs": [
+      222,
+      248,
+      33
+    ]
+  },
+  {
+    "id": 381,
+    "name": "Materia 381",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 382,
+    "name": "Materia 382",
+    "credits": 4,
+    "prereqs": [
+      51
+    ]
+  },
+  {
+    "id": 383,
+    "name": "Materia 383",
+    "credits": 2,
+    "prereqs": [
+      356
+    ]
+  },
+  {
+    "id": 384,
+    "name": "Materia 384",
+    "credits": 1,
+    "prereqs": [
+      149,
+      54,
+      60
+    ]
+  },
+  {
+    "id": 385,
+    "name": "Materia 385",
+    "credits": 1,
+    "prereqs": [
+      13
+    ]
+  },
+  {
+    "id": 386,
+    "name": "Materia 386",
+    "credits": 3,
+    "prereqs": [
+      118,
+      350,
+      208
+    ]
+  },
+  {
+    "id": 387,
+    "name": "Materia 387",
+    "credits": 3,
+    "prereqs": [
+      45,
+      58
+    ]
+  },
+  {
+    "id": 388,
+    "name": "Materia 388",
+    "credits": 3,
+    "prereqs": [
+      117,
+      72,
+      128
+    ]
+  },
+  {
+    "id": 389,
+    "name": "Materia 389",
+    "credits": 4,
+    "prereqs": [
+      14,
+      295,
+      212
+    ]
+  },
+  {
+    "id": 390,
+    "name": "Materia 390",
+    "credits": 4,
+    "prereqs": [
+      331,
+      348,
+      178
+    ]
+  },
+  {
+    "id": 391,
+    "name": "Materia 391",
+    "credits": 2,
+    "prereqs": [
+      262
+    ]
+  },
+  {
+    "id": 392,
+    "name": "Materia 392",
+    "credits": 1,
+    "prereqs": [
+      24
+    ]
+  },
+  {
+    "id": 393,
+    "name": "Materia 393",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 394,
+    "name": "Materia 394",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 395,
+    "name": "Materia 395",
+    "credits": 2,
+    "prereqs": [
+      143,
+      202,
+      310
+    ]
+  },
+  {
+    "id": 396,
+    "name": "Materia 396",
+    "credits": 3,
+    "prereqs": [
+      364,
+      104,
+      14
+    ]
+  },
+  {
+    "id": 397,
+    "name": "Materia 397",
+    "credits": 1,
+    "prereqs": [
+      333,
+      80,
+      138
+    ]
+  },
+  {
+    "id": 398,
+    "name": "Materia 398",
+    "credits": 3,
+    "prereqs": [
+      235
+    ]
+  },
+  {
+    "id": 399,
+    "name": "Materia 399",
+    "credits": 1,
+    "prereqs": [
+      161,
+      262,
+      27
+    ]
+  },
+  {
+    "id": 400,
+    "name": "Materia 400",
+    "credits": 4,
+    "prereqs": [
+      69,
+      21,
+      147
+    ]
+  },
+  {
+    "id": 401,
+    "name": "Materia 401",
+    "credits": 2,
+    "prereqs": [
+      373
+    ]
+  },
+  {
+    "id": 402,
+    "name": "Materia 402",
+    "credits": 1,
+    "prereqs": [
+      315
+    ]
+  },
+  {
+    "id": 403,
+    "name": "Materia 403",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 404,
+    "name": "Materia 404",
+    "credits": 2,
+    "prereqs": [
+      272
+    ]
+  },
+  {
+    "id": 405,
+    "name": "Materia 405",
+    "credits": 4,
+    "prereqs": [
+      304,
+      148,
+      378
+    ]
+  },
+  {
+    "id": 406,
+    "name": "Materia 406",
+    "credits": 3,
+    "prereqs": [
+      63,
+      218,
+      31
+    ]
+  },
+  {
+    "id": 407,
+    "name": "Materia 407",
+    "credits": 1,
+    "prereqs": [
+      157
+    ]
+  },
+  {
+    "id": 408,
+    "name": "Materia 408",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 409,
+    "name": "Materia 409",
+    "credits": 2,
+    "prereqs": [
+      75,
+      387,
+      101
+    ]
+  },
+  {
+    "id": 410,
+    "name": "Materia 410",
+    "credits": 3,
+    "prereqs": [
+      183,
+      362
+    ]
+  },
+  {
+    "id": 411,
+    "name": "Materia 411",
+    "credits": 2,
+    "prereqs": [
+      58,
+      121
+    ]
+  },
+  {
+    "id": 412,
+    "name": "Materia 412",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 413,
+    "name": "Materia 413",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 414,
+    "name": "Materia 414",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 415,
+    "name": "Materia 415",
+    "credits": 4,
+    "prereqs": [
+      301,
+      88,
+      220
+    ]
+  },
+  {
+    "id": 416,
+    "name": "Materia 416",
+    "credits": 3,
+    "prereqs": [
+      167,
+      147,
+      396
+    ]
+  },
+  {
+    "id": 417,
+    "name": "Materia 417",
+    "credits": 4,
+    "prereqs": [
+      274,
+      23,
+      163
+    ]
+  },
+  {
+    "id": 418,
+    "name": "Materia 418",
+    "credits": 1,
+    "prereqs": [
+      270
+    ]
+  },
+  {
+    "id": 419,
+    "name": "Materia 419",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 420,
+    "name": "Materia 420",
+    "credits": 3,
+    "prereqs": [
+      219,
+      292
+    ]
+  },
+  {
+    "id": 421,
+    "name": "Materia 421",
+    "credits": 4,
+    "prereqs": [
+      210,
+      131,
+      410
+    ]
+  },
+  {
+    "id": 422,
+    "name": "Materia 422",
+    "credits": 1,
+    "prereqs": [
+      124,
+      208,
+      184
+    ]
+  },
+  {
+    "id": 423,
+    "name": "Materia 423",
+    "credits": 2,
+    "prereqs": [
+      369
+    ]
+  },
+  {
+    "id": 424,
+    "name": "Materia 424",
+    "credits": 4,
+    "prereqs": [
+      298,
+      84,
+      162
+    ]
+  },
+  {
+    "id": 425,
+    "name": "Materia 425",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 426,
+    "name": "Materia 426",
+    "credits": 2,
+    "prereqs": [
+      334,
+      371
+    ]
+  },
+  {
+    "id": 427,
+    "name": "Materia 427",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 428,
+    "name": "Materia 428",
+    "credits": 2,
+    "prereqs": [
+      393
+    ]
+  },
+  {
+    "id": 429,
+    "name": "Materia 429",
+    "credits": 1,
+    "prereqs": [
+      304
+    ]
+  },
+  {
+    "id": 430,
+    "name": "Materia 430",
+    "credits": 4,
+    "prereqs": [
+      148,
+      388
+    ]
+  },
+  {
+    "id": 431,
+    "name": "Materia 431",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 432,
+    "name": "Materia 432",
+    "credits": 4,
+    "prereqs": [
+      298,
+      228
+    ]
+  },
+  {
+    "id": 433,
+    "name": "Materia 433",
+    "credits": 1,
+    "prereqs": [
+      70,
+      424,
+      35
+    ]
+  },
+  {
+    "id": 434,
+    "name": "Materia 434",
+    "credits": 1,
+    "prereqs": [
+      272,
+      15,
+      47
+    ]
+  },
+  {
+    "id": 435,
+    "name": "Materia 435",
+    "credits": 4,
+    "prereqs": [
+      68,
+      314
+    ]
+  },
+  {
+    "id": 436,
+    "name": "Materia 436",
+    "credits": 2,
+    "prereqs": [
+      319
+    ]
+  },
+  {
+    "id": 437,
+    "name": "Materia 437",
+    "credits": 4,
+    "prereqs": [
+      101,
+      353
+    ]
+  },
+  {
+    "id": 438,
+    "name": "Materia 438",
+    "credits": 4,
+    "prereqs": [
+      30,
+      432
+    ]
+  },
+  {
+    "id": 439,
+    "name": "Materia 439",
+    "credits": 1,
+    "prereqs": [
+      136
+    ]
+  },
+  {
+    "id": 440,
+    "name": "Materia 440",
+    "credits": 3,
+    "prereqs": [
+      267,
+      167
+    ]
+  },
+  {
+    "id": 441,
+    "name": "Materia 441",
+    "credits": 3,
+    "prereqs": [
+      408
+    ]
+  },
+  {
+    "id": 442,
+    "name": "Materia 442",
+    "credits": 2,
+    "prereqs": [
+      210,
+      14,
+      99
+    ]
+  },
+  {
+    "id": 443,
+    "name": "Materia 443",
+    "credits": 1,
+    "prereqs": [
+      364
+    ]
+  },
+  {
+    "id": 444,
+    "name": "Materia 444",
+    "credits": 2,
+    "prereqs": [
+      429
+    ]
+  },
+  {
+    "id": 445,
+    "name": "Materia 445",
+    "credits": 4,
+    "prereqs": [
+      90
+    ]
+  },
+  {
+    "id": 446,
+    "name": "Materia 446",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 447,
+    "name": "Materia 447",
+    "credits": 2,
+    "prereqs": [
+      127,
+      425,
+      195
+    ]
+  },
+  {
+    "id": 448,
+    "name": "Materia 448",
+    "credits": 4,
+    "prereqs": [
+      374,
+      110,
+      97
+    ]
+  },
+  {
+    "id": 449,
+    "name": "Materia 449",
+    "credits": 2,
+    "prereqs": [
+      202
+    ]
+  },
+  {
+    "id": 450,
+    "name": "Materia 450",
+    "credits": 4,
+    "prereqs": [
+      419,
+      349
+    ]
+  },
+  {
+    "id": 451,
+    "name": "Materia 451",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 452,
+    "name": "Materia 452",
+    "credits": 2,
+    "prereqs": [
+      90,
+      67,
+      168
+    ]
+  },
+  {
+    "id": 453,
+    "name": "Materia 453",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 454,
+    "name": "Materia 454",
+    "credits": 1,
+    "prereqs": [
+      353,
+      271
+    ]
+  },
+  {
+    "id": 455,
+    "name": "Materia 455",
+    "credits": 3,
+    "prereqs": [
+      148,
+      136,
+      11
+    ]
+  },
+  {
+    "id": 456,
+    "name": "Materia 456",
+    "credits": 2,
+    "prereqs": [
+      13,
+      407
+    ]
+  },
+  {
+    "id": 457,
+    "name": "Materia 457",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 458,
+    "name": "Materia 458",
+    "credits": 4,
+    "prereqs": [
+      381,
+      213
+    ]
+  },
+  {
+    "id": 459,
+    "name": "Materia 459",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 460,
+    "name": "Materia 460",
+    "credits": 4,
+    "prereqs": [
+      159,
+      23,
+      448
+    ]
+  },
+  {
+    "id": 461,
+    "name": "Materia 461",
+    "credits": 4,
+    "prereqs": [
+      422
+    ]
+  },
+  {
+    "id": 462,
+    "name": "Materia 462",
+    "credits": 1,
+    "prereqs": [
+      293,
+      324
+    ]
+  },
+  {
+    "id": 463,
+    "name": "Materia 463",
+    "credits": 1,
+    "prereqs": [
+      396,
+      233,
+      360
+    ]
+  },
+  {
+    "id": 464,
+    "name": "Materia 464",
+    "credits": 2,
+    "prereqs": [
+      138,
+      235
+    ]
+  },
+  {
+    "id": 465,
+    "name": "Materia 465",
+    "credits": 2,
+    "prereqs": [
+      319,
+      70,
+      365
+    ]
+  },
+  {
+    "id": 466,
+    "name": "Materia 466",
+    "credits": 3,
+    "prereqs": [
+      12,
+      311,
+      196
+    ]
+  },
+  {
+    "id": 467,
+    "name": "Materia 467",
+    "credits": 2,
+    "prereqs": [
+      392
+    ]
+  },
+  {
+    "id": 468,
+    "name": "Materia 468",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 469,
+    "name": "Materia 469",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 470,
+    "name": "Materia 470",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 471,
+    "name": "Materia 471",
+    "credits": 3,
+    "prereqs": [
+      267,
+      41
+    ]
+  },
+  {
+    "id": 472,
+    "name": "Materia 472",
+    "credits": 3,
+    "prereqs": [
+      212,
+      264
+    ]
+  },
+  {
+    "id": 473,
+    "name": "Materia 473",
+    "credits": 3,
+    "prereqs": [
+      358
+    ]
+  },
+  {
+    "id": 474,
+    "name": "Materia 474",
+    "credits": 4,
+    "prereqs": [
+      281,
+      64,
+      348
+    ]
+  },
+  {
+    "id": 475,
+    "name": "Materia 475",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 476,
+    "name": "Materia 476",
+    "credits": 4,
+    "prereqs": [
+      434,
+      394
+    ]
+  },
+  {
+    "id": 477,
+    "name": "Materia 477",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 478,
+    "name": "Materia 478",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 479,
+    "name": "Materia 479",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 480,
+    "name": "Materia 480",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 481,
+    "name": "Materia 481",
+    "credits": 3,
+    "prereqs": [
+      55,
+      474
+    ]
+  },
+  {
+    "id": 482,
+    "name": "Materia 482",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 483,
+    "name": "Materia 483",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 484,
+    "name": "Materia 484",
+    "credits": 1,
+    "prereqs": [
+      137
+    ]
+  },
+  {
+    "id": 485,
+    "name": "Materia 485",
+    "credits": 1,
+    "prereqs": [
+      436,
+      6,
+      76
+    ]
+  },
+  {
+    "id": 486,
+    "name": "Materia 486",
+    "credits": 2,
+    "prereqs": [
+      148,
+      126
+    ]
+  },
+  {
+    "id": 487,
+    "name": "Materia 487",
+    "credits": 4,
+    "prereqs": [
+      42
+    ]
+  },
+  {
+    "id": 488,
+    "name": "Materia 488",
+    "credits": 2,
+    "prereqs": [
+      366,
+      74
+    ]
+  },
+  {
+    "id": 489,
+    "name": "Materia 489",
+    "credits": 2,
+    "prereqs": [
+      326,
+      347
+    ]
+  },
+  {
+    "id": 490,
+    "name": "Materia 490",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 491,
+    "name": "Materia 491",
+    "credits": 3,
+    "prereqs": [
+      370
+    ]
+  },
+  {
+    "id": 492,
+    "name": "Materia 492",
+    "credits": 3,
+    "prereqs": [
+      66
+    ]
+  },
+  {
+    "id": 493,
+    "name": "Materia 493",
+    "credits": 1,
+    "prereqs": [
+      255
+    ]
+  },
+  {
+    "id": 494,
+    "name": "Materia 494",
+    "credits": 4,
+    "prereqs": [
+      478,
+      96
+    ]
+  },
+  {
+    "id": 495,
+    "name": "Materia 495",
+    "credits": 4,
+    "prereqs": [
+      478
+    ]
+  },
+  {
+    "id": 496,
+    "name": "Materia 496",
+    "credits": 1,
+    "prereqs": [
+      104
+    ]
+  },
+  {
+    "id": 497,
+    "name": "Materia 497",
+    "credits": 3,
+    "prereqs": [
+      89,
+      221,
+      103
+    ]
+  },
+  {
+    "id": 498,
+    "name": "Materia 498",
+    "credits": 1,
+    "prereqs": [
+      305,
+      261
+    ]
+  },
+  {
+    "id": 499,
+    "name": "Materia 499",
+    "credits": 2,
+    "prereqs": [
+      263,
+      301
+    ]
+  },
+  {
+    "id": 500,
+    "name": "Materia 500",
+    "credits": 4,
+    "prereqs": [
+      399,
+      86
+    ]
+  },
+  {
+    "id": 501,
+    "name": "Materia 501",
+    "credits": 4,
+    "prereqs": [
+      35
+    ]
+  },
+  {
+    "id": 502,
+    "name": "Materia 502",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 503,
+    "name": "Materia 503",
+    "credits": 1,
+    "prereqs": [
+      331
+    ]
+  },
+  {
+    "id": 504,
+    "name": "Materia 504",
+    "credits": 4,
+    "prereqs": [
+      11,
+      163,
+      166
+    ]
+  },
+  {
+    "id": 505,
+    "name": "Materia 505",
+    "credits": 1,
+    "prereqs": [
+      238
+    ]
+  },
+  {
+    "id": 506,
+    "name": "Materia 506",
+    "credits": 4,
+    "prereqs": [
+      388
+    ]
+  },
+  {
+    "id": 507,
+    "name": "Materia 507",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 508,
+    "name": "Materia 508",
+    "credits": 1,
+    "prereqs": [
+      17,
+      384
+    ]
+  },
+  {
+    "id": 509,
+    "name": "Materia 509",
+    "credits": 4,
+    "prereqs": [
+      348,
+      421,
+      149
+    ]
+  },
+  {
+    "id": 510,
+    "name": "Materia 510",
+    "credits": 1,
+    "prereqs": [
+      500,
+      475
+    ]
+  },
+  {
+    "id": 511,
+    "name": "Materia 511",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 512,
+    "name": "Materia 512",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 513,
+    "name": "Materia 513",
+    "credits": 2,
+    "prereqs": [
+      11,
+      339,
+      49
+    ]
+  },
+  {
+    "id": 514,
+    "name": "Materia 514",
+    "credits": 3,
+    "prereqs": [
+      318
+    ]
+  },
+  {
+    "id": 515,
+    "name": "Materia 515",
+    "credits": 1,
+    "prereqs": [
+      141,
+      313
+    ]
+  },
+  {
+    "id": 516,
+    "name": "Materia 516",
+    "credits": 4,
+    "prereqs": [
+      223,
+      204
+    ]
+  },
+  {
+    "id": 517,
+    "name": "Materia 517",
+    "credits": 1,
+    "prereqs": [
+      191,
+      396,
+      287
+    ]
+  },
+  {
+    "id": 518,
+    "name": "Materia 518",
+    "credits": 2,
+    "prereqs": [
+      86
+    ]
+  },
+  {
+    "id": 519,
+    "name": "Materia 519",
+    "credits": 2,
+    "prereqs": [
+      123,
+      169,
+      410
+    ]
+  },
+  {
+    "id": 520,
+    "name": "Materia 520",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 521,
+    "name": "Materia 521",
+    "credits": 3,
+    "prereqs": [
+      281,
+      81
+    ]
+  },
+  {
+    "id": 522,
+    "name": "Materia 522",
+    "credits": 3,
+    "prereqs": [
+      213
+    ]
+  },
+  {
+    "id": 523,
+    "name": "Materia 523",
+    "credits": 4,
+    "prereqs": [
+      52,
+      458
+    ]
+  },
+  {
+    "id": 524,
+    "name": "Materia 524",
+    "credits": 3,
+    "prereqs": [
+      96
+    ]
+  },
+  {
+    "id": 525,
+    "name": "Materia 525",
+    "credits": 3,
+    "prereqs": [
+      478,
+      196,
+      211
+    ]
+  },
+  {
+    "id": 526,
+    "name": "Materia 526",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 527,
+    "name": "Materia 527",
+    "credits": 2,
+    "prereqs": [
+      445
+    ]
+  },
+  {
+    "id": 528,
+    "name": "Materia 528",
+    "credits": 4,
+    "prereqs": [
+      137,
+      514,
+      154
+    ]
+  },
+  {
+    "id": 529,
+    "name": "Materia 529",
+    "credits": 4,
+    "prereqs": [
+      514,
+      349,
+      496
+    ]
+  },
+  {
+    "id": 530,
+    "name": "Materia 530",
+    "credits": 1,
+    "prereqs": [
+      295
+    ]
+  },
+  {
+    "id": 531,
+    "name": "Materia 531",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 532,
+    "name": "Materia 532",
+    "credits": 4,
+    "prereqs": [
+      256,
+      374
+    ]
+  },
+  {
+    "id": 533,
+    "name": "Materia 533",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 534,
+    "name": "Materia 534",
+    "credits": 1,
+    "prereqs": [
+      436,
+      61
+    ]
+  },
+  {
+    "id": 535,
+    "name": "Materia 535",
+    "credits": 3,
+    "prereqs": [
+      78,
+      45
+    ]
+  },
+  {
+    "id": 536,
+    "name": "Materia 536",
+    "credits": 2,
+    "prereqs": [
+      466,
+      300
+    ]
+  },
+  {
+    "id": 537,
+    "name": "Materia 537",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 538,
+    "name": "Materia 538",
+    "credits": 2,
+    "prereqs": [
+      90
+    ]
+  },
+  {
+    "id": 539,
+    "name": "Materia 539",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 540,
+    "name": "Materia 540",
+    "credits": 1,
+    "prereqs": [
+      383,
+      451
+    ]
+  },
+  {
+    "id": 541,
+    "name": "Materia 541",
+    "credits": 3,
+    "prereqs": [
+      447
+    ]
+  },
+  {
+    "id": 542,
+    "name": "Materia 542",
+    "credits": 3,
+    "prereqs": [
+      425,
+      149,
+      471
+    ]
+  },
+  {
+    "id": 543,
+    "name": "Materia 543",
+    "credits": 3,
+    "prereqs": [
+      435,
+      19
+    ]
+  },
+  {
+    "id": 544,
+    "name": "Materia 544",
+    "credits": 4,
+    "prereqs": [
+      46
+    ]
+  },
+  {
+    "id": 545,
+    "name": "Materia 545",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 546,
+    "name": "Materia 546",
+    "credits": 2,
+    "prereqs": [
+      45,
+      328,
+      111
+    ]
+  },
+  {
+    "id": 547,
+    "name": "Materia 547",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 548,
+    "name": "Materia 548",
+    "credits": 3,
+    "prereqs": [
+      13
+    ]
+  },
+  {
+    "id": 549,
+    "name": "Materia 549",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 550,
+    "name": "Materia 550",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 551,
+    "name": "Materia 551",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 552,
+    "name": "Materia 552",
+    "credits": 3,
+    "prereqs": [
+      405
+    ]
+  },
+  {
+    "id": 553,
+    "name": "Materia 553",
+    "credits": 4,
+    "prereqs": [
+      104
+    ]
+  },
+  {
+    "id": 554,
+    "name": "Materia 554",
+    "credits": 3,
+    "prereqs": [
+      483
+    ]
+  },
+  {
+    "id": 555,
+    "name": "Materia 555",
+    "credits": 2,
+    "prereqs": [
+      292,
+      11,
+      374
+    ]
+  },
+  {
+    "id": 556,
+    "name": "Materia 556",
+    "credits": 4,
+    "prereqs": [
+      530,
+      403,
+      30
+    ]
+  },
+  {
+    "id": 557,
+    "name": "Materia 557",
+    "credits": 1,
+    "prereqs": [
+      534
+    ]
+  },
+  {
+    "id": 558,
+    "name": "Materia 558",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 559,
+    "name": "Materia 559",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 560,
+    "name": "Materia 560",
+    "credits": 4,
+    "prereqs": [
+      326
+    ]
+  },
+  {
+    "id": 561,
+    "name": "Materia 561",
+    "credits": 4,
+    "prereqs": [
+      507,
+      167,
+      246
+    ]
+  },
+  {
+    "id": 562,
+    "name": "Materia 562",
+    "credits": 3,
+    "prereqs": [
+      553,
+      367
+    ]
+  },
+  {
+    "id": 563,
+    "name": "Materia 563",
+    "credits": 4,
+    "prereqs": [
+      429,
+      322,
+      129
+    ]
+  },
+  {
+    "id": 564,
+    "name": "Materia 564",
+    "credits": 1,
+    "prereqs": [
+      169,
+      475,
+      151
+    ]
+  },
+  {
+    "id": 565,
+    "name": "Materia 565",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 566,
+    "name": "Materia 566",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 567,
+    "name": "Materia 567",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 568,
+    "name": "Materia 568",
+    "credits": 2,
+    "prereqs": [
+      89,
+      404
+    ]
+  },
+  {
+    "id": 569,
+    "name": "Materia 569",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 570,
+    "name": "Materia 570",
+    "credits": 1,
+    "prereqs": [
+      10,
+      204,
+      75
+    ]
+  },
+  {
+    "id": 571,
+    "name": "Materia 571",
+    "credits": 3,
+    "prereqs": [
+      6,
+      75,
+      348
+    ]
+  },
+  {
+    "id": 572,
+    "name": "Materia 572",
+    "credits": 3,
+    "prereqs": [
+      161
+    ]
+  },
+  {
+    "id": 573,
+    "name": "Materia 573",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 574,
+    "name": "Materia 574",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 575,
+    "name": "Materia 575",
+    "credits": 3,
+    "prereqs": [
+      561,
+      361
+    ]
+  },
+  {
+    "id": 576,
+    "name": "Materia 576",
+    "credits": 4,
+    "prereqs": [
+      24,
+      386
+    ]
+  },
+  {
+    "id": 577,
+    "name": "Materia 577",
+    "credits": 2,
+    "prereqs": [
+      217
+    ]
+  },
+  {
+    "id": 578,
+    "name": "Materia 578",
+    "credits": 2,
+    "prereqs": [
+      76
+    ]
+  },
+  {
+    "id": 579,
+    "name": "Materia 579",
+    "credits": 1,
+    "prereqs": [
+      128,
+      355,
+      191
+    ]
+  },
+  {
+    "id": 580,
+    "name": "Materia 580",
+    "credits": 2,
+    "prereqs": [
+      114
+    ]
+  },
+  {
+    "id": 581,
+    "name": "Materia 581",
+    "credits": 1,
+    "prereqs": [
+      388
+    ]
+  },
+  {
+    "id": 582,
+    "name": "Materia 582",
+    "credits": 1,
+    "prereqs": [
+      245,
+      429,
+      440
+    ]
+  },
+  {
+    "id": 583,
+    "name": "Materia 583",
+    "credits": 1,
+    "prereqs": [
+      500,
+      82
+    ]
+  },
+  {
+    "id": 584,
+    "name": "Materia 584",
+    "credits": 3,
+    "prereqs": [
+      101
+    ]
+  },
+  {
+    "id": 585,
+    "name": "Materia 585",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 586,
+    "name": "Materia 586",
+    "credits": 3,
+    "prereqs": [
+      553
+    ]
+  },
+  {
+    "id": 587,
+    "name": "Materia 587",
+    "credits": 3,
+    "prereqs": [
+      156
+    ]
+  },
+  {
+    "id": 588,
+    "name": "Materia 588",
+    "credits": 4,
+    "prereqs": [
+      454
+    ]
+  },
+  {
+    "id": 589,
+    "name": "Materia 589",
+    "credits": 1,
+    "prereqs": [
+      217
+    ]
+  },
+  {
+    "id": 590,
+    "name": "Materia 590",
+    "credits": 3,
+    "prereqs": [
+      134,
+      338
+    ]
+  },
+  {
+    "id": 591,
+    "name": "Materia 591",
+    "credits": 3,
+    "prereqs": [
+      400,
+      472,
+      135
+    ]
+  },
+  {
+    "id": 592,
+    "name": "Materia 592",
+    "credits": 4,
+    "prereqs": [
+      451,
+      41
+    ]
+  },
+  {
+    "id": 593,
+    "name": "Materia 593",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 594,
+    "name": "Materia 594",
+    "credits": 4,
+    "prereqs": [
+      536,
+      227,
+      295
+    ]
+  },
+  {
+    "id": 595,
+    "name": "Materia 595",
+    "credits": 4,
+    "prereqs": [
+      590,
+      75
+    ]
+  },
+  {
+    "id": 596,
+    "name": "Materia 596",
+    "credits": 3,
+    "prereqs": [
+      63,
+      290,
+      277
+    ]
+  },
+  {
+    "id": 597,
+    "name": "Materia 597",
+    "credits": 2,
+    "prereqs": [
+      30,
+      207
+    ]
+  },
+  {
+    "id": 598,
+    "name": "Materia 598",
+    "credits": 3,
+    "prereqs": [
+      149
+    ]
+  },
+  {
+    "id": 599,
+    "name": "Materia 599",
+    "credits": 1,
+    "prereqs": [
+      255,
+      61,
+      450
+    ]
+  },
+  {
+    "id": 600,
+    "name": "Materia 600",
+    "credits": 1,
+    "prereqs": [
+      411
+    ]
+  },
+  {
+    "id": 601,
+    "name": "Materia 601",
+    "credits": 2,
+    "prereqs": [
+      263,
+      242
+    ]
+  },
+  {
+    "id": 602,
+    "name": "Materia 602",
+    "credits": 2,
+    "prereqs": [
+      348,
+      545
+    ]
+  },
+  {
+    "id": 603,
+    "name": "Materia 603",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 604,
+    "name": "Materia 604",
+    "credits": 4,
+    "prereqs": [
+      227,
+      302
+    ]
+  },
+  {
+    "id": 605,
+    "name": "Materia 605",
+    "credits": 2,
+    "prereqs": [
+      512
+    ]
+  },
+  {
+    "id": 606,
+    "name": "Materia 606",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 607,
+    "name": "Materia 607",
+    "credits": 1,
+    "prereqs": [
+      93,
+      235
+    ]
+  },
+  {
+    "id": 608,
+    "name": "Materia 608",
+    "credits": 2,
+    "prereqs": [
+      434
+    ]
+  },
+  {
+    "id": 609,
+    "name": "Materia 609",
+    "credits": 4,
+    "prereqs": [
+      590,
+      173
+    ]
+  },
+  {
+    "id": 610,
+    "name": "Materia 610",
+    "credits": 3,
+    "prereqs": [
+      157,
+      184
+    ]
+  },
+  {
+    "id": 611,
+    "name": "Materia 611",
+    "credits": 3,
+    "prereqs": [
+      365
+    ]
+  },
+  {
+    "id": 612,
+    "name": "Materia 612",
+    "credits": 3,
+    "prereqs": [
+      70
+    ]
+  },
+  {
+    "id": 613,
+    "name": "Materia 613",
+    "credits": 2,
+    "prereqs": [
+      111
+    ]
+  },
+  {
+    "id": 614,
+    "name": "Materia 614",
+    "credits": 1,
+    "prereqs": [
+      606,
+      181,
+      535
+    ]
+  },
+  {
+    "id": 615,
+    "name": "Materia 615",
+    "credits": 1,
+    "prereqs": [
+      361,
+      596
+    ]
+  },
+  {
+    "id": 616,
+    "name": "Materia 616",
+    "credits": 3,
+    "prereqs": [
+      463
+    ]
+  },
+  {
+    "id": 617,
+    "name": "Materia 617",
+    "credits": 1,
+    "prereqs": [
+      118
+    ]
+  },
+  {
+    "id": 618,
+    "name": "Materia 618",
+    "credits": 3,
+    "prereqs": [
+      484
+    ]
+  },
+  {
+    "id": 619,
+    "name": "Materia 619",
+    "credits": 1,
+    "prereqs": [
+      1,
+      250
+    ]
+  },
+  {
+    "id": 620,
+    "name": "Materia 620",
+    "credits": 1,
+    "prereqs": [
+      376,
+      542
+    ]
+  },
+  {
+    "id": 621,
+    "name": "Materia 621",
+    "credits": 2,
+    "prereqs": [
+      84,
+      330
+    ]
+  },
+  {
+    "id": 622,
+    "name": "Materia 622",
+    "credits": 3,
+    "prereqs": [
+      427,
+      69
+    ]
+  },
+  {
+    "id": 623,
+    "name": "Materia 623",
+    "credits": 4,
+    "prereqs": [
+      182,
+      126
+    ]
+  },
+  {
+    "id": 624,
+    "name": "Materia 624",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 625,
+    "name": "Materia 625",
+    "credits": 3,
+    "prereqs": [
+      50,
+      117
+    ]
+  },
+  {
+    "id": 626,
+    "name": "Materia 626",
+    "credits": 2,
+    "prereqs": [
+      17
+    ]
+  },
+  {
+    "id": 627,
+    "name": "Materia 627",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 628,
+    "name": "Materia 628",
+    "credits": 4,
+    "prereqs": [
+      474,
+      129
+    ]
+  },
+  {
+    "id": 629,
+    "name": "Materia 629",
+    "credits": 2,
+    "prereqs": [
+      32
+    ]
+  },
+  {
+    "id": 630,
+    "name": "Materia 630",
+    "credits": 1,
+    "prereqs": [
+      96
+    ]
+  },
+  {
+    "id": 631,
+    "name": "Materia 631",
+    "credits": 2,
+    "prereqs": [
+      164,
+      416,
+      360
+    ]
+  },
+  {
+    "id": 632,
+    "name": "Materia 632",
+    "credits": 2,
+    "prereqs": [
+      210,
+      98,
+      49
+    ]
+  },
+  {
+    "id": 633,
+    "name": "Materia 633",
+    "credits": 2,
+    "prereqs": [
+      444,
+      212
+    ]
+  },
+  {
+    "id": 634,
+    "name": "Materia 634",
+    "credits": 1,
+    "prereqs": [
+      161
+    ]
+  },
+  {
+    "id": 635,
+    "name": "Materia 635",
+    "credits": 1,
+    "prereqs": [
+      541,
+      253
+    ]
+  },
+  {
+    "id": 636,
+    "name": "Materia 636",
+    "credits": 3,
+    "prereqs": [
+      551,
+      384,
+      415
+    ]
+  },
+  {
+    "id": 637,
+    "name": "Materia 637",
+    "credits": 3,
+    "prereqs": [
+      444,
+      315,
+      580
+    ]
+  },
+  {
+    "id": 638,
+    "name": "Materia 638",
+    "credits": 2,
+    "prereqs": [
+      624
+    ]
+  },
+  {
+    "id": 639,
+    "name": "Materia 639",
+    "credits": 2,
+    "prereqs": [
+      221,
+      604,
+      423
+    ]
+  },
+  {
+    "id": 640,
+    "name": "Materia 640",
+    "credits": 1,
+    "prereqs": [
+      81
+    ]
+  },
+  {
+    "id": 641,
+    "name": "Materia 641",
+    "credits": 3,
+    "prereqs": [
+      614,
+      622
+    ]
+  },
+  {
+    "id": 642,
+    "name": "Materia 642",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 643,
+    "name": "Materia 643",
+    "credits": 4,
+    "prereqs": [
+      545,
+      346
+    ]
+  },
+  {
+    "id": 644,
+    "name": "Materia 644",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 645,
+    "name": "Materia 645",
+    "credits": 3,
+    "prereqs": [
+      568
+    ]
+  },
+  {
+    "id": 646,
+    "name": "Materia 646",
+    "credits": 3,
+    "prereqs": [
+      212,
+      89,
+      267
+    ]
+  },
+  {
+    "id": 647,
+    "name": "Materia 647",
+    "credits": 3,
+    "prereqs": [
+      232,
+      342,
+      38
+    ]
+  },
+  {
+    "id": 648,
+    "name": "Materia 648",
+    "credits": 3,
+    "prereqs": [
+      388,
+      286,
+      508
+    ]
+  },
+  {
+    "id": 649,
+    "name": "Materia 649",
+    "credits": 3,
+    "prereqs": [
+      292,
+      340,
+      262
+    ]
+  },
+  {
+    "id": 650,
+    "name": "Materia 650",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 651,
+    "name": "Materia 651",
+    "credits": 1,
+    "prereqs": [
+      499
+    ]
+  },
+  {
+    "id": 652,
+    "name": "Materia 652",
+    "credits": 1,
+    "prereqs": [
+      164,
+      604,
+      277
+    ]
+  },
+  {
+    "id": 653,
+    "name": "Materia 653",
+    "credits": 3,
+    "prereqs": [
+      305,
+      402
+    ]
+  },
+  {
+    "id": 654,
+    "name": "Materia 654",
+    "credits": 4,
+    "prereqs": [
+      86
+    ]
+  },
+  {
+    "id": 655,
+    "name": "Materia 655",
+    "credits": 4,
+    "prereqs": [
+      174,
+      470,
+      365
+    ]
+  },
+  {
+    "id": 656,
+    "name": "Materia 656",
+    "credits": 2,
+    "prereqs": [
+      360,
+      55
+    ]
+  },
+  {
+    "id": 657,
+    "name": "Materia 657",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 658,
+    "name": "Materia 658",
+    "credits": 3,
+    "prereqs": [
+      194,
+      205
+    ]
+  },
+  {
+    "id": 659,
+    "name": "Materia 659",
+    "credits": 3,
+    "prereqs": [
+      24,
+      64,
+      125
+    ]
+  },
+  {
+    "id": 660,
+    "name": "Materia 660",
+    "credits": 3,
+    "prereqs": [
+      420,
+      526,
+      348
+    ]
+  },
+  {
+    "id": 661,
+    "name": "Materia 661",
+    "credits": 1,
+    "prereqs": [
+      622,
+      110
+    ]
+  },
+  {
+    "id": 662,
+    "name": "Materia 662",
+    "credits": 3,
+    "prereqs": [
+      139,
+      213,
+      489
+    ]
+  },
+  {
+    "id": 663,
+    "name": "Materia 663",
+    "credits": 3,
+    "prereqs": [
+      368,
+      619
+    ]
+  },
+  {
+    "id": 664,
+    "name": "Materia 664",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 665,
+    "name": "Materia 665",
+    "credits": 4,
+    "prereqs": [
+      200,
+      251,
+      568
+    ]
+  },
+  {
+    "id": 666,
+    "name": "Materia 666",
+    "credits": 3,
+    "prereqs": [
+      524,
+      411
+    ]
+  },
+  {
+    "id": 667,
+    "name": "Materia 667",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 668,
+    "name": "Materia 668",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 669,
+    "name": "Materia 669",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 670,
+    "name": "Materia 670",
+    "credits": 3,
+    "prereqs": [
+      204
+    ]
+  },
+  {
+    "id": 671,
+    "name": "Materia 671",
+    "credits": 3,
+    "prereqs": [
+      179,
+      371,
+      260
+    ]
+  },
+  {
+    "id": 672,
+    "name": "Materia 672",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 673,
+    "name": "Materia 673",
+    "credits": 4,
+    "prereqs": [
+      625,
+      592
+    ]
+  },
+  {
+    "id": 674,
+    "name": "Materia 674",
+    "credits": 1,
+    "prereqs": [
+      117,
+      70
+    ]
+  },
+  {
+    "id": 675,
+    "name": "Materia 675",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 676,
+    "name": "Materia 676",
+    "credits": 2,
+    "prereqs": [
+      337,
+      160,
+      611
+    ]
+  },
+  {
+    "id": 677,
+    "name": "Materia 677",
+    "credits": 4,
+    "prereqs": [
+      475,
+      455
+    ]
+  },
+  {
+    "id": 678,
+    "name": "Materia 678",
+    "credits": 1,
+    "prereqs": [
+      334
+    ]
+  },
+  {
+    "id": 679,
+    "name": "Materia 679",
+    "credits": 1,
+    "prereqs": [
+      660,
+      527
+    ]
+  },
+  {
+    "id": 680,
+    "name": "Materia 680",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 681,
+    "name": "Materia 681",
+    "credits": 2,
+    "prereqs": [
+      154,
+      579,
+      238
+    ]
+  },
+  {
+    "id": 682,
+    "name": "Materia 682",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 683,
+    "name": "Materia 683",
+    "credits": 4,
+    "prereqs": [
+      118,
+      304,
+      205
+    ]
+  },
+  {
+    "id": 684,
+    "name": "Materia 684",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 685,
+    "name": "Materia 685",
+    "credits": 1,
+    "prereqs": [
+      359,
+      329,
+      562
+    ]
+  },
+  {
+    "id": 686,
+    "name": "Materia 686",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 687,
+    "name": "Materia 687",
+    "credits": 2,
+    "prereqs": [
+      40,
+      251
+    ]
+  },
+  {
+    "id": 688,
+    "name": "Materia 688",
+    "credits": 1,
+    "prereqs": [
+      63,
+      602
+    ]
+  },
+  {
+    "id": 689,
+    "name": "Materia 689",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 690,
+    "name": "Materia 690",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 691,
+    "name": "Materia 691",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 692,
+    "name": "Materia 692",
+    "credits": 3,
+    "prereqs": [
+      92,
+      459
+    ]
+  },
+  {
+    "id": 693,
+    "name": "Materia 693",
+    "credits": 2,
+    "prereqs": [
+      680,
+      12
+    ]
+  },
+  {
+    "id": 694,
+    "name": "Materia 694",
+    "credits": 2,
+    "prereqs": [
+      232
+    ]
+  },
+  {
+    "id": 695,
+    "name": "Materia 695",
+    "credits": 4,
+    "prereqs": [
+      527
+    ]
+  },
+  {
+    "id": 696,
+    "name": "Materia 696",
+    "credits": 2,
+    "prereqs": [
+      501,
+      202,
+      261
+    ]
+  },
+  {
+    "id": 697,
+    "name": "Materia 697",
+    "credits": 2,
+    "prereqs": [
+      304,
+      191,
+      583
+    ]
+  },
+  {
+    "id": 698,
+    "name": "Materia 698",
+    "credits": 2,
+    "prereqs": [
+      174,
+      420
+    ]
+  },
+  {
+    "id": 699,
+    "name": "Materia 699",
+    "credits": 4,
+    "prereqs": [
+      18,
+      26,
+      332
+    ]
+  },
+  {
+    "id": 700,
+    "name": "Materia 700",
+    "credits": 1,
+    "prereqs": [
+      658,
+      414
+    ]
+  },
+  {
+    "id": 701,
+    "name": "Materia 701",
+    "credits": 2,
+    "prereqs": [
+      287
+    ]
+  },
+  {
+    "id": 702,
+    "name": "Materia 702",
+    "credits": 3,
+    "prereqs": [
+      353,
+      298
+    ]
+  },
+  {
+    "id": 703,
+    "name": "Materia 703",
+    "credits": 4,
+    "prereqs": [
+      189,
+      117,
+      679
+    ]
+  },
+  {
+    "id": 704,
+    "name": "Materia 704",
+    "credits": 1,
+    "prereqs": [
+      524
+    ]
+  },
+  {
+    "id": 705,
+    "name": "Materia 705",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 706,
+    "name": "Materia 706",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 707,
+    "name": "Materia 707",
+    "credits": 3,
+    "prereqs": [
+      572
+    ]
+  },
+  {
+    "id": 708,
+    "name": "Materia 708",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 709,
+    "name": "Materia 709",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 710,
+    "name": "Materia 710",
+    "credits": 1,
+    "prereqs": [
+      232,
+      538
+    ]
+  },
+  {
+    "id": 711,
+    "name": "Materia 711",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 712,
+    "name": "Materia 712",
+    "credits": 1,
+    "prereqs": [
+      62,
+      164,
+      648
+    ]
+  },
+  {
+    "id": 713,
+    "name": "Materia 713",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 714,
+    "name": "Materia 714",
+    "credits": 4,
+    "prereqs": [
+      25,
+      613
+    ]
+  },
+  {
+    "id": 715,
+    "name": "Materia 715",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 716,
+    "name": "Materia 716",
+    "credits": 3,
+    "prereqs": [
+      153,
+      90
+    ]
+  },
+  {
+    "id": 717,
+    "name": "Materia 717",
+    "credits": 4,
+    "prereqs": [
+      236,
+      587
+    ]
+  },
+  {
+    "id": 718,
+    "name": "Materia 718",
+    "credits": 1,
+    "prereqs": [
+      431,
+      580
+    ]
+  },
+  {
+    "id": 719,
+    "name": "Materia 719",
+    "credits": 4,
+    "prereqs": [
+      396
+    ]
+  },
+  {
+    "id": 720,
+    "name": "Materia 720",
+    "credits": 4,
+    "prereqs": [
+      119
+    ]
+  },
+  {
+    "id": 721,
+    "name": "Materia 721",
+    "credits": 1,
+    "prereqs": [
+      348,
+      174,
+      98
+    ]
+  },
+  {
+    "id": 722,
+    "name": "Materia 722",
+    "credits": 4,
+    "prereqs": [
+      433,
+      368
+    ]
+  },
+  {
+    "id": 723,
+    "name": "Materia 723",
+    "credits": 1,
+    "prereqs": [
+      435,
+      340,
+      275
+    ]
+  },
+  {
+    "id": 724,
+    "name": "Materia 724",
+    "credits": 2,
+    "prereqs": [
+      257
+    ]
+  },
+  {
+    "id": 725,
+    "name": "Materia 725",
+    "credits": 1,
+    "prereqs": [
+      74,
+      271
+    ]
+  },
+  {
+    "id": 726,
+    "name": "Materia 726",
+    "credits": 2,
+    "prereqs": [
+      219,
+      562
+    ]
+  },
+  {
+    "id": 727,
+    "name": "Materia 727",
+    "credits": 3,
+    "prereqs": [
+      8
+    ]
+  },
+  {
+    "id": 728,
+    "name": "Materia 728",
+    "credits": 2,
+    "prereqs": [
+      405,
+      568
+    ]
+  },
+  {
+    "id": 729,
+    "name": "Materia 729",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 730,
+    "name": "Materia 730",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 731,
+    "name": "Materia 731",
+    "credits": 2,
+    "prereqs": [
+      215,
+      160
+    ]
+  },
+  {
+    "id": 732,
+    "name": "Materia 732",
+    "credits": 4,
+    "prereqs": [
+      318,
+      583
+    ]
+  },
+  {
+    "id": 733,
+    "name": "Materia 733",
+    "credits": 3,
+    "prereqs": [
+      506,
+      7
+    ]
+  },
+  {
+    "id": 734,
+    "name": "Materia 734",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 735,
+    "name": "Materia 735",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 736,
+    "name": "Materia 736",
+    "credits": 1,
+    "prereqs": [
+      494,
+      593
+    ]
+  },
+  {
+    "id": 737,
+    "name": "Materia 737",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 738,
+    "name": "Materia 738",
+    "credits": 4,
+    "prereqs": [
+      465
+    ]
+  },
+  {
+    "id": 739,
+    "name": "Materia 739",
+    "credits": 1,
+    "prereqs": [
+      577,
+      730,
+      71
+    ]
+  },
+  {
+    "id": 740,
+    "name": "Materia 740",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 741,
+    "name": "Materia 741",
+    "credits": 3,
+    "prereqs": [
+      14,
+      647,
+      621
+    ]
+  },
+  {
+    "id": 742,
+    "name": "Materia 742",
+    "credits": 2,
+    "prereqs": [
+      41,
+      126,
+      114
+    ]
+  },
+  {
+    "id": 743,
+    "name": "Materia 743",
+    "credits": 1,
+    "prereqs": [
+      691,
+      674
+    ]
+  },
+  {
+    "id": 744,
+    "name": "Materia 744",
+    "credits": 4,
+    "prereqs": [
+      604
+    ]
+  },
+  {
+    "id": 745,
+    "name": "Materia 745",
+    "credits": 1,
+    "prereqs": [
+      639,
+      196
+    ]
+  },
+  {
+    "id": 746,
+    "name": "Materia 746",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 747,
+    "name": "Materia 747",
+    "credits": 1,
+    "prereqs": [
+      480,
+      243,
+      134
+    ]
+  },
+  {
+    "id": 748,
+    "name": "Materia 748",
+    "credits": 2,
+    "prereqs": [
+      268,
+      257,
+      311
+    ]
+  },
+  {
+    "id": 749,
+    "name": "Materia 749",
+    "credits": 4,
+    "prereqs": [
+      344,
+      333
+    ]
+  },
+  {
+    "id": 750,
+    "name": "Materia 750",
+    "credits": 3,
+    "prereqs": [
+      729
+    ]
+  },
+  {
+    "id": 751,
+    "name": "Materia 751",
+    "credits": 2,
+    "prereqs": [
+      600
+    ]
+  },
+  {
+    "id": 752,
+    "name": "Materia 752",
+    "credits": 2,
+    "prereqs": [
+      749
+    ]
+  },
+  {
+    "id": 753,
+    "name": "Materia 753",
+    "credits": 3,
+    "prereqs": [
+      370,
+      544
+    ]
+  },
+  {
+    "id": 754,
+    "name": "Materia 754",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 755,
+    "name": "Materia 755",
+    "credits": 2,
+    "prereqs": [
+      480,
+      48
+    ]
+  },
+  {
+    "id": 756,
+    "name": "Materia 756",
+    "credits": 4,
+    "prereqs": [
+      461,
+      251,
+      519
+    ]
+  },
+  {
+    "id": 757,
+    "name": "Materia 757",
+    "credits": 2,
+    "prereqs": [
+      580,
+      479
+    ]
+  },
+  {
+    "id": 758,
+    "name": "Materia 758",
+    "credits": 3,
+    "prereqs": [
+      63
+    ]
+  },
+  {
+    "id": 759,
+    "name": "Materia 759",
+    "credits": 4,
+    "prereqs": [
+      17
+    ]
+  },
+  {
+    "id": 760,
+    "name": "Materia 760",
+    "credits": 3,
+    "prereqs": [
+      373,
+      25
+    ]
+  },
+  {
+    "id": 761,
+    "name": "Materia 761",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 762,
+    "name": "Materia 762",
+    "credits": 2,
+    "prereqs": [
+      379
+    ]
+  },
+  {
+    "id": 763,
+    "name": "Materia 763",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 764,
+    "name": "Materia 764",
+    "credits": 4,
+    "prereqs": [
+      374
+    ]
+  },
+  {
+    "id": 765,
+    "name": "Materia 765",
+    "credits": 2,
+    "prereqs": [
+      424
+    ]
+  },
+  {
+    "id": 766,
+    "name": "Materia 766",
+    "credits": 1,
+    "prereqs": [
+      195,
+      6,
+      681
+    ]
+  },
+  {
+    "id": 767,
+    "name": "Materia 767",
+    "credits": 3,
+    "prereqs": [
+      22,
+      552
+    ]
+  },
+  {
+    "id": 768,
+    "name": "Materia 768",
+    "credits": 2,
+    "prereqs": [
+      51,
+      243
+    ]
+  },
+  {
+    "id": 769,
+    "name": "Materia 769",
+    "credits": 2,
+    "prereqs": [
+      306,
+      499
+    ]
+  },
+  {
+    "id": 770,
+    "name": "Materia 770",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 771,
+    "name": "Materia 771",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 772,
+    "name": "Materia 772",
+    "credits": 1,
+    "prereqs": [
+      414,
+      4
+    ]
+  },
+  {
+    "id": 773,
+    "name": "Materia 773",
+    "credits": 2,
+    "prereqs": [
+      535,
+      666
+    ]
+  },
+  {
+    "id": 774,
+    "name": "Materia 774",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 775,
+    "name": "Materia 775",
+    "credits": 4,
+    "prereqs": [
+      524,
+      663
+    ]
+  },
+  {
+    "id": 776,
+    "name": "Materia 776",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 777,
+    "name": "Materia 777",
+    "credits": 4,
+    "prereqs": [
+      221,
+      112
+    ]
+  },
+  {
+    "id": 778,
+    "name": "Materia 778",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 779,
+    "name": "Materia 779",
+    "credits": 2,
+    "prereqs": [
+      611,
+      735,
+      20
+    ]
+  },
+  {
+    "id": 780,
+    "name": "Materia 780",
+    "credits": 3,
+    "prereqs": [
+      286
+    ]
+  },
+  {
+    "id": 781,
+    "name": "Materia 781",
+    "credits": 2,
+    "prereqs": [
+      190
+    ]
+  },
+  {
+    "id": 782,
+    "name": "Materia 782",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 783,
+    "name": "Materia 783",
+    "credits": 1,
+    "prereqs": [
+      422,
+      369
+    ]
+  },
+  {
+    "id": 784,
+    "name": "Materia 784",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 785,
+    "name": "Materia 785",
+    "credits": 4,
+    "prereqs": [
+      545,
+      243
+    ]
+  },
+  {
+    "id": 786,
+    "name": "Materia 786",
+    "credits": 4,
+    "prereqs": [
+      176
+    ]
+  },
+  {
+    "id": 787,
+    "name": "Materia 787",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 788,
+    "name": "Materia 788",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 789,
+    "name": "Materia 789",
+    "credits": 3,
+    "prereqs": [
+      316,
+      364
+    ]
+  },
+  {
+    "id": 790,
+    "name": "Materia 790",
+    "credits": 2,
+    "prereqs": [
+      209,
+      134
+    ]
+  },
+  {
+    "id": 791,
+    "name": "Materia 791",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 792,
+    "name": "Materia 792",
+    "credits": 1,
+    "prereqs": [
+      14,
+      61,
+      262
+    ]
+  },
+  {
+    "id": 793,
+    "name": "Materia 793",
+    "credits": 4,
+    "prereqs": [
+      338
+    ]
+  },
+  {
+    "id": 794,
+    "name": "Materia 794",
+    "credits": 2,
+    "prereqs": [
+      581
+    ]
+  },
+  {
+    "id": 795,
+    "name": "Materia 795",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 796,
+    "name": "Materia 796",
+    "credits": 3,
+    "prereqs": [
+      223
+    ]
+  },
+  {
+    "id": 797,
+    "name": "Materia 797",
+    "credits": 3,
+    "prereqs": [
+      447,
+      167,
+      498
+    ]
+  },
+  {
+    "id": 798,
+    "name": "Materia 798",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 799,
+    "name": "Materia 799",
+    "credits": 2,
+    "prereqs": [
+      319,
+      493,
+      791
+    ]
+  },
+  {
+    "id": 800,
+    "name": "Materia 800",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 801,
+    "name": "Materia 801",
+    "credits": 2,
+    "prereqs": [
+      466,
+      341
+    ]
+  },
+  {
+    "id": 802,
+    "name": "Materia 802",
+    "credits": 3,
+    "prereqs": [
+      321,
+      637,
+      314
+    ]
+  },
+  {
+    "id": 803,
+    "name": "Materia 803",
+    "credits": 1,
+    "prereqs": [
+      354,
+      457,
+      23
+    ]
+  },
+  {
+    "id": 804,
+    "name": "Materia 804",
+    "credits": 2,
+    "prereqs": [
+      128,
+      166
+    ]
+  },
+  {
+    "id": 805,
+    "name": "Materia 805",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 806,
+    "name": "Materia 806",
+    "credits": 2,
+    "prereqs": [
+      630,
+      655,
+      596
+    ]
+  },
+  {
+    "id": 807,
+    "name": "Materia 807",
+    "credits": 3,
+    "prereqs": [
+      804,
+      357,
+      503
+    ]
+  },
+  {
+    "id": 808,
+    "name": "Materia 808",
+    "credits": 3,
+    "prereqs": [
+      444,
+      275,
+      236
+    ]
+  },
+  {
+    "id": 809,
+    "name": "Materia 809",
+    "credits": 2,
+    "prereqs": [
+      466
+    ]
+  },
+  {
+    "id": 810,
+    "name": "Materia 810",
+    "credits": 1,
+    "prereqs": [
+      662
+    ]
+  },
+  {
+    "id": 811,
+    "name": "Materia 811",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 812,
+    "name": "Materia 812",
+    "credits": 2,
+    "prereqs": [
+      126
+    ]
+  },
+  {
+    "id": 813,
+    "name": "Materia 813",
+    "credits": 3,
+    "prereqs": [
+      759,
+      400
+    ]
+  },
+  {
+    "id": 814,
+    "name": "Materia 814",
+    "credits": 3,
+    "prereqs": [
+      305,
+      175,
+      510
+    ]
+  },
+  {
+    "id": 815,
+    "name": "Materia 815",
+    "credits": 1,
+    "prereqs": [
+      137,
+      34
+    ]
+  },
+  {
+    "id": 816,
+    "name": "Materia 816",
+    "credits": 2,
+    "prereqs": [
+      794,
+      544
+    ]
+  },
+  {
+    "id": 817,
+    "name": "Materia 817",
+    "credits": 1,
+    "prereqs": [
+      164,
+      192
+    ]
+  },
+  {
+    "id": 818,
+    "name": "Materia 818",
+    "credits": 4,
+    "prereqs": [
+      403,
+      2
+    ]
+  },
+  {
+    "id": 819,
+    "name": "Materia 819",
+    "credits": 4,
+    "prereqs": [
+      215
+    ]
+  },
+  {
+    "id": 820,
+    "name": "Materia 820",
+    "credits": 1,
+    "prereqs": [
+      505,
+      143
+    ]
+  },
+  {
+    "id": 821,
+    "name": "Materia 821",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 822,
+    "name": "Materia 822",
+    "credits": 4,
+    "prereqs": [
+      340
+    ]
+  },
+  {
+    "id": 823,
+    "name": "Materia 823",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 824,
+    "name": "Materia 824",
+    "credits": 1,
+    "prereqs": [
+      561,
+      77,
+      672
+    ]
+  },
+  {
+    "id": 825,
+    "name": "Materia 825",
+    "credits": 1,
+    "prereqs": [
+      782
+    ]
+  },
+  {
+    "id": 826,
+    "name": "Materia 826",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 827,
+    "name": "Materia 827",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 828,
+    "name": "Materia 828",
+    "credits": 1,
+    "prereqs": [
+      538
+    ]
+  },
+  {
+    "id": 829,
+    "name": "Materia 829",
+    "credits": 4,
+    "prereqs": [
+      423
+    ]
+  },
+  {
+    "id": 830,
+    "name": "Materia 830",
+    "credits": 4,
+    "prereqs": [
+      362
+    ]
+  },
+  {
+    "id": 831,
+    "name": "Materia 831",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 832,
+    "name": "Materia 832",
+    "credits": 3,
+    "prereqs": [
+      216,
+      785
+    ]
+  },
+  {
+    "id": 833,
+    "name": "Materia 833",
+    "credits": 1,
+    "prereqs": [
+      432,
+      748,
+      517
+    ]
+  },
+  {
+    "id": 834,
+    "name": "Materia 834",
+    "credits": 4,
+    "prereqs": [
+      104,
+      193,
+      240
+    ]
+  },
+  {
+    "id": 835,
+    "name": "Materia 835",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 836,
+    "name": "Materia 836",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 837,
+    "name": "Materia 837",
+    "credits": 1,
+    "prereqs": [
+      366,
+      390,
+      84
+    ]
+  },
+  {
+    "id": 838,
+    "name": "Materia 838",
+    "credits": 2,
+    "prereqs": [
+      667
+    ]
+  },
+  {
+    "id": 839,
+    "name": "Materia 839",
+    "credits": 2,
+    "prereqs": [
+      128
+    ]
+  },
+  {
+    "id": 840,
+    "name": "Materia 840",
+    "credits": 1,
+    "prereqs": [
+      753
+    ]
+  },
+  {
+    "id": 841,
+    "name": "Materia 841",
+    "credits": 2,
+    "prereqs": [
+      116,
+      194
+    ]
+  },
+  {
+    "id": 842,
+    "name": "Materia 842",
+    "credits": 4,
+    "prereqs": [
+      494,
+      479
+    ]
+  },
+  {
+    "id": 843,
+    "name": "Materia 843",
+    "credits": 1,
+    "prereqs": [
+      598
+    ]
+  },
+  {
+    "id": 844,
+    "name": "Materia 844",
+    "credits": 1,
+    "prereqs": [
+      99,
+      293
+    ]
+  },
+  {
+    "id": 845,
+    "name": "Materia 845",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 846,
+    "name": "Materia 846",
+    "credits": 2,
+    "prereqs": [
+      673,
+      465,
+      39
+    ]
+  },
+  {
+    "id": 847,
+    "name": "Materia 847",
+    "credits": 3,
+    "prereqs": [
+      483,
+      456,
+      109
+    ]
+  },
+  {
+    "id": 848,
+    "name": "Materia 848",
+    "credits": 3,
+    "prereqs": [
+      211,
+      700
+    ]
+  },
+  {
+    "id": 849,
+    "name": "Materia 849",
+    "credits": 4,
+    "prereqs": [
+      553
+    ]
+  },
+  {
+    "id": 850,
+    "name": "Materia 850",
+    "credits": 4,
+    "prereqs": [
+      472,
+      710
+    ]
+  },
+  {
+    "id": 851,
+    "name": "Materia 851",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 852,
+    "name": "Materia 852",
+    "credits": 4,
+    "prereqs": [
+      548,
+      678,
+      160
+    ]
+  },
+  {
+    "id": 853,
+    "name": "Materia 853",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 854,
+    "name": "Materia 854",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 855,
+    "name": "Materia 855",
+    "credits": 1,
+    "prereqs": [
+      606,
+      408,
+      385
+    ]
+  },
+  {
+    "id": 856,
+    "name": "Materia 856",
+    "credits": 4,
+    "prereqs": [
+      47
+    ]
+  },
+  {
+    "id": 857,
+    "name": "Materia 857",
+    "credits": 4,
+    "prereqs": [
+      496,
+      294
+    ]
+  },
+  {
+    "id": 858,
+    "name": "Materia 858",
+    "credits": 4,
+    "prereqs": [
+      497,
+      507,
+      753
+    ]
+  },
+  {
+    "id": 859,
+    "name": "Materia 859",
+    "credits": 2,
+    "prereqs": [
+      722
+    ]
+  },
+  {
+    "id": 860,
+    "name": "Materia 860",
+    "credits": 2,
+    "prereqs": [
+      387,
+      718
+    ]
+  },
+  {
+    "id": 861,
+    "name": "Materia 861",
+    "credits": 1,
+    "prereqs": [
+      850
+    ]
+  },
+  {
+    "id": 862,
+    "name": "Materia 862",
+    "credits": 1,
+    "prereqs": [
+      417
+    ]
+  },
+  {
+    "id": 863,
+    "name": "Materia 863",
+    "credits": 4,
+    "prereqs": [
+      550
+    ]
+  },
+  {
+    "id": 864,
+    "name": "Materia 864",
+    "credits": 4,
+    "prereqs": [
+      47
+    ]
+  },
+  {
+    "id": 865,
+    "name": "Materia 865",
+    "credits": 4,
+    "prereqs": [
+      706,
+      568,
+      131
+    ]
+  },
+  {
+    "id": 866,
+    "name": "Materia 866",
+    "credits": 4,
+    "prereqs": [
+      477,
+      103,
+      598
+    ]
+  },
+  {
+    "id": 867,
+    "name": "Materia 867",
+    "credits": 2,
+    "prereqs": [
+      607
+    ]
+  },
+  {
+    "id": 868,
+    "name": "Materia 868",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 869,
+    "name": "Materia 869",
+    "credits": 4,
+    "prereqs": [
+      645,
+      811
+    ]
+  },
+  {
+    "id": 870,
+    "name": "Materia 870",
+    "credits": 4,
+    "prereqs": [
+      379
+    ]
+  },
+  {
+    "id": 871,
+    "name": "Materia 871",
+    "credits": 2,
+    "prereqs": [
+      62
+    ]
+  },
+  {
+    "id": 872,
+    "name": "Materia 872",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 873,
+    "name": "Materia 873",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 874,
+    "name": "Materia 874",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 875,
+    "name": "Materia 875",
+    "credits": 3,
+    "prereqs": [
+      253,
+      151,
+      258
+    ]
+  },
+  {
+    "id": 876,
+    "name": "Materia 876",
+    "credits": 1,
+    "prereqs": [
+      592
+    ]
+  },
+  {
+    "id": 877,
+    "name": "Materia 877",
+    "credits": 3,
+    "prereqs": [
+      336,
+      294
+    ]
+  },
+  {
+    "id": 878,
+    "name": "Materia 878",
+    "credits": 1,
+    "prereqs": [
+      776
+    ]
+  },
+  {
+    "id": 879,
+    "name": "Materia 879",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 880,
+    "name": "Materia 880",
+    "credits": 3,
+    "prereqs": [
+      22
+    ]
+  },
+  {
+    "id": 881,
+    "name": "Materia 881",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 882,
+    "name": "Materia 882",
+    "credits": 3,
+    "prereqs": [
+      643
+    ]
+  },
+  {
+    "id": 883,
+    "name": "Materia 883",
+    "credits": 1,
+    "prereqs": [
+      347
+    ]
+  },
+  {
+    "id": 884,
+    "name": "Materia 884",
+    "credits": 1,
+    "prereqs": [
+      673
+    ]
+  },
+  {
+    "id": 885,
+    "name": "Materia 885",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 886,
+    "name": "Materia 886",
+    "credits": 2,
+    "prereqs": [
+      330,
+      753
+    ]
+  },
+  {
+    "id": 887,
+    "name": "Materia 887",
+    "credits": 3,
+    "prereqs": [
+      582,
+      661,
+      480
+    ]
+  },
+  {
+    "id": 888,
+    "name": "Materia 888",
+    "credits": 3,
+    "prereqs": [
+      733
+    ]
+  },
+  {
+    "id": 889,
+    "name": "Materia 889",
+    "credits": 4,
+    "prereqs": [
+      78,
+      259,
+      335
+    ]
+  },
+  {
+    "id": 890,
+    "name": "Materia 890",
+    "credits": 4,
+    "prereqs": [
+      258
+    ]
+  },
+  {
+    "id": 891,
+    "name": "Materia 891",
+    "credits": 3,
+    "prereqs": [
+      748
+    ]
+  },
+  {
+    "id": 892,
+    "name": "Materia 892",
+    "credits": 1,
+    "prereqs": [
+      840,
+      710,
+      551
+    ]
+  },
+  {
+    "id": 893,
+    "name": "Materia 893",
+    "credits": 3,
+    "prereqs": [
+      699
+    ]
+  },
+  {
+    "id": 894,
+    "name": "Materia 894",
+    "credits": 2,
+    "prereqs": [
+      161,
+      395
+    ]
+  },
+  {
+    "id": 895,
+    "name": "Materia 895",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 896,
+    "name": "Materia 896",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 897,
+    "name": "Materia 897",
+    "credits": 4,
+    "prereqs": [
+      309,
+      351
+    ]
+  },
+  {
+    "id": 898,
+    "name": "Materia 898",
+    "credits": 4,
+    "prereqs": [
+      265,
+      371,
+      888
+    ]
+  },
+  {
+    "id": 899,
+    "name": "Materia 899",
+    "credits": 4,
+    "prereqs": [
+      571,
+      734,
+      383
+    ]
+  },
+  {
+    "id": 900,
+    "name": "Materia 900",
+    "credits": 4,
+    "prereqs": [
+      751,
+      690
+    ]
+  },
+  {
+    "id": 901,
+    "name": "Materia 901",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 902,
+    "name": "Materia 902",
+    "credits": 3,
+    "prereqs": [
+      308,
+      715,
+      277
+    ]
+  },
+  {
+    "id": 903,
+    "name": "Materia 903",
+    "credits": 4,
+    "prereqs": [
+      232,
+      182
+    ]
+  },
+  {
+    "id": 904,
+    "name": "Materia 904",
+    "credits": 3,
+    "prereqs": [
+      498,
+      186,
+      223
+    ]
+  },
+  {
+    "id": 905,
+    "name": "Materia 905",
+    "credits": 3,
+    "prereqs": [
+      329
+    ]
+  },
+  {
+    "id": 906,
+    "name": "Materia 906",
+    "credits": 1,
+    "prereqs": [
+      696,
+      470,
+      633
+    ]
+  },
+  {
+    "id": 907,
+    "name": "Materia 907",
+    "credits": 3,
+    "prereqs": [
+      852,
+      220
+    ]
+  },
+  {
+    "id": 908,
+    "name": "Materia 908",
+    "credits": 1,
+    "prereqs": [
+      103
+    ]
+  },
+  {
+    "id": 909,
+    "name": "Materia 909",
+    "credits": 2,
+    "prereqs": [
+      707,
+      44,
+      718
+    ]
+  },
+  {
+    "id": 910,
+    "name": "Materia 910",
+    "credits": 3,
+    "prereqs": [
+      299,
+      518,
+      870
+    ]
+  },
+  {
+    "id": 911,
+    "name": "Materia 911",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 912,
+    "name": "Materia 912",
+    "credits": 2,
+    "prereqs": [
+      402
+    ]
+  },
+  {
+    "id": 913,
+    "name": "Materia 913",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 914,
+    "name": "Materia 914",
+    "credits": 4,
+    "prereqs": [
+      629,
+      510
+    ]
+  },
+  {
+    "id": 915,
+    "name": "Materia 915",
+    "credits": 1,
+    "prereqs": [
+      643
+    ]
+  },
+  {
+    "id": 916,
+    "name": "Materia 916",
+    "credits": 3,
+    "prereqs": [
+      315
+    ]
+  },
+  {
+    "id": 917,
+    "name": "Materia 917",
+    "credits": 3,
+    "prereqs": [
+      58,
+      55
+    ]
+  },
+  {
+    "id": 918,
+    "name": "Materia 918",
+    "credits": 2,
+    "prereqs": [
+      259,
+      587,
+      798
+    ]
+  },
+  {
+    "id": 919,
+    "name": "Materia 919",
+    "credits": 3,
+    "prereqs": [
+      872,
+      92,
+      772
+    ]
+  },
+  {
+    "id": 920,
+    "name": "Materia 920",
+    "credits": 4,
+    "prereqs": [
+      158
+    ]
+  },
+  {
+    "id": 921,
+    "name": "Materia 921",
+    "credits": 2,
+    "prereqs": [
+      162,
+      288
+    ]
+  },
+  {
+    "id": 922,
+    "name": "Materia 922",
+    "credits": 1,
+    "prereqs": [
+      155,
+      337,
+      921
+    ]
+  },
+  {
+    "id": 923,
+    "name": "Materia 923",
+    "credits": 1,
+    "prereqs": [
+      684,
+      362,
+      489
+    ]
+  },
+  {
+    "id": 924,
+    "name": "Materia 924",
+    "credits": 3,
+    "prereqs": [
+      41,
+      96,
+      476
+    ]
+  },
+  {
+    "id": 925,
+    "name": "Materia 925",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 926,
+    "name": "Materia 926",
+    "credits": 3,
+    "prereqs": [
+      139,
+      445
+    ]
+  },
+  {
+    "id": 927,
+    "name": "Materia 927",
+    "credits": 3,
+    "prereqs": [
+      864
+    ]
+  },
+  {
+    "id": 928,
+    "name": "Materia 928",
+    "credits": 2,
+    "prereqs": [
+      140
+    ]
+  },
+  {
+    "id": 929,
+    "name": "Materia 929",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 930,
+    "name": "Materia 930",
+    "credits": 1,
+    "prereqs": [
+      926,
+      402,
+      192
+    ]
+  },
+  {
+    "id": 931,
+    "name": "Materia 931",
+    "credits": 2,
+    "prereqs": [
+      381,
+      371,
+      316
+    ]
+  },
+  {
+    "id": 932,
+    "name": "Materia 932",
+    "credits": 4,
+    "prereqs": [
+      285
+    ]
+  },
+  {
+    "id": 933,
+    "name": "Materia 933",
+    "credits": 4,
+    "prereqs": [
+      53,
+      505,
+      253
+    ]
+  },
+  {
+    "id": 934,
+    "name": "Materia 934",
+    "credits": 2,
+    "prereqs": [
+      682,
+      304
+    ]
+  },
+  {
+    "id": 935,
+    "name": "Materia 935",
+    "credits": 4,
+    "prereqs": [
+      816
+    ]
+  },
+  {
+    "id": 936,
+    "name": "Materia 936",
+    "credits": 1,
+    "prereqs": [
+      811,
+      517,
+      219
+    ]
+  },
+  {
+    "id": 937,
+    "name": "Materia 937",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 938,
+    "name": "Materia 938",
+    "credits": 3,
+    "prereqs": [
+      770
+    ]
+  },
+  {
+    "id": 939,
+    "name": "Materia 939",
+    "credits": 1,
+    "prereqs": [
+      907,
+      262,
+      239
+    ]
+  },
+  {
+    "id": 940,
+    "name": "Materia 940",
+    "credits": 1,
+    "prereqs": [
+      589,
+      209,
+      32
+    ]
+  },
+  {
+    "id": 941,
+    "name": "Materia 941",
+    "credits": 1,
+    "prereqs": [
+      96,
+      536
+    ]
+  },
+  {
+    "id": 942,
+    "name": "Materia 942",
+    "credits": 4,
+    "prereqs": [
+      225,
+      96,
+      849
+    ]
+  },
+  {
+    "id": 943,
+    "name": "Materia 943",
+    "credits": 4,
+    "prereqs": [
+      929,
+      226,
+      516
+    ]
+  },
+  {
+    "id": 944,
+    "name": "Materia 944",
+    "credits": 4,
+    "prereqs": [
+      431,
+      912
+    ]
+  },
+  {
+    "id": 945,
+    "name": "Materia 945",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 946,
+    "name": "Materia 946",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 947,
+    "name": "Materia 947",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 948,
+    "name": "Materia 948",
+    "credits": 3,
+    "prereqs": [
+      667,
+      253,
+      907
+    ]
+  },
+  {
+    "id": 949,
+    "name": "Materia 949",
+    "credits": 1,
+    "prereqs": [
+      151
+    ]
+  },
+  {
+    "id": 950,
+    "name": "Materia 950",
+    "credits": 1,
+    "prereqs": []
+  },
+  {
+    "id": 951,
+    "name": "Materia 951",
+    "credits": 2,
+    "prereqs": [
+      250
+    ]
+  },
+  {
+    "id": 952,
+    "name": "Materia 952",
+    "credits": 2,
+    "prereqs": [
+      163,
+      231
+    ]
+  },
+  {
+    "id": 953,
+    "name": "Materia 953",
+    "credits": 4,
+    "prereqs": [
+      878
+    ]
+  },
+  {
+    "id": 954,
+    "name": "Materia 954",
+    "credits": 4,
+    "prereqs": [
+      480,
+      429,
+      739
+    ]
+  },
+  {
+    "id": 955,
+    "name": "Materia 955",
+    "credits": 3,
+    "prereqs": [
+      953,
+      386,
+      848
+    ]
+  },
+  {
+    "id": 956,
+    "name": "Materia 956",
+    "credits": 4,
+    "prereqs": [
+      664,
+      40
+    ]
+  },
+  {
+    "id": 957,
+    "name": "Materia 957",
+    "credits": 3,
+    "prereqs": [
+      372,
+      20
+    ]
+  },
+  {
+    "id": 958,
+    "name": "Materia 958",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 959,
+    "name": "Materia 959",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 960,
+    "name": "Materia 960",
+    "credits": 2,
+    "prereqs": []
+  },
+  {
+    "id": 961,
+    "name": "Materia 961",
+    "credits": 4,
+    "prereqs": [
+      377,
+      350,
+      320
+    ]
+  },
+  {
+    "id": 962,
+    "name": "Materia 962",
+    "credits": 3,
+    "prereqs": [
+      53,
+      256,
+      163
+    ]
+  },
+  {
+    "id": 963,
+    "name": "Materia 963",
+    "credits": 1,
+    "prereqs": [
+      456
+    ]
+  },
+  {
+    "id": 964,
+    "name": "Materia 964",
+    "credits": 3,
+    "prereqs": [
+      680,
+      830,
+      207
+    ]
+  },
+  {
+    "id": 965,
+    "name": "Materia 965",
+    "credits": 3,
+    "prereqs": [
+      577,
+      375,
+      435
+    ]
+  },
+  {
+    "id": 966,
+    "name": "Materia 966",
+    "credits": 4,
+    "prereqs": [
+      743,
+      620
+    ]
+  },
+  {
+    "id": 967,
+    "name": "Materia 967",
+    "credits": 2,
+    "prereqs": [
+      248,
+      171
+    ]
+  },
+  {
+    "id": 968,
+    "name": "Materia 968",
+    "credits": 4,
+    "prereqs": [
+      781,
+      153
+    ]
+  },
+  {
+    "id": 969,
+    "name": "Materia 969",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 970,
+    "name": "Materia 970",
+    "credits": 4,
+    "prereqs": [
+      518
+    ]
+  },
+  {
+    "id": 971,
+    "name": "Materia 971",
+    "credits": 3,
+    "prereqs": [
+      100
+    ]
+  },
+  {
+    "id": 972,
+    "name": "Materia 972",
+    "credits": 3,
+    "prereqs": [
+      238
+    ]
+  },
+  {
+    "id": 973,
+    "name": "Materia 973",
+    "credits": 3,
+    "prereqs": [
+      9
+    ]
+  },
+  {
+    "id": 974,
+    "name": "Materia 974",
+    "credits": 3,
+    "prereqs": [
+      180
+    ]
+  },
+  {
+    "id": 975,
+    "name": "Materia 975",
+    "credits": 4,
+    "prereqs": [
+      749
+    ]
+  },
+  {
+    "id": 976,
+    "name": "Materia 976",
+    "credits": 1,
+    "prereqs": [
+      590,
+      20
+    ]
+  },
+  {
+    "id": 977,
+    "name": "Materia 977",
+    "credits": 3,
+    "prereqs": [
+      959
+    ]
+  },
+  {
+    "id": 978,
+    "name": "Materia 978",
+    "credits": 3,
+    "prereqs": [
+      234
+    ]
+  },
+  {
+    "id": 979,
+    "name": "Materia 979",
+    "credits": 3,
+    "prereqs": [
+      199,
+      952,
+      811
+    ]
+  },
+  {
+    "id": 980,
+    "name": "Materia 980",
+    "credits": 3,
+    "prereqs": [
+      13,
+      901
+    ]
+  },
+  {
+    "id": 981,
+    "name": "Materia 981",
+    "credits": 3,
+    "prereqs": [
+      138,
+      635,
+      221
+    ]
+  },
+  {
+    "id": 982,
+    "name": "Materia 982",
+    "credits": 2,
+    "prereqs": [
+      382,
+      472
+    ]
+  },
+  {
+    "id": 983,
+    "name": "Materia 983",
+    "credits": 3,
+    "prereqs": [
+      184,
+      133,
+      410
+    ]
+  },
+  {
+    "id": 984,
+    "name": "Materia 984",
+    "credits": 2,
+    "prereqs": [
+      856,
+      543,
+      466
+    ]
+  },
+  {
+    "id": 985,
+    "name": "Materia 985",
+    "credits": 1,
+    "prereqs": [
+      690,
+      399
+    ]
+  },
+  {
+    "id": 986,
+    "name": "Materia 986",
+    "credits": 2,
+    "prereqs": [
+      409,
+      2
+    ]
+  },
+  {
+    "id": 987,
+    "name": "Materia 987",
+    "credits": 4,
+    "prereqs": [
+      926
+    ]
+  },
+  {
+    "id": 988,
+    "name": "Materia 988",
+    "credits": 3,
+    "prereqs": [
+      470
+    ]
+  },
+  {
+    "id": 989,
+    "name": "Materia 989",
+    "credits": 4,
+    "prereqs": [
+      557
+    ]
+  },
+  {
+    "id": 990,
+    "name": "Materia 990",
+    "credits": 1,
+    "prereqs": [
+      246,
+      223
+    ]
+  },
+  {
+    "id": 991,
+    "name": "Materia 991",
+    "credits": 4,
+    "prereqs": [
+      953
+    ]
+  },
+  {
+    "id": 992,
+    "name": "Materia 992",
+    "credits": 3,
+    "prereqs": [
+      339,
+      511,
+      545
+    ]
+  },
+  {
+    "id": 993,
+    "name": "Materia 993",
+    "credits": 3,
+    "prereqs": [
+      625,
+      538,
+      51
+    ]
+  },
+  {
+    "id": 994,
+    "name": "Materia 994",
+    "credits": 2,
+    "prereqs": [
+      422,
+      185
+    ]
+  },
+  {
+    "id": 995,
+    "name": "Materia 995",
+    "credits": 2,
+    "prereqs": [
+      317
+    ]
+  },
+  {
+    "id": 996,
+    "name": "Materia 996",
+    "credits": 4,
+    "prereqs": []
+  },
+  {
+    "id": 997,
+    "name": "Materia 997",
+    "credits": 4,
+    "prereqs": [
+      428
+    ]
+  },
+  {
+    "id": 998,
+    "name": "Materia 998",
+    "credits": 3,
+    "prereqs": []
+  },
+  {
+    "id": 999,
+    "name": "Materia 999",
+    "credits": 2,
+    "prereqs": [
+      76,
+      114,
+      88
+    ]
+  },
+  {
+    "id": 1000,
+    "name": "Materia 1000",
+    "credits": 1,
+    "prereqs": [
+      149,
+      791,
+      254
+    ]
+  }
+]
