@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 # Gráfico de comparación de velocidad de distintos metodos
 # cual es la eficiencia de:
 '''
-
    has_cycle(): detecta ciclos en el grafo de cursos, asegurando que la planificación sea válida.
    generate_greedy_schedule()
 Genera una sugerencia de materias por semestre tratando de optimizar el avance (más materias posibles por semestre).
@@ -48,7 +47,7 @@ plt.plot(df['Tamaño'], df['generate_random_schedule'], marker='s', label='gener
 plt.plot(df['Tamaño'], df['load_graph_from_json'], marker='^', label='load_graph_from_json')
 
 plt.xscale('log')
-plt.xlabel('Tamaño de la lista (log scale)')
+plt.xlabel('Cantidad de materias (log scale)')
 plt.ylabel('Tiempo promedio (ms)')
 plt.title('Comparación de velocidad')
 plt.legend()

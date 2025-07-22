@@ -114,7 +114,7 @@ QPushButton:pressed {
           <item>
            <widget class="QPushButton" name="ButtonVerCaminosMaterias">
             <property name="text">
-             <string>Ver Caminos de Materias</string>
+             <string>Ver Niveles de Materias</string>
             </property>
             <property name="icon">
              <iconset resource="../resources.qrc">

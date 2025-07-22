@@ -202,7 +202,7 @@ class ScheduleService:
                 "details": str(e)
             }
     
-    def generate_greedy_schedule(self, max_credits_per_semester: int = 18) -> Dict[str, Any]:
+    '''def generate_greedy_schedule(self, max_credits_per_semester: int = 18) -> Dict[str, Any]:
         """
         Genera una planificación greedy que maximiza los créditos por semestre.
         
@@ -267,7 +267,7 @@ class ScheduleService:
                 "error": "GREEDY_SCHEDULE_ERROR",
                 "message": f"Error al generar planificación greedy: {str(e)}",
                 "details": str(e)
-            }
+            }'''
     
     def generate_personalized_schedule(self, user: User, max_credits_per_semester: int = 18) -> Dict[str, Any]:
         """
