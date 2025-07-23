@@ -1,7 +1,6 @@
 from typing import List, Dict, Any, Optional
 from graduacion_unal.models.courses_schedule import Schedule
 from graduacion_unal.models.courses_graph import CoursesGraph
-from graduacion_unal.models.User import User
 import os
 import time
 
@@ -269,102 +268,6 @@ class ScheduleService:
                 "details": str(e)
             }
     
-    def generate_personalized_schedule(self, user: User, max_credits_per_semester: int = 18) -> Dict[str, Any]:
-        """
-        Genera una planificación personalizada basada en el progreso del usuario.
-        
-        Args:
-            user: Objeto User con el progreso actual
-            max_credits_per_semester: Límite de créditos por semestre
-            
-        Returns:
-            Diccionario con la planificación personalizada
-        """
-        if not self.graph:
-            return {
-                "success": False,
-                "error": "GRAPH_NOT_LOADED",
-                "message": "El grafo no ha sido cargado"
-            }
-        
-        try:
-            # Obtener cursos que el usuario puede tomar
-            available_courses = self.graph.get_ready_courses(user.completed_courses)
-            
-            # Filtrar cursos que ya está tomando actualmente
-            available_courses = [course for course in available_courses 
-                              if course.id not in user.current_courses]
-            
-            # Organizar por semestres considerando el progreso actual
-            schedule = {}
-            current_semester = user.semester
-            remaining_courses = available_courses.copy()
-            
-            while remaining_courses:
-                semester_courses = []
-                semester_credits = 0
-                
-                # Seleccionar cursos para el semestre actual
-                for course in remaining_courses[:]:
-                    if (semester_credits + course.credits) <= max_credits_per_semester:
-                        semester_courses.append(course.id)
-                        semester_credits += course.credits
-                        remaining_courses.remove(course)
-                    else:
-                        break
-                
-                if semester_courses:
-                    schedule[current_semester] = semester_courses
-                    current_semester += 1
-                else:
-                    break
-            
-            # Convertir a formato detallado
-            schedule_details = {}
-            total_credits = 0
-            
-            for semester, courses in schedule.items():
-                semester_info = []
-                semester_credits = 0
-                
-                for course_id in courses:
-                    course = self.graph.get_course(course_id)
-                    if course:
-                        semester_info.append({
-                            "id": course.id,
-                            "name": course.name,
-                            "credits": course.credits,
-                            "prereqs": course.prereqs
-                        })
-                        semester_credits += course.credits
-                
-                schedule_details[semester] = {
-                    "courses": semester_info,
-                    "total_courses": len(semester_info),
-                    "total_credits": semester_credits
-                }
-                total_credits += semester_credits
-            
-            return {
-                "success": True,
-                "schedule": schedule_details,
-                "total_semesters": len(schedule),
-                "total_courses": sum(len(courses) for courses in schedule.values()),
-                "total_credits": total_credits,
-                "user_progress": {
-                    "completed_courses": len(user.completed_courses),
-                    "current_semester": user.semester,
-                    "total_credits_completed": user.total_credits
-                }
-            }
-            
-        except Exception as e:
-            return {
-                "success": False,
-                "error": "PERSONALIZED_SCHEDULE_ERROR",
-                "message": f"Error al generar planificación personalizada: {str(e)}",
-                "details": str(e)
-            }
 
     def cargar_ver_arbol(self, ui_dir):
         self.limpiar_panel()

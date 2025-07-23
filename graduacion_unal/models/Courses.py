@@ -5,10 +5,6 @@ from graduacion_unal.structures.hash import HashMap
 from graduacion_unal.structures.queue import Queue   
 
 
-### PARA LA PROXIMA ENTREGA
-## PARA MANEJAR CURSOS Y GRAFOS DE CURSOS
-## NO SE UTILIZA EN LA ACTUAL VERSION
-
 
 class Course:
     """
@@ -149,28 +145,3 @@ def plan_semesters(mapa: HashMap, max_per_sem: int) -> List[List[int]]:
     if total != mapa.size:
         raise ValueError("Ciclo detectado o cursos faltantes")
     return result
-
-def main():
-    parser = argparse.ArgumentParser(description="Planificador de semestres UNAL")
-    parser.add_argument("-i", "--input",  required=True,
-                        help="Ruta al JSON de cursos")
-    parser.add_argument("-m", "--max-per-sem", type=int, default=6,
-                        help="Máximo de cursos por semestre")
-    parser.add_argument("-o", "--output",
-                        help="Archivo JSON de salida")
-    args = parser.parse_args()
-
-    courses = load_courses(args.input)
-    mapa = build_graph(courses)
-    plan = plan_semesters(mapa, args.max_per_sem)
-
-    for idx, sem in enumerate(plan, start=1):
-        print(f"Semestre {idx}: {sem}")
-    print(f"Semestres totales: {len(plan)}")
-
-    if args.output:
-        with open(args.output, 'w', encoding='utf-8') as f:
-            json.dump(plan, f, ensure_ascii=False, indent=2)
-
-if __name__ == "__main__":
-    main()

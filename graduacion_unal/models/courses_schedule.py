@@ -5,10 +5,6 @@ from graduacion_unal.models.Courses import Course
 from graduacion_unal.structures.queue import Queue
 from graduacion_unal.structures.heap import MaxHeap
 
-### PARA LA PROXIMA ENTREGA
-## PARA MANEJAR PLANIFICACIONES DE SEMESTRES
-## API SIN TESTEAR, ALGORITMOS INCOMPLETOS Y NO OPTIMIZADOS
-
 class Schedule:
     """
     Metodo para una planificacion de semestres valida.
@@ -258,58 +254,3 @@ class Schedule:
 
         return semestres
 
-    """
-
-    def random_schedule(self, max_credits_per_semester: int, courses_graph: CoursesGraph) -> Dict[int, List[int]]:
-        Metodo para generar una planificacion de semestres aleatoria con un maximo de creditos por semestre.
-        
-        Generar el grafo de cursos y seleccionar aleatoriamente entre las asignaturas que se pueden tomar en un semestre, que a lo mas sumen el maximo de creditos por semestre.
-        
-        Retorna una programacion de semestres en el siguiente formato:
-        {
-            1: [1, 2, 3], ## materias seleccionadas para tomar en el semestre 1
-            2: [4, 5, 6], ## materias seleccionadas para tomar en el semestre 2
-            ...
-            n: [i, j, k] ## materias seleccionadas para tomar en el semestre n
-        }
-        if not courses_graph:
-            return {}
-        
-        # Obtener el árbol de cursos disponibles
-        course_tree = self.tree_of_availible_courses(max_credits_per_semester, courses_graph)
-        
-        schedule = {}
-        completed_courses = set()
-        current_semester = 1
-        
-        # Procesar cada nivel del árbol
-        for level in sorted(course_tree.keys()):
-            available_courses = course_tree[level]
-            
-            # Filtrar cursos que ya están completados
-            available_courses = [course_id for course_id in available_courses if course_id not in completed_courses]
-            
-            if not available_courses:
-                continue
-            
-            # Seleccionar cursos aleatoriamente respetando el límite de créditos
-            selected_courses = []
-            current_credits = 0
-            
-            # Mezclar cursos disponibles
-            random.shuffle(available_courses)
-            
-            for course_id in available_courses:
-                course = courses_graph.get_course(course_id)
-                if course and (current_credits + course.credits) <= max_credits_per_semester:
-                    selected_courses.append(course_id)
-                    current_credits += course.credits
-            
-            if selected_courses:
-                schedule[current_semester] = selected_courses
-                completed_courses.update(selected_courses)
-                current_semester += 1
-        
-        return schedule
-
-    """
