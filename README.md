@@ -39,5 +39,3 @@ Ejecutar:
 python graduacion_unal/gui/app.py
 - Opcion 2(windows):  
 python -m graduacion_unal.gui.app
-
-### En la primera version no estan implementadas las funcionalidades, solo bocetos y primeras versiones de los modelos, los adaptdores y de la base de datos
